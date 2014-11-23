@@ -1,0 +1,85 @@
+(*
+The following code is
+
+© Andreas Amann, 2002-2004
+http://homepage.mac.com/aamann/
+
+You may incorporate this code into your program(s) without restriction.
+This code has been provided "AS IS" and the responsibility for its operation is yours.
+You are not permitted to redistribute this code under my name after having made changes.
+If you're going to redistribute the code, please make it clear that the code was descended
+from my code, but that you've made changes.
+*)
+
+--Open Mailbox.scpt (Mail Scripts 2.2.4)
+
+property sCancel : "Cancel"
+property sContinue : "Continue"
+property sMessage : "When run as a rule action, this script will open the mailbox the corresponding message has been moved to.
+
+If you continue now, it will open all mailboxes with unread messages in them."
+
+using terms from application "Mail"
+	on «event emalcpma» theMsgs given «class pmar»:theRule
+		try
+			set theRuleName to name of theRule -- this fails if the script is run from the script menu...
+			set theBoxes to {}
+			repeat with eachMsg in theMsgs
+				try
+					tell application "Mail"
+						if should move message of theRule = true then
+							set theCurrentBox to move message of theRule
+						else
+							set theCurrentBox to mailbox "INBOX" of account of mailbox of eachMsg
+						end if
+					end tell
+				end try
+				if theBoxes does not contain {theCurrentBox} then set end of theBoxes to theCurrentBox
+			end repeat
+			my displayMailboxesWithUnreadMessages(theBoxes)
+		on error
+			display dialog sMessage buttons {sCancel, sContinue} default button 1 with icon note
+			set theUnreadMailboxes to {}
+			tell application "Mail"
+				repeat with eachAccount in accounts
+					set theUnreadMailboxesOfAccount to (mailboxes of eachAccount whose unread count > 0)
+					repeat with i from 1 to count of theUnreadMailboxesOfAccount
+						set theBox to item i of theUnreadMailboxesOfAccount
+						ignoring case
+							if (name of theBox is not "Drafts") and (name of theBox is not "Junk") then set end of theUnreadMailboxes to theBox
+						end ignoring
+					end repeat
+				end repeat
+				set theUnreadMailboxes to theUnreadMailboxes & (mailboxes whose unread count > 0)
+			end tell
+			my displayMailboxesWithUnreadMessages(theUnreadMailboxes)
+		end try
+	end «event emalcpma»
+end using terms from
+
+on displayMailboxesWithUnreadMessages(theBoxes)
+	tell application "Mail"
+		set theDisplayedBoxes to {}
+		repeat with eachWindow in (message viewers whose visible is true)
+			set theDisplayedBoxes to theDisplayedBoxes & selected mailboxes of eachWindow
+		end repeat
+		repeat with i from 1 to count of theBoxes
+			set theBox to item i of theBoxes
+			if theDisplayedBoxes does not contain {theBox} then
+				ignoring case
+					if (name of theBox = "INBOX" and {inbox} is in theDisplayedBoxes) then exit repeat
+				end ignoring
+				set theNewWindow to make new message viewer
+				repeat
+					delay 1
+					try
+						set selected mailboxes of theNewWindow to {theBox}
+					end try
+					if selected mailboxes of theNewWindow = {theBox} then exit repeat
+				end repeat
+			end if
+		end repeat
+	end tell
+end displayMailboxesWithUnreadMessages
+
+--Open Mailbox.scpt

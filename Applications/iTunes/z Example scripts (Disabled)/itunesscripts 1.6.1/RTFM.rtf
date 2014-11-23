@@ -1,0 +1,140 @@
+{\rtf1\mac\ansicpg10000\cocoartf102
+{\fonttbl\f0\fswiss\fcharset77 Helvetica;\f1\fswiss\fcharset77 Helvetica-BoldOblique;\f2\fswiss\fcharset77 Helvetica-Bold;
+\f3\fswiss\fcharset77 Helvetica-Oblique;\f4\fnil\fcharset77 LucidaGrande-Bold;\f5\fnil\fcharset77 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww14540\viewh12900\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\qc
+
+\f0\fs18 \cf0 use these scripts at your own risk... ! ;-P
+\f1\i\b \
+
+\fs42 Hubi's iTunes Scripts 1.6.1
+\f0\i0\b0\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
+\cf0 \
+
+\f2\b\fs40 What is new in this Version?
+\f0\b0\fs24 \
+	- all 'RN' scripts now recognize the file's type (mp3,wav,aac,aiff) and use the correct suffix\
+	- 'Artist_Alias_Folder' script:  dialog added to choose if group folders should be made (named by the first character of an artist)\
+	- checked the scripts with iTunes version 4... everything seems to work =)\
+	\
+\
+
+\f2\b\fs40 Why I wrote these scripts?\
+
+\f0\b0\fs24 Well, I got sick of sorting mp3s... and tools I used before did not work any more, did not exactly what I wanted or I had to pay for them.\
+So I wrote these scripts...\
+\
+
+\f2\b\fs40 How to install/use the scripts:
+\fs24 \
+
+\f0\b0 Just place the folder Scripts in your local iTunes folder that you can find in  your Library folder  ( ~/Library/iTunes/), restart iTunes and you will see a little script-icon in your menu bar. From this menu you can select the script you would like to run.\
+\
+\
+
+\f2\b\fs40 What these scripts do?\
+
+\f0\b0\fs24 Well in first place the scripts rename and move mp3 files using the information found in the ID-Tags of the mp3 files.\
+Later on I found it very usefull to add some other scripts that makes it easier  to organize all the ID-Tags. iTunes itself offers a lot of features, but something simple  like switching Artist/Title is not (yet) implemented....\
+\
+So that is what each script is doing:\
+
+\f2\b -\'f0 Open Scripts folder\
+
+\f0\b0 opens the script folder (~/Library/iTunes/Scripts) in the Finder\
+\
+
+\f2\b -\'f0Delete Tracks from Disk&Playlist\
+
+\f0\b0 deletes the tracks in iTunes and moves the mp3 files to the trash\
+\
+
+\f2\b -\'f0Delete Tracks from every Playlist\
+
+\f0\b0 when you you delete a track from a play list it stays in the library...\
+this script removes the track from every playlist including the library\
+\
+
+\f2\b -\'f0Remove Missing Tracks\
+
+\f0\b0 finds the missing tracks in a selection/library and removes them from the library\
+\
+
+\f2\b 00-Delete x first-last chars. of Title\
+
+\f0\b0 sometimes titles of some mp3s look like e.g. their filename\
+
+\f3\i 01 - Highways.mp3
+\f0\i0 \
+then you run this script to delete the last 4 characters of the title\
+
+\f3\i 01 - Highways
+\f0\i0 \
+and run this script again to delete the first 5 characters and you get\
+
+\f3\i Highways\
+
+\f0\i0 \
+
+\f2\b 00-Fix combined Artist-Title\
+
+\f0\b0 sometimes the artist/title field look like\
+
+\f3\i \
+Title:				Artist\
+Madonna - Ray of Light	Various Artist\
+\
+
+\f0\i0 in this case the script can fix that when you enter the separator (" - " in this case) and the field in which the data is stored (Title)\
+just in case, the old information (Title/Artist)  is copied to the mp3's comment field\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f4\b \cf0 00-Replace Text in Title/Artist/Album\
+
+\f5\b0 just search for a special string and replace it by another\
+\
+
+\f4\b 00-switch Artist<->Title\
+
+\f5\b0 switches arist/title of an mp3... to undo run a second time ;)\
+\
+...\
+\
+
+\f4\b 08.RN-A-T->MV-Genre-Artist-Album\
+
+\f5\b0 RN = rename\
+MV = move\
+These scripts rename & perhaps move the selected mp3 to a folder named "Sorted mp3s". This folder is made on the disk the mp3s are stored on.\
+ just check out to find out, how it works\
+\
+...\
+\
+
+\f4\b 14.Generate Playlists\
+
+\f5\b0 Makes playlists of selection in iTunes... check out =)\
+\
+
+\f4\b Artist_Alias_Folder\
+
+\f5\b0 This script creates a folder named "Sorted By Artist" on the volume the mp3s are stored on and creates subfolders (named by the artist) and makes aliases of the mp3s within these subfolders.\
+\
+\
+
+\f4\b Playlist.txt of selection\
+
+\f5\b0 When you export a playlist to a textfile in iTunes... well pretty much information... this script generates such a text file on it's own.. check it out!\
+Another (faster) way to get such a playlist, is just to show the information you want (command + J) in iTunes, select the tracks you would like to have in the textfile, and copy the information to the clipboard =)\
+later on you can paste it in a text document or excel sheet =)\
+\
+\
+
+\f4\b\fs40 Feeback!!\
+
+\fs26 Scripts: hschulze@kommunity.net  |\'ca(www.hubis.net)\
+Design: info@pixeleon.com |\'cawww.pixeleon.com}

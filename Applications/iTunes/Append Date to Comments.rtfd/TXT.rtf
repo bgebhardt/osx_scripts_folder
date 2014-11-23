@@ -1,0 +1,196 @@
+{\rtf1\mac\ansicpg10000\cocoartf824\cocoasubrtf410
+\readonlydoc1{\fonttbl\f0\fswiss\fcharset77 Helvetica;\f1\fswiss\fcharset77 Helvetica-Bold;\f2\fswiss\fcharset77 Helvetica-BoldOblique;
+\f3\fswiss\fcharset77 Helvetica-Oblique;\f4\fnil\fcharset77 Verdana;\f5\fnil\fcharset77 Verdana-Italic;
+\f6\fnil\fcharset77 Verdana-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue255;\red102\green102\blue102;\red44\green0\blue253;
+\red17\green17\blue17;}
+\margl1440\margr1440\vieww10760\viewh14780\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\f0\fs84 \cf0 Append Date to Comments 
+\fs36  v1.0
+\fs84 \
+
+\fs36 AppleScript for iTunes
+\fs24 \
+Find more 
+\f1\b free
+\f0\b0  AppleScripts\
+and info on writing your own\
+at {\field{\*\fldinst{HYPERLINK "http://www.dougscripts.com/itunes/"}}{\fldrslt Doug's AppleScripts for iTunes}}.\
+\
+\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural\pardirnatural
+
+\fs36 \cf0 This script will allow you to supply a date which will be appended to the Comments field of the selected iTunes tracks. If no tracks are selected, the date you enter will be copied to the clipboard.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\fs24 \cf0 \
+
+\f1\b This script is {\field{\*\fldinst{HYPERLINK "http://www.dougscripts.com/itunes/itinfo/donate.php"}}{\fldrslt Donationware}}. If you use it and like it 
+\f2\i please
+\f1\i0  consider making a donation to support my AppleScripting efforts. {\field{\*\fldinst{HYPERLINK "http://www.dougscripts.com/itunes/itinfo/donate.php"}}{\fldrslt Click here}} for more info.
+\f0\b0\fs36 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\f1\b\fs24 \cf2 Installation:
+\f0\b0 \cf0 \
+\
+If you installed the files from the downloaded disk image by dragging them to the "Installer", then the AppleScript and this Read Me document have already been installed in your 
+\f3\i \cf3 [user name] > Library > iTunes > Scripts
+\f0\i0 \cf0  folder. The script will appear in iTunes' Script menu, where you can activate it by clicking on its name.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\f1\b \cf0 To manually install, if necessary: 
+\f0\b0 Put AppleScripts in your iTunes Scripts folder. This is located in 
+\f3\i \cf3 [user name] > Library > iTunes
+\f0\i0 \cf0 . If there is no folder named "Scripts" there, create one and put the script(s) in it. AppleScripts will then appear in iTunes' Script menu, and can be activated by selecting by name and clicking. Be sure to also save this Read Me document in a safe and convenient place.\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\f1\b \cf2 How to use:
+\f0\b0 \cf0 \
+\
+\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+\cf0 Select some tracks and run the script. You can enter a date in pretty much any format in the first dialog box:\
+\
+\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural\pardirnatural
+\cf0 {{\NeXTGraphic Pasted Graphic 2.pict \width7200 \height3300
+}¬}\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural\pardirnatural
+\cf0 \
+\
+The default date that appears will be "now". However, you can enter pretty much any sort of valid date format, such as:\
+\
+Mar 14, 2006\
+3.14.2006 1 PM\
+3/14/2006 3:37AM\
+6 months ago\
+4 weeks ago\
+20 minutes ago\
+and so on...\
+\
+\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+\cf0 The script will attempt to re-format whatever you enter to the "correct" date format. For example, if you had entered "Mar 14, 2006", the date will be formatted as "Tuesday, March 14, 2006 12:00:00 AM".\
+\
+If you enter a date that the script doesn't recognize as a valid date format, you will have an opportunity to re-enter a date:\
+\
+\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural\pardirnatural
+\cf0 {{\NeXTGraphic Pasted Graphic 4.pict \width7200 \height3940
+}¬}\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural\pardirnatural
+\cf0 \
+\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+\cf0 \
+After entering your date, a second dialog box will ask you to verify what you entered, displaying the "correct" date format:\
+\
+\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural\pardirnatural
+\cf0 {{\NeXTGraphic Pasted Graphic 3.pict \width7200 \height2980
+}¬}\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural\pardirnatural
+\cf0 \
+\
+Whatever is in this dialog box's text box will be the final output, so you can make changes here.\
+\
+Click the Redo button to return to the first diaog box and enter a different date. Click OK to sign off on this text. It will be appended to the Comments field of the selected tracks. If the Comments field for a track contains text already, the date will appear after the current text using " - " as a delimiter. (You can change this delimiter text, see below.)\
+\
+\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li580\ql\qnatural\pardirnatural
+\cf0 \'a5 Alternatively, you can run the script without selecting any tracks and the date you enter will be copied to the clipboard so you can paste it anywhere.\
+\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+\cf0 \
+\
+\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\f1\b \cf2 Modifying the Script:
+\f0\b0 \cf0 \
+\
+As mentioned above, if the Comments field of any selected track contains text, the date will be appended to the current Comments text with the text " - " separator. You can change this by editing the script.\
+\
+Open the script with Script Editor and look for this line near the beginning of the script:\
+\
+\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural\pardirnatural
+
+\f4\fs18 \cf0 \CocoaLigature0 --
+\f5\i \cf3  change this if you like. this will appear between your original comments text--if any--and the date you eventually select
+\f4\i0 \cf0 \
+
+\f6\b property
+\f4\b0  \cf4 delim\cf0  : " - "\
+\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+Change the text inside the quotes to anything you like. Then Save the script and quit Script Editor. You're done!\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+\cf0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\f1\b \cf2 Helpful Links:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\f0\b0 \cf0 \
+Click on the underlined URL text:\
+\
+- {\field{\*\fldinst{HYPERLINK "http://www.dougscripts.com/itunes/"}}{\fldrslt Doug's AppleScripts for iTunes}}\
+- {\field{\*\fldinst{HYPERLINK "http://www.dougscripts.com/itunes/itinfo/shortcutkeys.php"}}{\fldrslt Assign Shortcut Keys to AppleScripts}}\
+- {\field{\*\fldinst{HYPERLINK "http://www.dougscripts.com/itunes/itinfo/downloadfaq.php"}}{\fldrslt Download FAQ}} - 
+\f1\b Info on downloading and installing AppleScripts
+\f0\b0 \
+- {\field{\*\fldinst{HYPERLINK "http://www.dougscripts.com/itunes/dougs.rss"}}{\fldrslt Doug's RSS Feed}} - 
+\f1\b Recent site news, script additions and updates
+\f0\b0  (add link to your news reader)\
+- {\field{\*\fldinst{HYPERLINK "http://www.dougscripts.com/itunes/dougsupdated.rss"}}{\fldrslt 30 Most Recent RSS Feed}} - 
+\f1\b Most recent new and updated scripts
+\f0\b0  (add link to your news reader)\
+\
+
+\f1\b Information and download link for this script is located at:
+\f0\b0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural\pardirnatural
+{\field{\*\fldinst{HYPERLINK "http://www.dougscripts.com/itunes/scripts/ss.php?sp=appenddate"}}{\fldrslt \cf0 http://www.dougscripts.com/itunes/scripts/ss.php?sp=appenddate}}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\fs20 \cf0 Version History:\
+\
+\pard\tx140\tx160\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+\cf5 v1.0 jul 14 2006\
+- initial release\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+\cf5 this doc last updated November 22 06\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\fs24 \cf0 \
+
+\f1\b If you have any trouble with this script, please email me.
+\f0\b0 \
+My name is Doug Adams\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+{\field{\*\fldinst{HYPERLINK "mailto:dougscripts@mac.com"}}{\fldrslt \cf2 \ul \ulc2 dougscripts@mac.com}}\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\fs20 \cf0 This software is released "as-is". By using it or modifying it you agree that its author cannot be held responsible or liable for any tragedies resulting thereof.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural\pardirnatural
+\cf0 \CocoaLigature0 This program is free software; you can redistribute it and/or modify it under the terms of the 
+\f1\b GNU General Public License
+\f0\b0  as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\
+\
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\
+\
+Get a copy of the GNU General Public License by writing to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.\
+\
+or visit {\field{\*\fldinst{HYPERLINK "http://www.gnu.org/copyleft/gpl.html"}}{\fldrslt http://www.gnu.org/copyleft/gpl.html}}
+\f5\i\fs18 \cf3 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\f0\i0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\fs20 \cf0 AppleScript, iTunes, and iPod are registered trademarks of {\field{\*\fldinst{HYPERLINK "http://www.apple.com"}}{\fldrslt Apple Computer}}, Inc.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li180\ql\qnatural
+
+\fs24 \cf0 \
+}
