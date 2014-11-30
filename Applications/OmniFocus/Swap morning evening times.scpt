@@ -8,10 +8,20 @@ tell application "OmniFocus"
 		-- assumes one selection
 		set theSel to (selected trees where class of its value is not item and class of its value is not folder)
 		
+		-- need to create a list of tasks before changing dates as that changes what the trees point to
+		set theTasksSelected to {}
 		-- loop through all items; no error checking!
 		repeat with theItem in theSel
-			set theTask to value of theItem
-			my swapMorningEveningDueDateTime(theTask)
+			set the end of theTasksSelected to value of theItem
+		end repeat
+		
+		log (get theTasksSelected)
+		
+		-- loop through all items; no error checking!
+		repeat with theItem in theTasksSelected
+			log (get theItem)
+			log (get name of theItem)
+			my swapMorningEveningDueDateTime(theItem)
 		end repeat
 	end tell
 	
