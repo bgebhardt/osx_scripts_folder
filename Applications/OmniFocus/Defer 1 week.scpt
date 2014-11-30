@@ -54,24 +54,24 @@ on setDate(theTask)
 	tell application "OmniFocus"
 		
 		if due date of theTask is missing value then
-			my startToday(theTask, theDateToSet)
+			my taskStartOnDate(theTask, theDateToSet)
 		else -- due date present
 			if defer date of theTask is missing value then
-				my dueToday(theTask, theDateToSet)
+				my taskDueOnDate(theTask, theDateToSet)
 			else -- defer date pressent
 				-- set both only if dates match
 				if due date of theTask = defer date of theTask then
-					my startToday(theTask, theDateToSet)
-					my dueToday(theTask, theDateToSet)
+					my taskStartOnDate(theTask, theDateToSet)
+					my taskDueOnDate(theTask, theDateToSet)
 				else -- otherwise just set start date
-					my startToday(theTask, theDateToSet)
+					my taskStartOnDate(theTask, theDateToSet)
 				end if
 			end if
 		end if
 	end tell
 end setDate
 
-on startToday(selectedItem, theDateToSet)
+on taskStartOnDate(selectedItem, theDateToSet)
 	set success to false
 	tell application "OmniFocus"
 		try
@@ -87,10 +87,10 @@ on startToday(selectedItem, theDateToSet)
 		end try
 	end tell
 	return success
-end startToday
+end taskStartOnDate
 
 
-on dueToday(selectedItem, theDateToSet)
+on taskDueOnDate(selectedItem, theDateToSet)
 	set success to false
 	tell application "OmniFocus"
 		try
@@ -106,4 +106,29 @@ on dueToday(selectedItem, theDateToSet)
 		end try
 	end tell
 	return success
-end dueToday
+end taskDueOnDate
+
+
+-- determine if the two dates are within an week interval.
+on isIntervalOfAWeek(date1, date2)
+	isIntervalOfXDays(date1, date2, 7)
+end isIntervalOfAWeek
+
+-- determine if the two dates are within an interval of days.
+-- example: if daysInterval is 7 then will check if the dates are X weeks apart
+on isIntervalOfXDays(date1, date2, daysInterval)
+	set daysApart to getDayNumber(date1) - getDayNumber(date2)
+	if (daysApart mod daysInterval) is 0 then
+		return true
+	end if
+	return false
+end isIntervalOfXDays
+
+-- get day number based on current year
+on getDayNumber(theDate)
+	set currentYear to date ("1/1/" & (year of (current date)))
+	return (theDate - currentYear) div days
+end getDayNumber
+
+
+
