@@ -1,4 +1,4 @@
--- Omnifocus script to swap due date times.  Allows me to push things easily to the evening.
+-- Omnifocus script to swap due date and defer date times.  Allows me to push things easily to the evening.
 -- swap morning evening times.  Assumes fixed morning and evening time set in function.
 -- if time is after noon then swaps to morning; otherwise swaps to evening time.
 -- (c) 2014 Bryan Gebhardt
@@ -21,7 +21,7 @@ tell application "OmniFocus"
 		repeat with theItem in theTasksSelected
 			log (get theItem)
 			log (get name of theItem)
-			my swapMorningEveningDueDateTime(theItem)
+			my swapMorningEveningDueDateDeferDateTimes(theItem)
 		end repeat
 	end tell
 	
@@ -29,20 +29,36 @@ tell application "OmniFocus"
 	
 end tell
 
-on swapMorningEveningDueDateTime(theTask)
+on swapMorningEveningDueDateDeferDateTimes(theTask)
 	set theMorningTime to 32400 -- 9:00:00 AM in seconds
 	set theEveningTime to 68400 -- 7:00:00 PM in seconds
 	set noonTime to 43200 -- 12:00:00 PM in seconds
 	
 	tell application "OmniFocus"
-		set dateToChange to due date of theTask
-		log (get dateToChange)
-		if time of dateToChange > noonTime then
-			set time of dateToChange to theMorningTime
-		else
-			set time of dateToChange to theEveningTime
+		if due date of theTask is not missing value then
+			set due date of theTask to my getSwappedMorningEveningTime(due date of theTask)		
 		end if
 		
-		set due date of theTask to dateToChange
+		if defer date of theTask is not missing value then
+			set defer date of theTask to my getSwappedMorningEveningTime(defer date of theTask)
+		end if
+		
 	end tell
-end swapMorningEveningDueDateTime
+end swapMorningEveningDueDateDeferDateTimes
+
+
+on getSwappedMorningEveningTime(dateToChange)
+	set theMorningTime to 32400 -- 9:00:00 AM in seconds
+	set theEveningTime to 68400 -- 7:00:00 PM in seconds
+	set noonTime to 43200 -- 12:00:00 PM in seconds
+
+	log (get dateToChange)
+	
+	if time of dateToChange > noonTime then
+		set time of dateToChange to theMorningTime
+	else
+		set time of dateToChange to theEveningTime
+	end if
+
+	return dateToChange
+end
