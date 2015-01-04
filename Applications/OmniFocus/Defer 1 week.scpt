@@ -22,6 +22,8 @@ property timeToSetOffset : 7 * days  -- number of seconds to set time.
 2419200 = 4 weeks (approximately a month)
 *)
 
+log ("Time to set offset is " & timeToSetOffset)
+
 tell application "OmniFocus"
 	tell content of first document window of front document
 		--Get selection
@@ -110,6 +112,14 @@ end setTaskDueDate
 
 on getDateToSetBasedOnOriginalDate(originalDate)
 	set theDateToSet to my getCurrentDatePlusOffset()
+	log ("original date: " & originalDate)
+	log ("theDateToSet: " & theDateToSet)
+	
+	-- special case for offset 0 (today).  never return the original date
+	if timeToSetOffset = 0 then
+		return theDateToSet
+	end if
+	
 	-- if original date is greater than the current date + offset interval then just add the offset to the original date
 	if originalDate > theDateToSet then
 		return (originalDate + timeToSetOffset)
