@@ -12,9 +12,9 @@ Inspired by Dan Byler's script.  Also borrowed some of the code.
 	(TL;DR: do whatever you want with it.)
 *)
 
-property startTime : 9 --Start hour for items not previously assigned a start time (24 hr clock)
-property dueTime : 9 --Due hour for items not previously assigned a due time (24 hr clock)
-property timeToSetOffset : 604800  -- number of seconds to set time.
+property startTime : 8 --Start hour for items not previously assigned a start time (24 hr clock)
+property dueTime : 8 --Due hour for items not previously assigned a due time (24 hr clock)
+property timeToSetOffset : 7 * days  -- number of seconds to set time.
 (* common time offsets
 0= today
 86400 = tomorrow
@@ -50,64 +50,76 @@ tell application "OmniFocus"
 end tell
 
 on setDate(theTask)
-	set theDateToSet to (current date) - (time of (current date)) + timeToSetOffset
 	tell application "OmniFocus"
 		
 		if due date of theTask is missing value then
-			my taskStartOnDate(theTask, theDateToSet)
+			my setTaskStartDate(theTask)
 		else -- due date present
 			if defer date of theTask is missing value then
-				my taskDueOnDate(theTask, theDateToSet)
+				my setTaskDueDate(theTask)
 			else -- defer date pressent
 				-- set both only if dates match
 				if due date of theTask = defer date of theTask then
-					my taskStartOnDate(theTask, theDateToSet)
-					my taskDueOnDate(theTask, theDateToSet)
+					my setTaskStartDate(theTask)
+					my setTaskDueDate(theTask)
 				else -- otherwise just set start date
-					my taskStartOnDate(theTask, theDateToSet)
+					my setTaskStartDate(theTask)
 				end if
 			end if
 		end if
 	end tell
 end setDate
 
-on taskStartOnDate(selectedItem, theDateToSet)
+on setTaskStartDate(selectedItem)
 	set success to false
 	tell application "OmniFocus"
-		try
+		try -- note no catch error handling, all errors return false
 			set originalStartDateTime to defer date of selectedItem
+			
 			if (originalStartDateTime is not missing value) then
-				--Set new start date with original start time
-				set defer date of selectedItem to (theDateToSet + (time of originalStartDateTime))
+				set defer date of selectedItem to my getDateToSetBasedOnOriginalDate(originalStartDateTime)
 				set success to true
 			else
-				set defer date of selectedItem to (theDateToSet + (startTime * hours))
+				set defer date of selectedItem to (my getCurrentDatePlusOffset() + (startTime * hours))
 				set success to true
 			end if
 		end try
 	end tell
 	return success
-end taskStartOnDate
+end setTaskStartDate
 
-
-on taskDueOnDate(selectedItem, theDateToSet)
+on setTaskDueDate(selectedItem)
 	set success to false
 	tell application "OmniFocus"
-		try
+		try -- note no catch error handling, all errors return false
 			set originalDueDateTime to due date of selectedItem
 			if (originalDueDateTime is not missing value) then
-				--Set new start date with original start time
-				set due date of selectedItem to (theDateToSet + (time of originalDueDateTime))
+				set due date of selectedItem to my getDateToSetBasedOnOriginalDate(originalDueDateTime)
 				set success to true
 			else
-				set due date of selectedItem to (theDateToSet + (dueTime * hours))
+				set due date of selectedItem to (my getCurrentDatePlusOffset() + (dueTime * hours))
 				set success to true
 			end if
 		end try
 	end tell
 	return success
-end taskDueOnDate
+end setTaskDueDate
 
+
+on getDateToSetBasedOnOriginalDate(originalDate)
+	set theDateToSet to my getCurrentDatePlusOffset()
+	-- if original date is greater than the current date + offset interval then just add the offset to the original date
+	if originalDate > theDateToSet then
+		return (originalDate + timeToSetOffset)
+	end if
+	-- otherwise return current plus offset time; be sure to preserve the original start time
+	return (theDateToSet + (time of originalDate))
+end getDateToSetBasedOnOriginalDate
+
+on getCurrentDatePlusOffset()
+	-- subtract the current time to return a date starting at midnight
+	return (current date) - (time of (current date)) + timeToSetOffset
+end getCurrentDatePlusOffset
 
 -- determine if the two dates are within an week interval.
 on isIntervalOfAWeek(date1, date2)
