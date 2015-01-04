@@ -68,6 +68,8 @@ on setDate(theTask)
 			end if
 		end if
 	end tell
+	
+	my fixDueDateIfBeforeDeferDate(theTask)	
 end setDate
 
 on setTaskStartDate(selectedItem)
@@ -121,6 +123,25 @@ on getCurrentDatePlusOffset()
 	return (current date) - (time of (current date)) + timeToSetOffset
 end getCurrentDatePlusOffset
 
+on fixDueDateIfBeforeDeferDate(theTask)
+	
+	tell application "OmniFocus"
+		
+		if due date of theTask is not missing value then
+			if defer date of theTask is not missing value then
+				if due date of theTask < defer date of theTask then
+					set due date of theTask to defer date of theTask
+				end if
+			end if
+		end if
+	end tell
+	
+end fixDueDateIfBeforeDeferDate
+
+
+-- ===================
+-- NOTE: The interval code below has never been used.  Left here as an exmaple.
+
 -- determine if the two dates are within an week interval.
 on isIntervalOfAWeek(date1, date2)
 	isIntervalOfXDays(date1, date2, 7)
@@ -141,4 +162,6 @@ on getDayNumber(theDate)
 	set currentYear to date ("1/1/" & (year of (current date)))
 	return (theDate - currentYear) div days
 end getDayNumber
+
+
 
