@@ -117,7 +117,7 @@ on getDateToSetBasedOnOriginalDate(originalDate)
 	
 	-- special case for offset 0 (today).  never return the original date
 	if timeToSetOffset = 0 then
-		return theDateToSet
+		return (theDateToSet + (time of originalDate))
 	end if
 	
 	-- if original date is greater than the current date + offset interval then just add the offset to the original date
