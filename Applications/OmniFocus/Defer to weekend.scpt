@@ -14,9 +14,9 @@ Inspired by Dan Byler's script.  Also borrowed some of the code.
 
 property startTime : 8 --Start hour for items not previously assigned a start time (24 hr clock)
 property dueTime : 8 --Due hour for items not previously assigned a due time (24 hr clock)
-property dayToDeferTo : null -- set to null to not find next day to defer to
+property dayToDeferTo : Saturday -- set to null to not find next day to defer to
 -- typical value is Saturday to defer an event to the weekend
-property timeToSetOffset : 7 * days  -- number of seconds to set time.
+property timeToSetOffset : 1 * days  -- number of seconds to set time.
 (* common time offsets
 0= today
 86400 = tomorrow

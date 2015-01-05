@@ -14,6 +14,8 @@ Inspired by Dan Byler's script.  Also borrowed some of the code.
 
 property startTime : 8 --Start hour for items not previously assigned a start time (24 hr clock)
 property dueTime : 8 --Due hour for items not previously assigned a due time (24 hr clock)
+property dayToDeferTo : null -- set to null to not find next day to defer to
+-- typical value is Saturday to defer an event to the weekend
 property timeToSetOffset : 1 * days  -- number of seconds to set time.
 (* common time offsets
 0= today
@@ -22,7 +24,7 @@ property timeToSetOffset : 1 * days  -- number of seconds to set time.
 2419200 = 4 weeks (approximately a month)
 *)
 
-log ("Time to set offset is " & timeToSetOffset)
+log ("Time to set offset is " & timeToSetOffset & " and dayToDeferTo is " & dayToDeferTo)
 
 tell application "OmniFocus"
 	tell content of first document window of front document
@@ -36,12 +38,13 @@ tell application "OmniFocus"
 			set the end of theTasksSelected to value of theItem
 		end repeat
 		
+		log "list of tasks: "
 		log (get theTasksSelected)
 		
 		-- loop through all items; no error checking!
 		repeat with theItem in theTasksSelected
+			log ("task name: " & name of theItem)
 			log (get theItem)
-			log (get name of theItem)
 			my setDate(theItem)
 		end repeat
 	end tell
@@ -81,7 +84,7 @@ on setTaskStartDate(selectedItem)
 			set originalStartDateTime to defer date of selectedItem
 			
 			if (originalStartDateTime is not missing value) then
-				set defer date of selectedItem to my getDateToSetBasedOnOriginalDate(originalStartDateTime)
+				set defer date of selectedItem to my calculateDate(originalStartDateTime)
 				set success to true
 			else
 				set defer date of selectedItem to (my getCurrentDatePlusOffset() + (startTime * hours))
@@ -98,7 +101,7 @@ on setTaskDueDate(selectedItem)
 		try -- note no catch error handling, all errors return false
 			set originalDueDateTime to due date of selectedItem
 			if (originalDueDateTime is not missing value) then
-				set due date of selectedItem to my getDateToSetBasedOnOriginalDate(originalDueDateTime)
+				set due date of selectedItem to my calculateDate(originalDueDateTime)
 				set success to true
 			else
 				set due date of selectedItem to (my getCurrentDatePlusOffset() + (dueTime * hours))
@@ -109,10 +112,36 @@ on setTaskDueDate(selectedItem)
 	return success
 end setTaskDueDate
 
+-- TODO: With a setting os dayToDeferTo as Saturday and timeToSetOffset as 1the script in effect sets out to the next Saturday to defer to the weekend.  On additional runs on the same item it in effect adds a week each time.  This is a little non-intuitive and should consider changing the calculateDate logic to find the next dayToDeferTo but if already on that date then add the timeToSetOffset.  That logic would be slightly more clear I think.
+on calculateDate(originalDate)
+	log ("original date: " & originalDate)
+	
+	set returnDate to my getDateToSetBasedOnOriginalDate(originalDate)
+
+	if dayToDeferTo is not null then
+		set returnDate to my getDateOfNextWeekday(returnDate, dayToDeferTo)
+	end if
+
+	log ("calculateDate's returnDate: " & returnDate)
+		
+	return returnDate
+end calculateDate
+
+-- Simple function to find next weekday based on post at:  http://canadian-fury.com/2012/08/31/performing-fixed-point-date-arithmetic-in-textexpander-using-applescript/
+on getDateOfNextWeekday(originalDate, nextWeekdayToFind)
+	set returnDate to originalDate
+	
+	repeat until returnDate's weekday is nextWeekdayToFind
+		set returnDate to returnDate + days
+	end repeat
+	
+	log ("getDateOfNextWeekday : " & returnDate)
+	
+	return returnDate
+end getDateOfNextWeekday
 
 on getDateToSetBasedOnOriginalDate(originalDate)
 	set theDateToSet to my getCurrentDatePlusOffset()
-	log ("original date: " & originalDate)
 	log ("theDateToSet: " & theDateToSet)
 	
 	-- special case for offset 0 (today).  never return the original date
@@ -145,7 +174,6 @@ on fixDueDateIfBeforeDeferDate(theTask)
 			end if
 		end if
 	end tell
-	
 end fixDueDateIfBeforeDeferDate
 
 
