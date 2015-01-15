@@ -35,6 +35,6 @@ end getTheMessageToReply
 on pasteText()
 	-- 
 	tell application "System Events"
-		tell process "TextEdit" to keystroke "v" using {command down}
+		tell process "TextEdit" to keystroke "v" using {command down, option down, shift down} -- past and match style
 	end tell
 end pasteText
