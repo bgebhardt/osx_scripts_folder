@@ -87,6 +87,7 @@ on setTaskStartDate(selectedItem)
 				set defer date of selectedItem to my calculateDate(originalStartDateTime)
 				set success to true
 			else
+				-- TODO BUG: this doesn't account for the new dayToDeferTo fature!  Need to fix to use calculateDate
 				set defer date of selectedItem to (my getCurrentDatePlusOffset() + (startTime * hours))
 				set success to true
 			end if
@@ -101,6 +102,7 @@ on setTaskDueDate(selectedItem)
 		try -- note no catch error handling, all errors return false
 			set originalDueDateTime to due date of selectedItem
 			if (originalDueDateTime is not missing value) then
+				--TODO BUG: this doesn't account for the new dayToDeferTo fature!  Need to fix to use calculateDate
 				set due date of selectedItem to my calculateDate(originalDueDateTime)
 				set success to true
 			else
@@ -140,6 +142,10 @@ on getDateOfNextWeekday(originalDate, nextWeekdayToFind)
 	return returnDate
 end getDateOfNextWeekday
 
+-- TODO BUG: Example: in the tomorrow case if I run once it goes to tomorrow.  If I run again it won't increment again.  Only increments if you're not exactly offset away.  If theDateToSet = originalDate then we should just add the offset.
+-- TODO BUG: Unexpected behavior: In the tomorrow case for any dates in the future it will increment when maybe I'd like to move it back to tomorrow.  Better behavior: If the original date is one timeToSetOffset +/- than I can assume the script has been run again to increment the date.  If not then use theDateToSet instead.  One Example: in the tomorrow case (1 day offset) if today is 1/6 and the task's date is 1/10 then that is more than one interval and it shoult be set to 1/7.  If it is 1/7 then it should be set ot 1/8.
+-- TODO Need to figure out script libraries.  Getting to hard.
+-- TODO Need to do test driven dev.  too many bugs. :)
 on getDateToSetBasedOnOriginalDate(originalDate)
 	set theDateToSet to my getCurrentDatePlusOffset()
 	log ("theDateToSet: " & theDateToSet)
