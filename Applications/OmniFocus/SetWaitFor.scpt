@@ -4,7 +4,7 @@ Script to set the context to Wait For
 inspired and helped by the follwoing posts:
 * http://forums.omnigroup.com/showthread.php?t=29790
 * https://discourse.omnigroup.com/t/creating-a-new-note-in-a-specific-sub-context/5874
-* [An unnecessary AppleScript to convert an OmniFocus task into a project | Marc Abramowitz](http://marc-abramowitz.com/archives/2012/09/12/an-unnecessary-applescript-to-convert-an-omnifocus-task-into-a-project/)
+* http://marc-abramowitz.com/archives/2012/09/12/an-unnecessary-applescript-to-convert-an-omnifocus-task-into-a-project/
 * [Create OmniFocus Tasks with AppleScript — MacSparky](http://macsparky.com/blog/2012/8/applescript-omnifocus-tasks)
 * [Omnifocus/applescript issue when setting context - The Omni Group Forums](http://forums.omnigroup.com/showthread.php?t=24825)
 
