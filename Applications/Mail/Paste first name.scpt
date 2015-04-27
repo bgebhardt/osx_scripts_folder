@@ -8,14 +8,16 @@ It assumes that the first message selected in your main message viewer is on the
 
 *)
 
+
 tell application "Mail"
 	--	properties of (get window 1)
 	--get selection
 	set theMsg to my getTheMessageToReply()
 	
+	set theOldClipboard to the clipboard
 	set the clipboard to (my getTheSenderName(theMsg) & ",\n")
 	my pasteText()
-	
+	set the clipboard to theOldClipboard	
 end tell
 
 
