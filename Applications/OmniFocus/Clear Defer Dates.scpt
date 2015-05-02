@@ -1,3 +1,4 @@
+-- TODO: remove this as replaced by Defer forever.
 global gDeferDate
 set gDeferDate to date "Tuesday, January 1, 2030 at 9:00:00 AM"
 
