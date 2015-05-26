@@ -3,7 +3,7 @@
 tell application "Safari"
 	set URL_list to ""
 	repeat with i in (every tab of window 1)
-		set mdURL to "[" & name of i & "](" & URL of i & ")"
+		set mdURL to "* [" & name of i & "](" & URL of i & ")"
 		set URL_list to URL_list & return & mdURL
 	end repeat
 	
