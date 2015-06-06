@@ -26,7 +26,8 @@ tell application "Safari"
 			end
 			
 			repeat with i in (every tab of theWindow)
-				set mdURL to "* [" & name of i & "](" & URL of i & ")"
+				set isActiveTabText to (my activeTabText(i, numTabs))
+				set mdURL to "* " & isActiveTabText & "[" & name of i & "](" & URL of i & ")"
 				set URL_list to URL_list & return & mdURL
 			end repeat
 			
@@ -40,3 +41,13 @@ tell application "Safari"
 	
 	beep 2
 end tell
+
+-- if there are multiple tabs return the text to add to the item
+on activeTabText(tab, numTabs)
+	if numTabs is not 1 then
+		if (visible of tab) is true then -- current active tab
+			return "ACTIVE TAB: "
+		end
+	end
+	return ""
+end
