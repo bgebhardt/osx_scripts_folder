@@ -7,9 +7,16 @@ tell application "Safari"
 	set totalTabs to 0
 	
 	repeat with theWindow in allWindows
-		
-		if name of theWindow is not "" then
-			-- window header
+		log (get name of theWindow) 
+		set skipWindow to false
+		try
+			set numTabs to count tabs of theWindow	
+		on error
+			-- some windows don't have tabs so we skip that one, but don't want to squash other errors
+			set skipWindow to true
+		end try		
+				
+		if skipWindow is false then			
 			set numTabs to count tabs of theWindow
 			set totalTabs to totalTabs + numTabs
 			
