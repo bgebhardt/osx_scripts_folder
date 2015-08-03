@@ -27,7 +27,7 @@ tell application "Safari"
 			
 			repeat with i in (every tab of theWindow)
 				set isActiveTabText to (my activeTabText(i, numTabs))
-				set mdURL to "* " & isActiveTabText & "[" & name of i & "](" & URL of i & ")"
+				set mdURL to "* " & isActiveTabText & "[" & name of i & "]( " & URL of i & " )"
 				set URL_list to URL_list & return & mdURL
 			end repeat
 			
