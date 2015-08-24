@@ -24,7 +24,9 @@ tell application "Safari"
 			if (visible of theWindow) is not true then
 				set URL_list to URL_list & " (minimized)"
 			end
-			
+
+			set URL_list to URL_list & return -- add a return for readability in markdown editors.
+							
 			repeat with i in (every tab of theWindow)
 				set isActiveTabText to (my activeTabText(i, numTabs))
 				set mdURL to "* " & isActiveTabText & "[" & name of i & "]( " & URL of i & " )"
