@@ -1,0 +1,4689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>381</string>
+	<key>AMApplicationVersion</key>
+	<string>2.4</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.3</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<dict/>
+					<key>CheckedForUserDefaultShell</key>
+					<dict/>
+					<key>inputMethod</key>
+					<dict/>
+					<key>shell</key>
+					<dict/>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run Shell Script.action</string>
+				<key>ActionName</key>
+				<string>Run Shell Script</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<string>#!/usr/bin/env perl
+#
+# $Id: addmetadata.pl 499 2008-03-23 13:03:19Z fletcher $
+#
+# Command line tool to prepend metadata in a MultiMarkdown document
+# before processing.
+#
+# Copyright (c) 2006-2008 Fletcher T. Penney
+#	&lt;http://fletcherpenney.net/&gt;
+#
+# MultiMarkdown Version 2.0.b6
+#
+
+# grab metadata from args
+
+my $result = "Format: snippet\n\n";
+
+@ARGV = ();
+
+# grab document from stdin
+
+undef $/;
+$result .= &lt;&gt;;
+
+
+print $result;
+</string>
+					<key>CheckedForUserDefaultShell</key>
+					<true/>
+					<key>inputMethod</key>
+					<integer>0</integer>
+					<key>shell</key>
+					<string>/usr/bin/perl</string>
+					<key>source</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.RunShellScript</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.3</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunShellScriptAction</string>
+				<key>InputUUID</key>
+				<string>F5A3C0B0-CBD3-4215-948B-0EFB7FC9CC26</string>
+				<key>Keywords</key>
+				<array>
+					<string>Shell</string>
+					<string>Script</string>
+					<string>Command</string>
+					<string>Run</string>
+					<string>Unix</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>ECE0D8FD-69DC-46B9-B691-363809BCC76C</string>
+				<key>UUID</key>
+				<string>9EE2E3AE-8CE6-48AF-AB64-E6BB0B36C15D</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>inputMethod</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>CheckedForUserDefaultShell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>COMMAND_STRING</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>3</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>default value</key>
+						<string>/bin/sh</string>
+						<key>name</key>
+						<string>shell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>4</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>449.500000:752.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.3</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<dict/>
+					<key>CheckedForUserDefaultShell</key>
+					<dict/>
+					<key>inputMethod</key>
+					<dict/>
+					<key>shell</key>
+					<dict/>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run Shell Script.action</string>
+				<key>ActionName</key>
+				<string>Run Shell Script</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<string>#!/usr/bin/env perl
+
+# MultiMarkdown -- A modification of John Gruber's original Markdown
+#	that adds new features and an output format that can more readily
+#	be converted into other document formats
+#
+# $Id: MultiMarkdown.pl 525 2009-06-15 18:45:44Z fletcher $
+#
+# Original Code Copyright (c) 2004-2007 John Gruber
+#	&lt;http://daringfireball.net/projects/markdown/&gt;
+#
+# MultiMarkdown changes Copyright (c) 2005-2009 Fletcher T. Penney
+#	&lt;http://fletcherpenney.net/&gt;
+#
+# MultiMarkdown Version 2.0.b6
+#
+# Based on Markdown.pl 1.0.2b8 -  Wed 09 May 2007
+#
+#
+#	TODO: Change math mode delimiter?
+#	TODO: Still need to get the glossary working in non-memoir documents
+#	TODO: A mechanism to include arbitrary code (LaTeX, etc) without being "ugly"
+#	TODO: Look into discussion re: assigning classes to div's/span's on Markdown list.
+#	TODO: Improve support for tables with long items and overall width in LaTeX
+#	TODO: Need a syntax for long table cells in MMD, even if no rowspan feature yet
+#	TODO: Create utilities to convert MMD tables to/from tab-delimited
+
+
+package MultiMarkdown;
+require 5.006_000;
+use strict;
+use warnings;
+
+use File::Basename;
+
+use Digest::MD5 qw(md5_hex);
+use vars qw($VERSION $g_use_metadata $g_base_url
+	$g_bibliography_title $g_allow_mathml $g_base_header_level $mathParser);
+$VERSION = '2.0.b6';
+
+# $mathParser = new Text::ASCIIMathML();
+
+## Disabled; causes problems under Perl 5.6.1:
+# use utf8;
+# binmode( STDOUT, ":utf8" );  # c.f.: http://acis.openlib.org/dev/perl-unicode-struggle.html
+
+#
+# Global default settings:
+#
+my $g_empty_element_suffix = " /&gt;";     # Change to "&gt;" for HTML output
+my $g_tab_width = 4;
+my $g_allow_mathml = 0;
+my $g_base_header_level = 1;
+
+#
+# Globals:
+#
+
+# Reusable patterns to match balanced [brackets] and (parens). See
+# Friedl's "Mastering Regular Expressions", 2nd Ed., pp. 328-331.
+my ($g_nested_brackets, $g_nested_parens);
+$g_nested_brackets = qr{
+	(?&gt; 								# Atomic matching
+	   [^\[\]]+							# Anything other than brackets
+	 | 
+	   \[
+		 (??{ $g_nested_brackets })		# Recursive set of nested brackets
+	   \]
+	)*
+}x;
+
+# Doesn't allow for whitespace, because we're using it to match URLs:
+$g_nested_parens = qr{
+	(?&gt; 								# Atomic matching
+	   [^()\s]+							# Anything other than parens or whitespace
+	 | 
+	   \(
+		 (??{ $g_nested_parens })		# Recursive set of nested brackets
+	   \)
+	)*
+}x;
+
+
+# Table of hash values for escaped characters:
+my %g_escape_table;
+foreach my $char (split //, '\\`*_{}[]()&gt;#+-.!') {
+	$g_escape_table{$char} = md5_hex($char);
+}
+
+
+# Global hashes, used by various utility routines
+my %g_urls = ();
+my %g_titles= ();
+my %g_html_blocks = ();
+my %g_metadata = ();
+my %g_metadata_newline = ();
+my %g_crossrefs = ();
+my %g_footnotes = ();
+my %g_attributes = ();
+my @g_used_footnotes = ();
+my $g_footnote_counter = 0;
+
+my $g_citation_counter = 0;
+my @g_used_references = ();
+my %g_references = ();
+$g_bibliography_title = "Bibliography";
+
+$g_use_metadata = 1;
+$g_metadata_newline{default} = "\n";
+$g_metadata_newline{keywords} = ", ";
+my $g_document_format = "";
+
+# Used to track when we're inside an ordered or unordered list
+# (see _ProcessListItems() for details):
+my $g_list_level = 0;
+
+
+#### Blosxom plug-in interface ##########################################
+
+# Set $g_blosxom_use_meta to 1 to use Blosxom's meta plug-in to determine
+# which posts Markdown should process, using a "meta-markup: markdown"
+# header. If it's set to 0 (the default), Markdown will process all
+# entries.
+my $g_blosxom_use_meta = 0;
+
+sub start { 1; }
+sub story {
+	my($pkg, $path, $filename, $story_ref, $title_ref, $body_ref) = @_;
+
+	if ( (! $g_blosxom_use_meta) or
+	     (defined($meta::markup) and ($meta::markup =~ /^\s*markdown\s*$/i))
+	     ){
+			$$body_ref  = Markdown($$body_ref);
+     }
+     1;
+}
+
+
+#### Movable Type plug-in interface #####################################
+eval {require MT};  # Test to see if we're running in MT.
+unless ($@) {
+    require MT;
+    import  MT;
+    require MT::Template::Context;
+    import  MT::Template::Context;
+
+	eval {require MT::Plugin};  # Test to see if we're running &gt;= MT 3.0.
+	unless ($@) {
+		require MT::Plugin;
+		import  MT::Plugin;
+		my $plugin = new MT::Plugin({
+			name =&gt; "MultiMarkdown",
+			description =&gt; "Based on the original Markdown",
+			doc_link =&gt; 'http://fletcherpenney.net/multimarkdown/'
+		});
+		MT-&gt;add_plugin( $plugin );
+	}
+
+	MT::Template::Context-&gt;add_container_tag(MultiMarkdownOptions =&gt; sub {
+		my $ctx	 = shift;
+		my $args = shift;
+		my $builder = $ctx-&gt;stash('builder');
+		my $tokens = $ctx-&gt;stash('tokens');
+
+		if (defined ($args-&gt;{'output'}) ) {
+			$ctx-&gt;stash('multimarkdown_output', lc $args-&gt;{'output'});
+		}
+
+		defined (my $str = $builder-&gt;build($ctx, $tokens) )
+			or return $ctx-&gt;error($builder-&gt;errstr);
+		$str;		# return value
+	});
+
+	MT-&gt;add_text_filter('multimarkdown' =&gt; {
+		label     =&gt; 'MultiMarkdown',
+		docs      =&gt; 'http://fletcherpenney.net/MultiMarkdown/',
+		on_format =&gt; sub {
+			my $text = shift;
+			my $ctx  = shift;
+			my $raw  = 0;
+		    if (defined $ctx) {
+		    	my $output = $ctx-&gt;stash('multimarkdown_output'); 
+				if (defined $output  &amp;&amp;  $output =~ m/^html/i) {
+					$g_empty_element_suffix = "&gt;";
+					$ctx-&gt;stash('multimarkdown_output', '');
+				}
+				elsif (defined $output  &amp;&amp;  $output eq 'raw') {
+					$raw = 1;
+					$ctx-&gt;stash('multimarkdown_output', '');
+				}
+				else {
+					$raw = 0;
+					$g_empty_element_suffix = " /&gt;";
+				}
+			}
+			$text = $raw ? $text : Markdown($text);
+			$text;
+		},
+	});
+
+	# If SmartyPants is loaded, add a combo Markdown/SmartyPants text filter:
+	my $smartypants;
+
+	{
+		no warnings "once";
+		$smartypants = $MT::Template::Context::Global_filters{'smarty_pants'};
+	}
+
+	if ($smartypants) {
+		MT-&gt;add_text_filter('multimarkdown_with_smartypants' =&gt; {
+			label     =&gt; 'MultiMarkdown With SmartyPants',
+			docs      =&gt; 'http://fletcherpenney.net/MultiMarkdown/',
+			on_format =&gt; sub {
+				my $text = shift;
+				my $ctx  = shift;
+				if (defined $ctx) {
+					my $output = $ctx-&gt;stash('multimarkdown_output'); 
+					if (defined $output  &amp;&amp;  $output eq 'html') {
+						$g_empty_element_suffix = "&gt;";
+					}
+					else {
+						$g_empty_element_suffix = " /&gt;";
+					}
+				}
+				$text = Markdown($text);
+				$text = $smartypants-&gt;($text, '1');
+			},
+		});
+	}
+}
+else {
+#### BBEdit/command-line text filter interface ##########################
+# Needs to be hidden from MT (and Blosxom when running in static mode).
+
+    # We're only using $blosxom::version once; tell Perl not to warn us:
+	no warnings 'once';
+    unless ( defined($blosxom::version) ) {
+		use warnings;
+
+		#### Check for command-line switches: #################
+		my %cli_opts;
+		use Getopt::Long;
+		Getopt::Long::Configure('pass_through');
+		GetOptions(\%cli_opts,
+			'version',
+			'shortversion',
+			'html4tags',
+		);
+		if ($cli_opts{'version'}) {		# Version info
+			print "\nThis is MultiMarkdown, version $VERSION.\n";
+			print "Original code Copyright 2004 John Gruber\n";
+			print "MultiMarkdown changes Copyright 2005-2009 Fletcher Penney\n";
+			print "http://fletcherpenney.net/multimarkdown/\n";
+			print "http://daringfireball.net/projects/markdown/\n\n";
+			exit 0;
+		}
+		if ($cli_opts{'shortversion'}) {		# Just the version number string.
+			print $VERSION;
+			exit 0;
+		}
+		if ($cli_opts{'html4tags'}) {			# Use HTML tag style instead of XHTML
+			$g_empty_element_suffix = "&gt;";
+		}
+
+
+		#### Process incoming text: ###########################
+		my $text;
+		{
+			local $/;               # Slurp the whole file
+			$text = &lt;&gt;;
+		}
+        print Markdown($text);
+    }
+}
+
+
+
+sub Markdown {
+#
+# Main function. The order in which other subs are called here is
+# essential. Link and image substitutions need to happen before
+# _EscapeSpecialCharsWithinTagAttributes(), so that any *'s or _'s in the &lt;a&gt;
+# and &lt;img&gt; tags get encoded.
+#
+	my $text = shift;
+
+	# Clear the global hashes. If we don't clear these, you get conflicts
+	# from other articles when generating a page which contains more than
+	# one article (e.g. an index page that shows the N most recent
+	# articles):
+	%g_urls = ();
+	%g_titles = ();
+	%g_html_blocks = ();
+	%g_metadata = ();
+	%g_crossrefs = ();
+	%g_footnotes = ();
+	@g_used_footnotes = ();
+	$g_footnote_counter = 0;
+	@g_used_references = ();
+	%g_references = ();
+	$g_citation_counter = 0;
+	%g_attributes = ();
+
+
+	# Standardize line endings:
+	$text =~ s{\r\n}{\n}g; 	# DOS to Unix
+	$text =~ s{\r}{\n}g; 	# Mac to Unix
+
+	# Make sure $text ends with a couple of newlines:
+	$text .= "\n\n";
+
+	# Convert all tabs to spaces.
+	$text = _Detab($text);
+
+	# Strip any lines consisting only of spaces and tabs.
+	# This makes subsequent regexen easier to write, because we can
+	# match consecutive blank lines with /\n+/ instead of something
+	# contorted like /[ \t]*\n+/ .
+	$text =~ s/^[ \t]+$//mg;
+	
+	# Strip out MetaData
+	$text = _ParseMetaData($text) if $g_use_metadata;
+
+	# And recheck for leading blank lines
+	$text =~ s/^\n+//s;
+		
+	# Turn block-level HTML blocks into hash entries
+	$text = _HashHTMLBlocks($text);
+
+	# Strip footnote and link definitions, store in hashes.
+	$text = _StripFootnoteDefinitions($text);
+
+	$text = _StripLinkDefinitions($text);
+
+	_GenerateImageCrossRefs($text);
+	
+	$text = _StripMarkdownReferences($text);
+
+	$text = _RunBlockGamut($text);
+	
+	$text = _DoMarkdownCitations($text);
+	
+	$text = _DoFootnotes($text);
+	
+	$text = _UnescapeSpecialChars($text);
+	
+	# Clean encoding within HTML comments
+	$text = _UnescapeComments($text);
+	
+	$text = _FixFootnoteParagraphs($text);
+	$text .= _PrintFootnotes();
+	
+	$text .= _PrintMarkdownBibliography();
+		
+	$text = _ConvertCopyright($text);
+	
+	if (lc($g_document_format) =~ /^complete\s*$/i) {
+		return xhtmlMetaData() . "&lt;body&gt;\n\n" . $text . "\n&lt;/body&gt;\n&lt;/html&gt;";
+	} elsif (lc($g_document_format) =~ /^snippet\s*$/i) {
+		return $text . "\n";
+	} else {
+		return $g_document_format . textMetaData() . $text . "\n";
+	}
+	
+}
+
+
+sub _StripLinkDefinitions {
+#
+# Strips link definitions from text, stores the URLs and titles in
+# hash references.
+#
+	my $text = shift;
+	my $less_than_tab = $g_tab_width - 1;
+
+	# Link defs are in the form: ^[id]: url "optional title"
+	while ($text =~ s{
+						# Pattern altered for MultiMarkdown
+						# in order to not match citations or footnotes
+						^[ ]{0,$less_than_tab}\[([^#^].*)\]:	# id = $1
+						  [ \t]*
+						  \n?				# maybe *one* newline
+						  [ \t]*
+						&lt;?(\S+?)&gt;?			# url = $2
+						  [ \t]*
+						  \n?				# maybe one newline
+						  [ \t]*
+						(?:
+							(?&lt;=\s)			# lookbehind for whitespace
+							["(]
+							(.+?)			# title = $3
+							[")]
+							[ \t]*
+						)?	# title is optional
+						
+						# MultiMarkdown addition for attribute support
+						\n?
+						(				# Attributes = $4
+							(?&lt;=\s)			# lookbehind for whitespace
+							(([ \t]*\n)?[ \t]*((\S+=\S+)|(\S+=".*?")))*
+						)?
+						[ \t]*
+						# /addition
+						(?:\n+|\Z)
+					}
+					{}mx) {
+		$g_urls{lc $1} = _EncodeAmpsAndAngles( $2 );	# Link IDs are case-insensitive
+		if ($3) {
+			$g_titles{lc $1} = $3;
+			$g_titles{lc $1} =~ s/"/&amp;quot;/g;
+		}
+		
+		# MultiMarkdown addition "
+		if ($4) {
+			$g_attributes{lc $1} = $4;
+		}
+		# /addition
+	}
+
+	return $text;
+}
+
+sub _StripHTML {
+	# Strip (X)HTML code from string
+	my $text = shift;
+	
+	$text =~ s/&lt;.*?&gt;//g;
+	
+	return $text;
+}
+
+sub _HashHTMLBlocks {
+	my $text = shift;
+	my $less_than_tab = $g_tab_width - 1;
+
+	# Hashify HTML blocks:
+	# We only want to do this for block-level HTML tags, such as headers,
+	# lists, and tables. That's because we still want to wrap &lt;p&gt;s around
+	# "paragraphs" that are wrapped in non-block-level tags, such as anchors,
+	# phrase emphasis, and spans. The list of tags we're looking for is
+	# hard-coded:
+	my $block_tags = qr{
+		  (?:
+			p         |  div     |  h[1-6]  |  blockquote  |  pre       |  table  |
+			dl        |  ol      |  ul      |  script      |  noscript  |  form   |
+			fieldset  |  iframe     |  ins         |  del
+		  )
+		}x;			# MultiMarkdown does not include `math` in the above list so that 
+					# Equations can optionally be included in separate paragraphs
+
+	my $tag_attrs = qr{
+						(?:				# Match one attr name/value pair
+							\s+				# There needs to be at least some whitespace
+											# before each attribute name.
+							[\w.:_-]+		# Attribute name
+							\s*=\s*
+							(?:
+								".+?"		# "Attribute value"
+							 |
+								'.+?'		# 'Attribute value'
+							)
+						)*				# Zero or more
+					}x;
+
+	my $empty_tag = qr{&lt; \w+ $tag_attrs \s* /&gt;}xms;
+	my $open_tag =  qr{&lt; $block_tags $tag_attrs \s* &gt;}xms;
+	my $close_tag = undef;	# let Text::Balanced handle this
+
+	use Text::Balanced qw(gen_extract_tagged);
+	my $extract_block = gen_extract_tagged($open_tag, $close_tag, undef, { ignore =&gt; [$empty_tag] });
+
+	my @chunks;
+	## TO-DO: the 0,3 on the next line ought to respect the
+	## tabwidth, or else, we should mandate 4-space tabwidth and
+	## be done with it:
+	while ($text =~ s{^(([ ]{0,3}&lt;)?.*\n)}{}m) {
+		my $cur_line = $1;
+		if (defined $2) {
+			# current line could be start of code block
+
+			my ($tag, $remainder) = $extract_block-&gt;($cur_line . $text);
+			if ($tag) {
+				my $key = md5_hex($tag);
+				$g_html_blocks{$key} = $tag;
+				push @chunks, "\n\n" . $key . "\n\n";
+				$text = $remainder;
+			}
+			else {
+				# No tag match, so toss $cur_line into @chunks
+				push @chunks, $cur_line;
+			}
+		}
+		else {
+			# current line could NOT be start of code block
+			push @chunks, $cur_line;
+		}
+
+	}
+	push @chunks, $text; # Whatever is left.
+
+	$text = join '', @chunks;
+
+
+
+	# Special case just for &lt;hr /&gt;. It was easier to make a special case than
+	# to make the other regex more complicated.	
+	$text =~ s{
+				(?:
+					(?&lt;=\n\n)		# Starting after a blank line
+					|				# or
+					\A\n?			# the beginning of the doc
+				)
+				(						# save in $1
+					[ ]{0,$less_than_tab}
+					&lt;(hr)				# start tag = $2
+					\b					# word break
+					([^&lt;&gt;])*?			# 
+					/?&gt;					# the matching end tag
+					[ \t]*
+					(?=\n{2,}|\Z)		# followed by a blank line or end of document
+				)
+			}{
+				my $key = md5_hex($1);
+				$g_html_blocks{$key} = $1;
+				"\n\n" . $key . "\n\n";
+			}egx;
+
+	# Special case for standalone HTML comments:
+	$text =~ s{
+				(?:
+					(?&lt;=\n\n)		# Starting after a blank line
+					|				# or
+					\A\n?			# the beginning of the doc
+				)
+				(						# save in $1
+					[ ]{0,$less_than_tab}
+					(?s:
+						&lt;!
+						(--.*?--\s*)+
+						&gt;
+					)
+					[ \t]*
+					(?=\n{2,}|\Z)		# followed by a blank line or end of document
+				)
+			}{
+				my $key = md5_hex($1);
+				$g_html_blocks{$key} = $1;
+				"\n\n" . $key . "\n\n";
+			}egx;
+
+	# PHP and ASP-style processor instructions (&lt;?…?&gt; and &lt;%…%&gt;)
+	$text =~ s{
+				(?:
+					(?&lt;=\n\n)		# Starting after a blank line
+					|				# or
+					\A\n?			# the beginning of the doc
+				)
+				(						# save in $1
+					[ ]{0,$less_than_tab}
+					(?s:
+						&lt;([?%])			# $2
+						.*?
+						\2&gt;
+					)
+					[ \t]*
+					(?=\n{2,}|\Z)		# followed by a blank line or end of document
+				)
+			}{
+				my $key = md5_hex($1);
+				$g_html_blocks{$key} = $1;
+				"\n\n" . $key . "\n\n";
+			}egx;
+
+
+	return $text;
+}
+
+
+sub _RunBlockGamut {
+#
+# These are all the transformations that form block-level
+# tags like paragraphs, headers, and list items.
+#
+	my $text = shift;
+
+	$text = _DoHeaders($text);
+
+	# Do tables first to populate the table id's for cross-refs
+	# Escape &lt;pre&gt;&lt;code&gt; so we don't get greedy with tables
+	$text = _DoTables($text);
+	
+	# And now, protect our tables
+	$text = _HashHTMLBlocks($text);
+
+	# Do Horizontal Rules:
+	$text =~ s{^[ ]{0,2}([ ]?\*[ ]?){3,}[ \t]*$}{\n&lt;hr$g_empty_element_suffix\n}gmx;
+	$text =~ s{^[ ]{0,2}([ ]? -[ ]?){3,}[ \t]*$}{\n&lt;hr$g_empty_element_suffix\n}gmx;
+	$text =~ s{^[ ]{0,2}([ ]? _[ ]?){3,}[ \t]*$}{\n&lt;hr$g_empty_element_suffix\n}gmx;
+
+	$text = _DoDefinitionLists($text);
+	$text = _DoLists($text);
+	$text = _DoCodeBlocks($text);
+	$text = _DoBlockQuotes($text);
+
+	# We already ran _HashHTMLBlocks() before, in Markdown(), but that
+	# was to escape raw HTML in the original Markdown source. This time,
+	# we're escaping the markup we've just created, so that we don't wrap
+	# &lt;p&gt; tags around block-level tags.
+	$text = _HashHTMLBlocks($text);
+	$text = _FormParagraphs($text);
+
+	return $text;
+}
+
+
+sub _RunSpanGamut {
+#
+# These are all the transformations that occur *within* block-level
+# tags like paragraphs, headers, and list items.
+#
+	my $text = shift;
+
+	$text = _DoCodeSpans($text);
+	$text = _DoMathSpans($text);
+	$text = _EscapeSpecialCharsWithinTagAttributes($text);
+	$text = _EncodeBackslashEscapes($text);
+
+	# Process anchor and image tags. Images must come first,
+	# because ![foo][f] looks like an anchor.
+	$text = _DoImages($text);
+	$text = _DoAnchors($text);	
+
+	# Make links out of things like `&lt;http://example.com/&gt;`
+	# Must come after _DoAnchors(), because you can use &lt; and &gt;
+	# delimiters in inline links like [this](&lt;url&gt;).
+	$text = _DoAutoLinks($text);
+	$text = _EncodeAmpsAndAngles($text);
+	$text = _DoItalicsAndBold($text);
+
+	# Do hard breaks:
+	$text =~ s/ {2,}\n/ &lt;br$g_empty_element_suffix\n/g;
+
+	return $text;
+}
+
+
+sub _EscapeSpecialCharsWithinTagAttributes {
+#
+# Within tags -- meaning between &lt; and &gt; -- encode [\ ` * _] so they
+# don't conflict with their use in Markdown for code, italics and strong.
+# We're replacing each such character with its corresponding MD5 checksum
+# value; this is likely overkill, but it should prevent us from colliding
+# with the escape values by accident.
+#
+	my $text = shift;
+	my $tokens ||= _TokenizeHTML($text);
+	$text = '';   # rebuild $text from the tokens
+
+	foreach my $cur_token (@$tokens) {
+		if ($cur_token-&gt;[0] eq "tag") {
+			$cur_token-&gt;[1] =~  s! \\ !$g_escape_table{'\\'}!gx;
+			$cur_token-&gt;[1] =~  s{ (?&lt;=.)&lt;/?code&gt;(?=.)  }{$g_escape_table{'`'}}gx;
+			$cur_token-&gt;[1] =~  s! \* !$g_escape_table{'*'}!gx;
+			$cur_token-&gt;[1] =~  s! _  !$g_escape_table{'_'}!gx;
+		}
+		$text .= $cur_token-&gt;[1];
+	}
+	return $text;
+}
+
+
+sub _DoAnchors {
+#
+# Turn Markdown link shortcuts into XHTML &lt;a&gt; tags.
+#
+	my $text = shift;
+
+	#
+	# First, handle reference-style links: [link text] [id]
+	#
+	$text =~ s{
+		(					# wrap whole match in $1
+		  \[
+		    ($g_nested_brackets)	# link text = $2
+		  \]
+
+		  [ ]?				# one optional space
+		  (?:\n[ ]*)?		# one optional newline followed by spaces
+
+		  \[
+		    (.*?)		# id = $3
+		  \]
+		)
+	}{
+		my $result;
+		my $whole_match = $1;
+		my $link_text   = $2;
+		my $link_id     = lc $3;
+
+		if ($link_id eq "") {
+			$link_id = lc $link_text;     # for shortcut links like [this][].
+		}
+
+		# Allow automatic cross-references to headers
+		my $label = Header2Label($link_id);
+		if (defined $g_urls{$link_id}) {
+			my $url = $g_urls{$link_id};
+			$url =~ s! \* !$g_escape_table{'*'}!gx;		# We've got to encode these to avoid
+			$url =~ s!  _ !$g_escape_table{'_'}!gx;		# conflicting with italics/bold.
+			$result = "&lt;a href=\"$url\"";
+			if ( defined $g_titles{$link_id} ) {
+				my $title = $g_titles{$link_id};
+				$title =~ s! \* !$g_escape_table{'*'}!gx;
+				$title =~ s!  _ !$g_escape_table{'_'}!gx;
+				$result .=  " title=\"$title\"";
+			}
+			$result .= _DoAttributes($label);
+			$result .= "&gt;$link_text&lt;/a&gt;";
+		} elsif (defined $g_crossrefs{$label}) {
+			my $url = $g_crossrefs{$label};
+			$url =~ s! \* !$g_escape_table{'*'}!gx;		# We've got to encode these to avoid
+			$url =~ s!  _ !$g_escape_table{'_'}!gx;		# conflicting with italics/bold.
+			$result = "&lt;a href=\"$url\"";
+			if ( defined $g_titles{$label} ) {
+				my $title = $g_titles{$label};
+				$title =~ s! \* !$g_escape_table{'*'}!gx;
+				$title =~ s!  _ !$g_escape_table{'_'}!gx;
+				$result .=  " title=\"$title\"";
+			}
+			$result .= _DoAttributes($label);
+			$result .= "&gt;$link_text&lt;/a&gt;";
+		} else {
+			$result = $whole_match;
+		}
+		$result;
+	}xsge;
+
+	#
+	# Next, inline-style links: [link text](url "optional title")
+	#
+	$text =~ s{
+		(				# wrap whole match in $1
+		  \[
+		    ($g_nested_brackets)	# link text = $2
+		  \]
+		  \(			# literal paren
+		  	[ \t]*
+			($g_nested_parens)		# href = $3
+		  	[ \t]*
+			(			# $4
+			  (['"])	# quote char = $5
+			  (.*?)		# Title = $6
+			  \5		# matching quote
+  		  	  [ \t]*	# ignore any spaces/tabs between closing quote and )
+			)?			# title is optional
+		  \)
+		)
+	}{
+		my $result;
+		my $whole_match = $1;
+		my $link_text   = $2;
+		my $url	  		= $3;
+		my $title		= $6;
+
+		$url =~ s! \* !$g_escape_table{'*'}!gx;		# We've got to encode these to avoid
+		$url =~ s!  _ !$g_escape_table{'_'}!gx;		# conflicting with italics/bold.
+		$url =~ s{^&lt;(.*)&gt;$}{$1};					# Remove &lt;&gt;'s surrounding URL, if present
+		$result = "&lt;a href=\"$url\"";
+
+		if (defined $title) {
+			$title =~ s/"/&amp;quot;/g;
+			$title =~ s! \* !$g_escape_table{'*'}!gx;
+			$title =~ s!  _ !$g_escape_table{'_'}!gx;
+			$result .=  " title=\"$title\"";
+		}
+		$result .= "&gt;$link_text&lt;/a&gt;";
+
+		$result;
+	}xsge;
+
+	#
+	# Last, handle reference-style shortcuts: [link text]
+	# These must come last in case you've also got [link test][1]
+	# or [link test](/foo)
+	#
+	$text =~ s{
+		(					# wrap whole match in $1
+		  \[
+		    ([^\[\]]+)		# link text = $2; can't contain '[' or ']'
+		  \]
+		)
+	}{
+		my $result;
+		my $whole_match = $1;
+		my $link_text   = $2;
+		(my $link_id = lc $2) =~ s{[ ]?\n}{ }g; # lower-case and turn embedded newlines into spaces
+
+		# Allow automatic cross-references to headers
+		my $label = Header2Label($link_id);
+		if (defined $g_urls{$link_id}) {
+			my $url = $g_urls{$link_id};
+			$url =~ s! \* !$g_escape_table{'*'}!gx;		# We've got to encode these to avoid
+			$url =~ s!  _ !$g_escape_table{'_'}!gx;		# conflicting with italics/bold.
+			$result = "&lt;a href=\"$url\"";
+			if ( defined $g_titles{$link_id} ) {
+				my $title = $g_titles{$link_id};
+				$title =~ s! \* !$g_escape_table{'*'}!gx;
+				$title =~ s!  _ !$g_escape_table{'_'}!gx;
+				$result .=  " title=\"$title\"";
+			}
+			$result .= _DoAttributes($link_id);
+			$result .= "&gt;$link_text&lt;/a&gt;";
+		} elsif (defined $g_crossrefs{$label}) {
+			my $url = $g_crossrefs{$label};
+			$url =~ s! \* !$g_escape_table{'*'}!gx;		# We've got to encode these to avoid
+			$url =~ s!  _ !$g_escape_table{'_'}!gx;		# conflicting with italics/bold.
+			$result = "&lt;a href=\"$url\"";
+			if ( defined $g_titles{$label} ) {
+				my $title = $g_titles{$label};
+				$title =~ s! \* !$g_escape_table{'*'}!gx;
+				$title =~ s!  _ !$g_escape_table{'_'}!gx;
+				$result .=  " title=\"$title\"";
+			}
+			$result .= _DoAttributes($label);
+			$result .= "&gt;$link_text&lt;/a&gt;";
+		} else {
+			$result = $whole_match;
+		}
+		$result;
+	}xsge;
+
+	return $text;
+}
+
+
+sub _DoImages {
+#
+# Turn Markdown image shortcuts into &lt;img&gt; tags.
+#
+	my $text = shift;
+
+	#
+	# First, handle reference-style labeled images: ![alt text][id]
+	#
+	$text =~ s{
+		(				# wrap whole match in $1
+		  !\[
+		    (.*?)		# alt text = $2
+		  \]
+
+		  [ ]?				# one optional space
+		  (?:\n[ ]*)?		# one optional newline followed by spaces
+
+		  \[
+		    (.*?)		# id = $3
+		  \]
+
+		)
+	}{
+		my $result;
+		my $whole_match = $1;
+		my $alt_text    = $2;
+		my $link_id     = lc $3;
+
+		if ($link_id eq "") {
+			$link_id = lc $alt_text;     # for shortcut links like ![this][].
+		}
+
+		$alt_text =~ s/"/&amp;quot;/g;
+		if (defined $g_urls{$link_id}) {
+			my $url = $g_urls{$link_id};
+			$url =~ s! \* !$g_escape_table{'*'}!gx;		# We've got to encode these to avoid
+			$url =~ s!  _ !$g_escape_table{'_'}!gx;		# conflicting with italics/bold.
+			
+			my $label = Header2Label($alt_text);
+			$g_crossrefs{$label} = "#$label";
+			if (! defined $g_titles{$link_id}) {
+				$g_titles{$link_id} = $alt_text;
+			}
+			
+			$result = "&lt;img id=\"$label\" src=\"$url\" alt=\"$alt_text\"";
+			if (defined $g_titles{$link_id}) {
+				my $title = $g_titles{$link_id};
+				$title =~ s! \* !$g_escape_table{'*'}!gx;
+				$title =~ s!  _ !$g_escape_table{'_'}!gx;
+				$result .=  " title=\"$title\"";
+			}
+			$result .= _DoAttributes($link_id);
+			$result .= $g_empty_element_suffix;		
+		}
+		else {
+			# If there's no such link ID, leave intact:
+			$result = $whole_match;
+		}
+
+		$result;
+	}xsge;
+
+	#
+	# Next, handle inline images:  ![alt text](url "optional title")
+	# Don't forget: encode * and _
+
+	$text =~ s{
+		(				# wrap whole match in $1
+		  !\[
+		    (.*?)		# alt text = $2
+		  \]
+		  \s?			# One optional whitespace character
+		  \(			# literal paren
+		  	[ \t]*
+			($g_nested_parens)		# href = $3
+		  	[ \t]*
+			(			# $4
+			  (['"])	# quote char = $5
+			  (.*?)		# title = $6
+			  \5		# matching quote
+			  [ \t]*
+			)?			# title is optional
+		  \)
+		)
+	}{
+		my $result;
+		my $whole_match = $1;
+		my $alt_text    = $2;
+		my $url	  		= $3;
+		my $title		= (defined $6) ? $6 : '';
+
+		$alt_text =~ s/"/&amp;quot;/g;
+		$title    =~ s/"/&amp;quot;/g;
+		$url =~ s! \* !$g_escape_table{'*'}!gx;		# We've got to encode these to avoid
+		$url =~ s!  _ !$g_escape_table{'_'}!gx;		# conflicting with italics/bold.
+		$url =~ s{^&lt;(.*)&gt;$}{$1};					# Remove &lt;&gt;'s surrounding URL, if present
+
+		my $label = Header2Label($alt_text);
+		$g_crossrefs{$label} = "#$label";
+#		$g_titles{$label} = $alt_text;			# I think this line should not be here
+			
+		$result = "&lt;img id=\"$label\" src=\"$url\" alt=\"$alt_text\"";
+		if (defined $title) {
+			$title =~ s! \* !$g_escape_table{'*'}!gx;
+			$title =~ s!  _ !$g_escape_table{'_'}!gx;
+			$result .=  " title=\"$title\"";
+		}
+		$result .= $g_empty_element_suffix;
+
+		$result;
+	}xsge;
+
+	return $text;
+}
+
+
+sub _DoHeaders {
+	my $text = shift;
+	my $header = "";
+	my $label = "";
+	my $idString = "";
+		
+	# Setext-style headers:
+	#	  Header 1
+	#	  ========
+	#  
+	#	  Header 2
+	#	  --------
+	#
+	$text =~ s{ ^(.+?)(?:\s*(?&lt;!\\)\[([^\[]*?)\])?[ \t]*\n=+[ \t]*\n+ }{
+		if (defined $2) {
+			$label = Header2Label($2);
+		} else {
+			$label = Header2Label($1);
+		}
+		$header = _RunSpanGamut($1);
+		$header =~ s/^\s*//s;
+		
+		if ($label ne "") {
+			$g_crossrefs{$label} = "#$label";
+			$g_titles{$label} = _StripHTML($header);
+			$idString = " id=\"$label\"";			
+		} else {
+			$idString = "";
+		}
+		my $h_level = $g_base_header_level;
+		
+		"&lt;h$h_level$idString&gt;"  .  $header  .  "&lt;/h$h_level&gt;\n\n";
+	}egmx;
+
+	$text =~ s{ ^(.+?)(?:\s*(?&lt;!\\)\[([^\[]*?)\])?[ \t]*\n-+[ \t]*\n+ }{
+		if (defined $2) {
+			$label = Header2Label($2);
+		} else {
+			$label = Header2Label($1);
+		}
+		$header = _RunSpanGamut($1);
+		$header =~ s/^\s*//s;
+		
+		if ($label ne "") {
+			$g_crossrefs{$label} = "#$label";
+			$g_titles{$label} = _StripHTML($header);
+			$idString = " id=\"$label\"";			
+		} else {
+			$idString = "";
+		}
+		
+		my $h_level = $g_base_header_level +1;
+		
+		"&lt;h$h_level$idString&gt;"  .  $header  .  "&lt;/h$h_level&gt;\n\n";
+	}egmx;
+
+
+	# atx-style headers:
+	#	# Header 1
+	#	## Header 2
+	#	## Header 2 with closing hashes ##
+	#	...
+	#	###### Header 6
+	#
+	$text =~ s{
+			^(\#{1,6})	# $1 = string of #'s
+			[ \t]*
+			(.+?)		# $2 = Header text
+			[ \t]*
+			(?:(?&lt;!\\)\[([^\[]*?)\])?	# $3 = optional label for cross-reference
+			[ \t]*
+			\#*			# optional closing #'s (not counted)
+			\n+
+		}{
+			my $h_level = length($1) + $g_base_header_level - 1;
+			if (defined $3) {
+				$label = Header2Label($3);
+			} else {
+				$label = Header2Label($2);
+			}
+			$header = _RunSpanGamut($2);
+			$header =~ s/^\s*//s;
+			
+			if ($label ne "") {
+				$g_crossrefs{$label} = "#$label";
+				$g_titles{$label} = _StripHTML($header);
+				$idString = " id=\"$label\"";			
+			} else {
+				$idString = "";
+			}
+
+			"&lt;h$h_level$idString&gt;"  .  $header  .  "&lt;/h$h_level&gt;\n\n";
+		}egmx;
+
+	return $text;
+}
+
+
+sub _DoLists {
+#
+# Form HTML ordered (numbered) and unordered (bulleted) lists.
+#
+	my $text = shift;
+	my $less_than_tab = $g_tab_width - 1;
+
+	# Re-usable patterns to match list item bullets and number markers:
+	my $marker_ul  = qr/[*+-]/;
+	my $marker_ol  = qr/\d+[.]/;
+	my $marker_any = qr/(?:$marker_ul|$marker_ol)/;
+
+	# Re-usable pattern to match any entirel ul or ol list:
+	my $whole_list = qr{
+		(								# $1 = whole list
+		  (								# $2
+			[ ]{0,$less_than_tab}
+			(${marker_any})				# $3 = first list item marker
+			[ \t]+
+		  )
+		  (?s:.+?)
+		  (								# $4
+			  \z
+			|
+			  \n{2,}
+			  (?=\S)
+			  (?!						# Negative lookahead for another list item marker
+				[ \t]*
+				${marker_any}[ \t]+
+			  )
+		  )
+		)
+	}mx;
+
+	# We use a different prefix before nested lists than top-level lists.
+	# See extended comment in _ProcessListItems().
+	#
+	# Note: There's a bit of duplication here. My original implementation
+	# created a scalar regex pattern as the conditional result of the test on
+	# $g_list_level, and then only ran the $text =~ s{...}{...}egmx
+	# substitution once, using the scalar as the pattern. This worked,
+	# everywhere except when running under MT on my hosting account at Pair
+	# Networks. There, this caused all rebuilds to be killed by the reaper (or
+	# perhaps they crashed, but that seems incredibly unlikely given that the
+	# same script on the same server ran fine *except* under MT. I've spent
+	# more time trying to figure out why this is happening than I'd like to
+	# admit. My only guess, backed up by the fact that this workaround works,
+	# is that Perl optimizes the substition when it can figure out that the
+	# pattern will never change, and when this optimization isn't on, we run
+	# afoul of the reaper. Thus, the slightly redundant code that uses two
+	# static s/// patterns rather than one conditional pattern.
+
+	if ($g_list_level) {
+		$text =~ s{
+				^
+				$whole_list
+			}{
+				my $list = $1;
+				my $list_type = ($3 =~ m/$marker_ul/) ? "ul" : "ol";
+
+				# Turn double returns into triple returns, so that we can make a
+				# paragraph for the last item in a list, if necessary:
+				$list =~ s/\n{2,}/\n\n\n/g;
+				my $result = _ProcessListItems($list, $marker_any);
+
+				# Trim any trailing whitespace, to put the closing `&lt;/$list_type&gt;`
+				# up on the preceding line, to get it past the current stupid
+				# HTML block parser. This is a hack to work around the terrible
+				# hack that is the HTML block parser.
+				$result =~ s{\s+$}{};
+				$result = "&lt;$list_type&gt;" . $result . "&lt;/$list_type&gt;\n";
+				$result;
+			}egmx;
+	}
+	else {
+		$text =~ s{
+				(?:(?&lt;=\n\n)|\A\n?)
+				$whole_list
+			}{
+				my $list = $1;
+				my $list_type = ($3 =~ m/$marker_ul/) ? "ul" : "ol";
+				# Turn double returns into triple returns, so that we can make a
+				# paragraph for the last item in a list, if necessary:
+				$list =~ s/\n{2,}/\n\n\n/g;
+				my $result = _ProcessListItems($list, $marker_any);
+				$result = "&lt;$list_type&gt;\n" . $result . "&lt;/$list_type&gt;\n";
+				$result;
+			}egmx;
+	}
+
+
+	return $text;
+}
+
+
+sub _ProcessListItems {
+#
+#	Process the contents of a single ordered or unordered list, splitting it
+#	into individual list items.
+#
+
+	my $list_str = shift;
+	my $marker_any = shift;
+
+
+	# The $g_list_level global keeps track of when we're inside a list.
+	# Each time we enter a list, we increment it; when we leave a list,
+	# we decrement. If it's zero, we're not in a list anymore.
+	#
+	# We do this because when we're not inside a list, we want to treat
+	# something like this:
+	#
+	#		I recommend upgrading to version
+	#		8. Oops, now this line is treated
+	#		as a sub-list.
+	#
+	# As a single paragraph, despite the fact that the second line starts
+	# with a digit-period-space sequence.
+	#
+	# Whereas when we're inside a list (or sub-list), that line will be
+	# treated as the start of a sub-list. What a kludge, huh? This is
+	# an aspect of Markdown's syntax that's hard to parse perfectly
+	# without resorting to mind-reading. Perhaps the solution is to
+	# change the syntax rules such that sub-lists must start with a
+	# starting cardinal number; e.g. "1." or "a.".
+
+	$g_list_level++;
+
+	# trim trailing blank lines:
+	$list_str =~ s/\n{2,}\z/\n/;
+
+
+	$list_str =~ s{
+		(\n)?							# leading line = $1
+		(^[ \t]*)						# leading whitespace = $2
+		($marker_any) [ \t]+			# list marker = $3
+		((?s:.+?)						# list item text   = $4
+		(\n{1,2}))
+		(?= \n* (\z | \2 ($marker_any) [ \t]+))
+	}{
+		my $item = $4;
+		my $leading_line = $1;
+		my $leading_space = $2;
+
+		if ($leading_line or ($item =~ m/\n{2,}/)) {
+			$item = _RunBlockGamut(_Outdent($item));
+		}
+		else {
+			# Recursion for sub-lists:
+			$item = _DoLists(_Outdent($item));
+			chomp $item;
+			$item = _RunSpanGamut($item);
+		}
+
+		"&lt;li&gt;" . $item . "&lt;/li&gt;\n";
+	}egmx;
+
+	$g_list_level--;
+	return $list_str;
+}
+
+
+
+sub _DoCodeBlocks {
+#
+#	Process Markdown `&lt;pre&gt;&lt;code&gt;` blocks.
+#	
+
+	my $text = shift;
+
+	$text =~ s{
+			(?:\n\n|\A)
+			(	            # $1 = the code block -- one or more lines, starting with a space/tab
+			  (?:
+			    (?:[ ]{$g_tab_width} | \t)  # Lines must start with a tab or a tab-width of spaces
+			    .*\n+
+			  )+
+			)
+			((?=^[ ]{0,$g_tab_width}\S)|\Z)	# Lookahead for non-space at line-start, or end of doc
+		}{
+			my $codeblock = $1;
+			my $result; # return value
+
+			$codeblock = _EncodeCode(_Outdent($codeblock));
+			$codeblock = _Detab($codeblock);
+			$codeblock =~ s/\A\n+//; # trim leading newlines
+			$codeblock =~ s/\n+\z//; # trim trailing newlines
+
+			$result = "\n\n&lt;pre&gt;&lt;code&gt;" . $codeblock . "&lt;/code&gt;&lt;/pre&gt;\n\n";	# CHANGED: Removed newline for MMD
+
+			$result;
+		}egmx;
+
+	return $text;
+}
+
+
+sub _DoCodeSpans {
+#
+# 	*	Backtick quotes are used for &lt;code&gt;&lt;/code&gt; spans.
+# 
+# 	*	You can use multiple backticks as the delimiters if you want to
+# 		include literal backticks in the code span. So, this input:
+#     
+#         Just type ``foo `bar` baz`` at the prompt.
+#     
+#     	Will translate to:
+#     
+#         &lt;p&gt;Just type &lt;code&gt;foo `bar` baz&lt;/code&gt; at the prompt.&lt;/p&gt;
+#     
+#		There's no arbitrary limit to the number of backticks you
+#		can use as delimters. If you need three consecutive backticks
+#		in your code, use four for delimiters, etc.
+#
+#	*	You can use spaces to get literal backticks at the edges:
+#     
+#         ... type `` `bar` `` ...
+#     
+#     	Turns to:
+#     
+#         ... type &lt;code&gt;`bar`&lt;/code&gt; ...
+#
+
+	my $text = shift;
+
+	$text =~ s@
+			(?&lt;!\\)		# Character before opening ` can't be a backslash
+			(`+)		# $1 = Opening run of `
+			(.+?)		# $2 = The code block
+			(?&lt;!`)
+			\1			# Matching closer
+			(?!`)
+		@
+ 			my $c = "$2";
+ 			$c =~ s/^[ \t]*//g; # leading whitespace
+ 			$c =~ s/[ \t]*$//g; # trailing whitespace
+ 			$c = _EncodeCode($c);
+			"&lt;code&gt;$c&lt;/code&gt;";
+		@egsx;
+
+	return $text;
+}
+
+
+sub _EncodeCode {
+#
+# Encode/escape certain characters inside Markdown code runs.
+# The point is that in code, these characters are literals,
+# and lose their special Markdown meanings.
+#
+    local $_ = shift;
+	
+	# Encode all ampersands; HTML entities are not
+	# entities within a Markdown code span.
+	s/&amp;/&amp;amp;/g;
+
+	# Encode $'s, but only if we're running under Blosxom.
+	# (Blosxom interpolates Perl variables in article bodies.)
+	{
+		no warnings 'once';
+    	if (defined($blosxom::version)) {
+    		s/\$/&amp;#036;/g;	
+    	}
+    }
+
+
+	# Do the angle bracket song and dance:
+	s! &lt;  !&amp;lt;!gx;
+	s! &gt;  !&amp;gt;!gx;
+
+	# Now, escape characters that are magic in Markdown:
+	s! \* !$g_escape_table{'*'}!gx;
+	s! _  !$g_escape_table{'_'}!gx;
+	s! {  !$g_escape_table{'{'}!gx;
+	s! }  !$g_escape_table{'}'}!gx;
+	s! \[ !$g_escape_table{'['}!gx;
+	s! \] !$g_escape_table{']'}!gx;
+	s! \\ !$g_escape_table{'\\'}!gx;
+
+	return $_;
+}
+
+
+sub _DoItalicsAndBold {
+	my $text = shift;
+
+	# Cave in - `*` and `_` behave differently...  We'll see how it works out
+	
+	
+	# &lt;strong&gt; must go first:
+	$text =~ s{ (?&lt;!\w) (\*\*|__) (?=\S) (.+?[*_]*) (?&lt;=\S) \1 }
+		{&lt;strong&gt;$2&lt;/strong&gt;}gsx;
+
+	$text =~ s{ (?&lt;!\w) (\*|_) (?=\S) (.+?) (?&lt;=\S) \1 }
+		{&lt;em&gt;$2&lt;/em&gt;}gsx;
+
+	# And now, a second pass to catch nested strong and emphasis special cases
+	$text =~ s{ (?&lt;!\w) (\*\*|__) (?=\S) (.+?[*_]*) (?&lt;=\S) \1 }
+		{&lt;strong&gt;$2&lt;/strong&gt;}gsx;
+
+	$text =~ s{ (?&lt;!\w) (\*|_) (?=\S) (.+?) (?&lt;=\S) \1 }
+		{&lt;em&gt;$2&lt;/em&gt;}gsx;
+
+	# And now, allow `*` in the middle of words
+
+	# &lt;strong&gt; must go first:
+	$text =~ s{ (\*\*) (?=\S) (.+?[*]*) (?&lt;=\S) \1 }
+		{&lt;strong&gt;$2&lt;/strong&gt;}gsx;
+
+	$text =~ s{ (\*) (?=\S) (.+?) (?&lt;=\S) \1 }
+		{&lt;em&gt;$2&lt;/em&gt;}gsx;
+
+	return $text;
+}
+
+
+sub _DoBlockQuotes {
+	my $text = shift;
+
+	$text =~ s{
+		  (								# Wrap whole match in $1
+			(
+			  ^[ \t]*&gt;[ \t]?			# '&gt;' at the start of a line
+			    .+\n					# rest of the first line
+			  (.+\n)*					# subsequent consecutive lines
+			  \n*						# blanks
+			)+
+		  )
+		}{
+			my $bq = $1;
+			$bq =~ s/^[ \t]*&gt;[ \t]?//gm;	# trim one level of quoting
+			$bq =~ s/^[ \t]+$//mg;			# trim whitespace-only lines
+			$bq = _RunBlockGamut($bq);		# recurse
+
+			$bq =~ s/^/  /g;
+			# These leading spaces screw with &lt;pre&gt; content, so we need to fix that:
+			$bq =~ s{
+					(\s*&lt;pre&gt;.+?&lt;/pre&gt;)
+				}{
+					my $pre = $1;
+					$pre =~ s/^  //mg;
+					$pre;
+				}egsx;
+
+			"&lt;blockquote&gt;\n$bq\n&lt;/blockquote&gt;\n\n";
+		}egmx;
+
+
+	return $text;
+}
+
+
+sub _FormParagraphs {
+#
+#	Params:
+#		$text - string to process with html &lt;p&gt; tags
+#
+	my $text = shift;
+
+	# Strip leading and trailing lines:
+	$text =~ s/\A\n+//;
+	$text =~ s/\n+\z//;
+
+	my @grafs = split(/\n{2,}/, $text);
+
+	#
+	# Wrap &lt;p&gt; tags.
+	#
+	foreach (@grafs) {
+		unless (defined( $g_html_blocks{$_} )) {
+			$_ = _RunSpanGamut($_);
+			s/^([ \t]*)/&lt;p&gt;/;
+			$_ .= "&lt;/p&gt;";
+		}
+	}
+
+	#
+	# Unhashify HTML blocks
+	#
+# 	foreach my $graf (@grafs) {
+# 		my $block = $g_html_blocks{$graf};
+# 		if (defined $block) {
+# 			$graf = $block;
+# 		}
+# 	}
+
+	foreach my $graf (@grafs) {
+		# Modify elements of @grafs in-place...
+		my $block = $g_html_blocks{$graf};
+		if (defined $block) {
+			$graf = $block;
+			if ($block =~ m{
+							\A
+							(							# $1 = &lt;div&gt; tag
+							  &lt;div  \s+
+							  [^&gt;]*
+							  \b
+							  markdown\s*=\s*  (['"])	#	$2 = attr quote char
+							  1
+							  \2
+							  [^&gt;]*
+							  &gt;
+							)
+							(							# $3 = contents
+							.*
+							)
+							(&lt;/div&gt;)					# $4 = closing tag
+							\z
+
+							}xms
+				) {
+				my ($div_open, $div_content, $div_close) = ($1, $3, $4);
+
+				# We can't call Markdown(), because that resets the hash;
+				# that initialization code should be pulled into its own sub, though.
+				$div_content = _HashHTMLBlocks($div_content);
+				$div_content = _StripLinkDefinitions($div_content);
+				$div_content = _RunBlockGamut($div_content);
+				$div_content = _UnescapeSpecialChars($div_content);
+
+				$div_open =~ s{\smarkdown\s*=\s*(['"]).+?\1}{}ms;
+
+				$graf = $div_open . "\n" . $div_content . "\n" . $div_close;
+			}
+		}
+	}
+
+
+	return join "\n\n", @grafs;
+}
+
+
+sub _EncodeAmpsAndAngles {
+# Smart processing for ampersands and angle brackets that need to be encoded.
+
+	my $text = shift;
+
+	# Ampersand-encoding based entirely on Nat Irons's Amputator MT plugin:
+	#   http://bumppo.net/projects/amputator/
+ 	$text =~ s/&amp;(?!#?[xX]?(?:[0-9a-fA-F]+|\w+);)/&amp;amp;/g;
+
+	# Encode naked &lt;'s
+ 	$text =~ s{&lt;(?![a-z/?\$!])}{&amp;lt;}gi;
+
+	return $text;
+}
+
+
+sub _EncodeBackslashEscapes {
+#
+#   Parameter:  String.
+#   Returns:    The string, with after processing the following backslash
+#               escape sequences.
+#
+    local $_ = shift;
+
+    s! \\\\  !$g_escape_table{'\\'}!gx;		# Must process escaped backslashes first.
+    s! \\`   !$g_escape_table{'`'}!gx;
+    s! \\\*  !$g_escape_table{'*'}!gx;
+    s! \\_   !$g_escape_table{'_'}!gx;
+    s! \\\{  !$g_escape_table{'{'}!gx;
+    s! \\\}  !$g_escape_table{'}'}!gx;
+    s! \\\[  !$g_escape_table{'['}!gx;
+    s! \\\]  !$g_escape_table{']'}!gx;
+    s! \\\(  !$g_escape_table{'('}!gx;
+    s! \\\)  !$g_escape_table{')'}!gx;
+    s! \\&gt;   !$g_escape_table{'&gt;'}!gx;
+    s! \\\#  !$g_escape_table{'#'}!gx;
+    s! \\\+  !$g_escape_table{'+'}!gx;
+    s! \\\-  !$g_escape_table{'-'}!gx;
+    s! \\\.  !$g_escape_table{'.'}!gx;
+    s{ \\!  }{$g_escape_table{'!'}}gx;
+
+    return $_;
+}
+
+
+sub _DoAutoLinks {
+	my $text = shift;
+
+	$text =~ s{&lt;((https?|ftp|dict):[^'"&gt;\s]+)&gt;}{&lt;a href="$1"&gt;$1&lt;/a&gt;}gi;
+
+	# Email addresses: &lt;address@domain.foo&gt;
+	$text =~ s{
+		&lt;
+        (?:mailto:)?
+		(
+			[-.\w]+
+			\@
+			[-a-z0-9]+(\.[-a-z0-9]+)*\.[a-z]+
+		)
+		&gt;
+	}{
+		_EncodeEmailAddress( _UnescapeSpecialChars($1) );
+	}egix;
+
+	return $text;
+}
+
+
+sub _EncodeEmailAddress {
+#
+#	Input: an email address, e.g. "foo@example.com"
+#
+#	Output: the email address as a mailto link, with each character
+#		of the address encoded as either a decimal or hex entity, in
+#		the hopes of foiling most address harvesting spam bots. E.g.:
+#
+#	  &lt;a href="&amp;#x6D;&amp;#97;&amp;#105;&amp;#108;&amp;#x74;&amp;#111;:&amp;#102;&amp;#111;&amp;#111;&amp;#64;&amp;#101;
+#       x&amp;#x61;&amp;#109;&amp;#x70;&amp;#108;&amp;#x65;&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;"&gt;&amp;#102;&amp;#111;&amp;#111;
+#       &amp;#64;&amp;#101;x&amp;#x61;&amp;#109;&amp;#x70;&amp;#108;&amp;#x65;&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;
+#
+#	Based on a filter by Matthew Wickline, posted to the BBEdit-Talk
+#	mailing list: &lt;http://tinyurl.com/yu7ue&gt;
+#
+
+	my $addr = shift;
+
+	srand;
+	my @encode = (
+		sub { '&amp;#' .                 ord(shift)   . ';' },
+		sub { '&amp;#x' . sprintf( "%X", ord(shift) ) . ';' },
+		sub {                            shift          },
+	);
+
+	$addr = "mailto:" . $addr;
+
+	$addr =~ s{(.)}{
+		my $char = $1;
+		if ( $char eq '@' ) {
+			# this *must* be encoded. I insist.
+			$char = $encode[int rand 1]-&gt;($char);
+		} elsif ( $char ne ':' ) {
+			# leave ':' alone (to spot mailto: later)
+			my $r = rand;
+			# roughly 10% raw, 45% hex, 45% dec
+			$char = (
+				$r &gt; .9   ?  $encode[2]-&gt;($char)  :
+				$r &lt; .45  ?  $encode[1]-&gt;($char)  :
+							 $encode[0]-&gt;($char)
+			);
+		}
+		$char;
+	}gex;
+
+	$addr = qq{&lt;a href="$addr"&gt;$addr&lt;/a&gt;};
+	$addr =~ s{"&gt;.+?:}{"&gt;}; # strip the mailto: from the visible part
+
+	return $addr;
+}
+
+
+sub _UnescapeSpecialChars {
+#
+# Swap back in all the special characters we've hidden.
+#
+	my $text = shift;
+
+	while( my($char, $hash) = each(%g_escape_table) ) {
+		$text =~ s/$hash/$char/g;
+	}
+    return $text;
+}
+
+
+sub _TokenizeHTML {
+#
+#   Parameter:  String containing HTML markup.
+#   Returns:    Reference to an array of the tokens comprising the input
+#               string. Each token is either a tag (possibly with nested,
+#               tags contained therein, such as &lt;a href="&lt;MTFoo&gt;"&gt;, or a
+#               run of text between tags. Each element of the array is a
+#               two-element array; the first is either 'tag' or 'text';
+#               the second is the actual value.
+#
+#
+#   Derived from the _tokenize() subroutine from Brad Choate's MTRegex plugin.
+#       &lt;http://www.bradchoate.com/past/mtregex.php&gt;
+#
+
+    my $str = shift;
+    my $pos = 0;
+    my $len = length $str;
+    my @tokens;
+
+    my $depth = 6;
+    my $nested_tags = join('|', ('(?:&lt;[a-z/!$](?:[^&lt;&gt;]') x $depth) . (')*&gt;)' x  $depth);
+    my $match = qr/(?s: &lt;! ( -- .*? -- \s* )+ &gt; ) |  # comment
+                   (?s: &lt;\? .*? \?&gt; ) |              # processing instruction
+                   $nested_tags/ix;                   # nested tags
+
+    while ($str =~ m/($match)/g) {
+        my $whole_tag = $1;
+        my $sec_start = pos $str;
+        my $tag_start = $sec_start - length $whole_tag;
+        if ($pos &lt; $tag_start) {
+            push @tokens, ['text', substr($str, $pos, $tag_start - $pos)];
+        }
+        push @tokens, ['tag', $whole_tag];
+        $pos = pos $str;
+    }
+    push @tokens, ['text', substr($str, $pos, $len - $pos)] if $pos &lt; $len;
+
+    return \@tokens;
+}
+
+
+sub _Outdent {
+#
+# Remove one level of line-leading tabs or spaces
+#
+	my $text = shift;
+
+	$text =~ s/^(\t|[ ]{1,$g_tab_width})//gm;
+	return $text;
+}
+
+
+sub _Detab {
+#
+# Cribbed from a post by Bart Lateur:
+# &lt;http://www.nntp.perl.org/group/perl.macperl.anyperl/154&gt;
+#
+	my $text = shift;
+
+	$text =~ s{(.*?)\t}{$1.(' ' x ($g_tab_width - length($1) % $g_tab_width))}ge;
+	return $text;
+}
+
+#
+# MultiMarkdown Routines
+#
+
+sub _ParseMetaData {
+	my $text = shift;
+	my $clean_text = "";
+	
+	my ($inMetaData, $currentKey) = (1,'');
+	
+	# If only metadata is "Format: complete" then skip
+	
+	if ($text =~ s/^(Format):\s*complete\n(.*?)\n/$2\n/is) {
+		# If "Format: complete" was added automatically, don't force first 
+		#	line of text to be metadata
+		$g_metadata{$1}= "complete";
+		$g_document_format = "complete";
+	}
+	
+	foreach my $line ( split /\n/, $text ) {
+		$line =~ /^$/ and $inMetaData = 0;
+		if ($inMetaData) {
+			if ($line =~ /^([a-zA-Z0-9][0-9a-zA-Z _-]*?):\s*(.*)$/ ) {
+				$currentKey = $1;
+				my $meta = $2;
+				$currentKey =~ s/\s+/ /g;
+				$currentKey =~ s/\s$//;
+				$g_metadata{$currentKey} = $meta;
+				if (lc($currentKey) eq "format") {
+					$g_document_format = lc($g_metadata{$currentKey});
+				}
+				if (lc($currentKey) eq "base url") {
+					$g_base_url = $g_metadata{$currentKey};
+				}
+				if (lc($currentKey) eq "bibliography title") {
+					$g_bibliography_title = $g_metadata{$currentKey};
+					$g_bibliography_title =~ s/\s*$//;
+				}
+				if (lc($currentKey) eq "base header level") {
+					$g_base_header_level = $g_metadata{$currentKey};
+				}
+				if (!$g_metadata_newline{$currentKey}) {
+					$g_metadata_newline{$currentKey} = $g_metadata_newline{default};
+				}
+			} else {
+				if ($currentKey eq "") {
+					# No metadata present
+					$clean_text .= "$line\n";
+					$inMetaData = 0;
+					next;
+				}
+				if ($line =~ /^\s*(.+)$/ ) {
+					$g_metadata{$currentKey} .= "$g_metadata_newline{$currentKey}$1";
+				}
+			}
+		} else {
+			$clean_text .= "$line\n";
+		}
+	}
+		
+	return $clean_text;
+}
+
+sub _StripFootnoteDefinitions {
+	my $text = shift;
+	my $less_than_tab = $g_tab_width - 1;
+
+	while ($text =~ s{
+		\n[ ]{0,$less_than_tab}\[\^([^\n]+?)\]\:[ \t]*# id = $1
+		\n?
+		(.*?)\n{1,2}		# end at new paragraph
+		((?=\n[ ]{0,$less_than_tab}\S)|\Z)	# Lookahead for non-space at line-start, or end of doc
+	}
+	{\n}sx)
+	{
+		my $id = $1;
+		my $footnote = "$2\n";
+		$footnote =~ s/^[ ]{0,$g_tab_width}//gm;
+	
+		$g_footnotes{id2footnote($id)} = $footnote;
+	}
+	
+	return $text;
+}
+
+sub _DoFootnotes {
+	my $text = shift;
+	
+	# First, run routines that get skipped in footnotes
+	foreach my $label (sort keys %g_footnotes) {
+		my $footnote = _RunBlockGamut($g_footnotes{$label});
+
+		$footnote = _DoMarkdownCitations($footnote);
+		$g_footnotes{$label} = $footnote;
+	}
+	
+	$text =~ s{
+		\[\^(.+?)\]		# id = $1
+	}{
+		my $result = "";
+		my $id = id2footnote($1);
+		if (defined $g_footnotes{$id} ) {
+			$g_footnote_counter++;
+			if ($g_footnotes{$id} =~ /^(&lt;p&gt;)?glossary:/i) {
+				$result = "&lt;a href=\"#fn:$id\" id=\"fnref:$id\" title=\"see glossary\" class=\"footnote glossary\"&gt;$g_footnote_counter&lt;/a&gt;";
+			} else {
+				$result = "&lt;a href=\"#fn:$id\" id=\"fnref:$id\" title=\"see footnote\" class=\"footnote\"&gt;$g_footnote_counter&lt;/a&gt;";
+			}
+			push (@g_used_footnotes,$id);
+		}
+		$result;
+	}xsge;
+	
+	return $text;
+}
+
+sub _FixFootnoteParagraphs {
+	my $text = shift;
+	
+	$text =~ s/^\&lt;p\&gt;\&lt;\/footnote\&gt;/&lt;\/footnote&gt;/gm;
+	
+	return $text;
+}
+
+sub _PrintFootnotes{
+	my $footnote_counter = 0;
+	my $result = "";
+	
+	foreach my $id (@g_used_footnotes) {
+		$footnote_counter++;
+		my $footnote = $g_footnotes{$id};
+		my $footnote_closing_tag = "";
+
+		$footnote =~ s/(\&lt;\/(p(re)?|ol|ul)\&gt;)$//;
+		$footnote_closing_tag = $1;
+		
+		if ($footnote =~ s/^(&lt;p&gt;)?glossary:\s*//i) {
+			# Add some formatting for glossary entries
+
+			$footnote =~ s{
+				^(.*?)				# $1 = term
+				\s*
+				(?:\(([^\(\)]*)\)[^\n]*)?		# $2 = optional sort key
+				\n
+			}{
+				my $glossary = "&lt;span class=\"glossary name\"&gt;$1&lt;/span&gt;";
+				
+				if ($2) {
+					$glossary.="&lt;span class=\"glossary sort\" style=\"display:none\"&gt;$2&lt;/span&gt;";
+				};
+				
+				$glossary . ":&lt;p&gt;";	
+			}egsx;
+
+			$result.="&lt;li id=\"fn:$id\"&gt;$footnote&lt;a href=\"#fnref:$id\" title=\"return to article\" class=\"reversefootnote\"&gt;&amp;#160;&amp;#8617;&lt;/a&gt;$footnote_closing_tag&lt;/li&gt;\n\n";
+		} else {
+			$result.="&lt;li id=\"fn:$id\"&gt;$footnote&lt;a href=\"#fnref:$id\" title=\"return to article\" class=\"reversefootnote\"&gt;&amp;#160;&amp;#8617;&lt;/a&gt;$footnote_closing_tag&lt;/li&gt;\n\n";
+		}
+	}
+	$result .= "&lt;/ol&gt;\n&lt;/div&gt;";
+
+	if ($footnote_counter &gt; 0) {
+		$result = "\n\n&lt;div class=\"footnotes\"&gt;\n&lt;hr$g_empty_element_suffix\n&lt;ol&gt;\n\n".$result;
+	} else {
+		$result = "";
+	}	
+	
+	$result= _UnescapeSpecialChars($result);
+	return $result;
+}
+
+sub Header2Label {
+	my $header = shift;
+	my $label = lc $header;
+	$label =~ s/[^A-Za-z0-9:_.-]//g;		# Strip illegal characters
+	while ($label =~ s/^[^A-Za-z]//g)
+		{};		# Strip illegal leading characters
+	return $label;
+}
+
+sub id2footnote {
+	# Since we prepend "fn:", we can allow leading digits in footnotes
+	my $id = shift;
+	my $footnote = lc $id;
+	$footnote =~ s/[^A-Za-z0-9:_.-]//g;		# Strip illegal characters
+	return $footnote;
+}
+
+
+sub xhtmlMetaData {
+	my $result = qq{&lt;?xml version="1.0" encoding="UTF-8" ?&gt;\n};
+
+	# This screws up xsltproc - make sure to use `-nonet -novalid` if you
+	#	have difficulty
+	if ($g_allow_mathml) {
+		 $result .= qq{&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN"\n\t"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd"&gt;
+\n};
+	
+		$result.= qq{&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;\n\t&lt;head&gt;\n};
+	} else {
+		$result .= qq{&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;\n};
+
+		$result.= qq!&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;\n\t&lt;head&gt;\n!;
+	}
+	
+	$result.= "\t\t&lt;!-- Processed by MultiMarkdown --&gt;\n";
+	
+	foreach my $key (sort keys %g_metadata ) {
+		# Strip trailing spaces
+		$g_metadata{$key} =~ s/(\s)*$//s;
+		
+		# Strip spaces from key
+		my $export_key = $key;
+		$export_key =~ s/\s//g;
+		
+		if (lc($key) eq "title") {
+			$result.= "\t\t&lt;title&gt;" . _EncodeAmpsAndAngles($g_metadata{$key}) . "&lt;/title&gt;\n";
+		} elsif (lc($key) eq "css") {
+			$result.= "\t\t&lt;link type=\"text/css\" rel=\"stylesheet\" href=\"$g_metadata{$key}\"$g_empty_element_suffix\n";
+		} elsif (lc($export_key) eq "xhtmlheader") {
+			$result .= "\t\t$g_metadata{$key}\n";
+		} else {
+			$result.= qq!\t\t&lt;meta name="$export_key" content="$g_metadata{$key}"$g_empty_element_suffix\n!;
+		}
+	}
+	$result.= "\t&lt;/head&gt;\n";
+	
+	return $result;
+}
+
+sub textMetaData {
+	my $result = "";
+	
+	foreach my $key (sort keys %g_metadata ) {
+		$result .= "$key: $g_metadata{$key}\n";
+	}
+	$result =~ s/\s*\n/&lt;br \/&gt;\n/g;
+	
+	if ($result ne "") {
+		$result.= "\n";
+	}
+	
+	return $result;
+}
+
+sub _ConvertCopyright{
+	my $text = shift;
+	# Convert to an XML compatible form of copyright symbol
+	
+	$text =~ s/&amp;copy;/&amp;#xA9;/gi;
+	
+	return $text;
+}
+
+
+sub _DoTables {
+	my $text = shift;
+	my $less_than_tab = $g_tab_width - 1;
+	
+	# Algorithm inspired by PHP Markdown Extra's table support
+	# &lt;http://www.michelf.com/projects/php-markdown/&gt;
+		
+	# Reusable regexp's to match table
+	
+	my $line_start = qr{
+		[ ]{0,$less_than_tab}
+	}mx;
+	
+	my $table_row = qr{
+		[^\n]*?\|[^\n]*?\n
+	}mx;
+		
+	my $first_row = qr{
+		$line_start
+		\S+.*?\|.*?\n
+	}mx;
+	
+	my $table_rows = qr{
+		(\n?$table_row)
+	}mx;
+	
+	my $table_caption = qr{
+		$line_start
+		\[.*?\][ \t]*\n
+	}mx;
+	
+	my $table_divider = qr{
+		$line_start
+		[\|\-\+\:\.][ \-\+\|\:\.]* \| [ \-\+\|\:\.]* 
+	}mx;
+	
+	my $whole_table = qr{
+		($table_caption)?		# Optional caption
+		($first_row				# First line must start at beginning
+		($table_row)*?)?		# Header Rows
+		$table_divider			# Divider/Alignment definitions
+		$table_rows+			# Body Rows
+		($table_caption)?		# Optional caption
+	}mx;
+	
+	
+	# Find whole tables, then break them up and process them
+	
+	$text =~ s{
+		^($whole_table)			# Whole table in $1
+		(\n|\Z)					# End of file or 2 blank lines
+	}{
+		my $table = $1;
+		
+		# Clean extra spaces at end of lines - 
+		#	they cause the processing to choke
+		$table =~ s/[\t ]*\n/\n/gs;
+		
+		my $result = "&lt;table&gt;\n";
+		my @alignments;
+		my $use_row_header = 1;
+		
+		# Add Caption, if present
+		
+		if ($table =~ s/^$line_start(?:\[\s*(.*)\s*\])?(?:\[\s*(.*?)\s*\])[ \t]*$//m) {
+			my $table_id = "";
+			my $table_caption = "";
+
+			$table_id = Header2Label($2);
+
+			if (defined $1) {
+				$table_caption = $1;
+			} else {
+				$table_caption = $2;
+			}
+			$result .= "&lt;caption id=\"$table_id\"&gt;" . _RunSpanGamut($table_caption). "&lt;/caption&gt;\n";
+				
+			$g_crossrefs{$table_id} = "#$table_id";
+			$g_titles{$table_id} = "see table";		# captions with "stuff" in them break links
+		}
+				
+		# If a second "caption" is present, treat it as a summary
+		# However, this is not valid in XHTML 1.0 Strict
+		# But maybe in future
+		
+		# A summary might be longer than one line
+		if ($table =~ s/\n$line_start\[\s*(.*?)\s*\][ \t]*\n/\n/s) {
+			# $result .= "&lt;summary&gt;" . _RunSpanGamut($1) . "&lt;/summary&gt;\n";
+		}
+		
+		# Now, divide table into header, alignment, and body
+
+		# First, add leading \n in case there is no header
+		
+		$table = "\n" . $table;
+		
+		# Need to be greedy
+		
+		$table =~ s/\n($table_divider)\n(($table_rows)+)//s;
+
+		my $body = "";
+		my $alignment_string = "";
+		if (defined $1){
+			$alignment_string = $1;
+		}
+		if (defined $2){
+			$body = $2;
+		}
+
+		# Process column alignment
+		while ($alignment_string =~ /\|?\s*(.+?)\s*(\||\Z)/gs) {
+			my $cell = _RunSpanGamut($1);
+			if ($cell =~ /\+/){
+				$result .= "&lt;col class=\"extended\"";
+			} else {
+				$result .= "&lt;col";
+			}
+			if ($cell =~ /\:$/) {
+				if ($cell =~ /^\:/) {
+					$result .= " align=\"center\"$g_empty_element_suffix\n";
+					push(@alignments,"center");
+				} else {
+					$result .= " align=\"right\"$g_empty_element_suffix\n";
+					push(@alignments,"right");
+				}
+			} else {
+				if ($cell =~ /^\:/) {
+					$result .= " align=\"left\"$g_empty_element_suffix\n";
+					push(@alignments,"left");
+				} else {
+					if (($cell =~ /^\./) || ($cell =~ /\.$/)) {
+						$result .= " align=\"char\"$g_empty_element_suffix\n";
+						push(@alignments,"char");
+					} else {
+						$result .= "$g_empty_element_suffix\n";
+						push(@alignments,"");
+					}
+				}
+			}
+		}
+		
+		# Process headers
+		$table =~ s/^\n+//s;
+		
+		$result .= "&lt;thead&gt;\n";
+		
+		# Strip blank lines
+		$table =~ s/\n[ \t]*\n/\n/g;
+		
+		foreach my $line (split(/\n/, $table)) {
+			# process each line (row) in table
+			$result .= "&lt;tr&gt;\n";
+			my $count=0;
+			while ($line =~ /\|?\s*([^\|]+?)\s*(\|+|\Z)/gs) {
+				# process contents of each cell
+				my $cell = _RunSpanGamut($1);
+				my $ending = $2;
+				my $colspan = "";
+				if ($ending =~ s/^\s*(\|{2,})\s*$/$1/) {
+					$colspan = " colspan=\"" . length($ending) . "\"";
+				}
+				$result .= "\t&lt;th$colspan&gt;$cell&lt;/th&gt;\n";
+				if ( $count == 0) {
+					if ($cell =~ /^\s*$/) {
+						$use_row_header = 1;
+					} else {
+						$use_row_header = 0;
+					}
+				}
+				$count++;
+			}
+			$result .= "&lt;/tr&gt;\n";
+		}
+		
+		# Process body
+		
+		$result .= "&lt;/thead&gt;\n&lt;tbody&gt;\n";
+
+		foreach my $line (split(/\n/, $body)) {
+			# process each line (row) in table
+			if ($line =~ /^\s*$/) {
+				$result .= "&lt;/tbody&gt;\n\n&lt;tbody&gt;\n";
+				next;
+			}
+			$result .= "&lt;tr&gt;\n";
+			my $count=0;
+			while ($line =~ /\|?\s*([^\|]+?)\s*(\|+|\Z)/gs) {
+				# process contents of each cell
+				my $cell = _RunSpanGamut($1);
+				my $ending = "";
+				if ($2 ne ""){
+					$ending = $2;
+				}
+				my $colspan = "";
+				my $cell_type = "td";
+				if ($count == 0 &amp;&amp; $use_row_header == 1) {
+					$cell_type = "th";
+				}
+				if ($ending =~ s/^\s*(\|{2,})\s*$/$1/) {
+					$colspan = " colspan=\"" . length($ending) . "\"";
+				}
+				if ($alignments[$count] !~ /^\s*$/) {
+					$result .= "\t&lt;$cell_type$colspan align=\"$alignments[$count]\"&gt;$cell&lt;/$cell_type&gt;\n";
+				} else {
+					$result .= "\t&lt;$cell_type$colspan&gt;$cell&lt;/$cell_type&gt;\n";
+					}
+				$count++;
+			}
+			$result .= "&lt;/tr&gt;\n";
+		}
+
+		# Strip out empty &lt;thead&gt; sections
+		$result =~ s/&lt;thead&gt;\s*&lt;\/thead&gt;\s*//s;
+
+		# Handle pull-quotes
+
+		# This might be too specific for my needs.  If others want it
+		# removed, I am open to discussion.
+
+		$result =~ s/&lt;table&gt;\s*&lt;col \/&gt;\s*&lt;tbody&gt;/&lt;table class="pull-quote"&gt;\n&lt;col \/&gt;\n&lt;tbody&gt;/s;
+		
+		$result .= "&lt;/tbody&gt;\n&lt;/table&gt;\n";
+		$result
+	}egmx;
+	
+	my $table_body = qr{
+		(								# wrap whole match in $2
+			
+			(.*?\|.*?)\n 					# wrap headers in $3
+			
+			[ ]{0,$less_than_tab}
+			($table_divider) 	# alignment in $4
+			
+			(							# wrap cells in $5
+				$table_rows
+			)
+		)
+	}mx;
+	
+	return $text;
+}
+
+
+sub _DoAttributes{
+	my $id = shift;
+	my $result = "";
+	
+	if (defined $g_attributes{$id}) {
+		my $attributes = $g_attributes{$id};
+		while ($attributes =~ s/(\S+)="(.*?)"//) {
+			$result .= " $1=\"$2\"";
+		}
+		while ($attributes =~ /(\S+)=(\S+)/g) {
+			$result .= " $1=\"$2\"";
+		}
+	}
+	
+	return $result;
+}
+
+
+sub _StripMarkdownReferences {
+	my $text = shift;
+	my $less_than_tab = $g_tab_width - 1;
+
+	while ($text =~ s{
+		\n\[\#(.+?)\]:[ \t]*	# id = $1
+		\n?
+		(.*?)\n{1,2}			# end at new paragraph
+		((?=\n[ ]{0,$less_than_tab}\S)|\Z)	# Lookahead for non-space at line-start, or end of doc
+	}
+	{\n}sx)
+	{
+		my $id = $1;
+		my $reference = "$2\n";
+
+		$reference =~ s/^[ ]{0,$g_tab_width}//gm;
+		
+		$reference = _RunBlockGamut($reference);
+
+		# strip leading and trailing &lt;p&gt; tags (they will be added later)
+		$reference =~ s/^\&lt;p\&gt;//s;
+		$reference =~ s/\&lt;\/p\&gt;\s*$//s;
+		
+		$g_references{$id} = $reference;
+	}
+	
+	return $text;
+}
+
+sub _DoMarkdownCitations {
+	my $text = shift;
+	
+	$text =~ s{				# Allow for citations without locator to be written
+		\[\#([^\[]*?)\]		# in usual manner, e.g. [#author][] rather than
+		[ ]?				# [][#author]
+		(?:\n[ ]*)?
+		\[\s*\]
+	}{
+		"[][#$1]";
+	}xsge;
+	
+	$text =~ s{
+		\[([^\[]*?)\]		# citation text = $1
+		[ ]?			# one optional space
+		(?:\n[ ]*)?		# one optional newline followed by spaces
+		\[\#(.*?)\]		# id = $2
+	}{
+		my $result;
+		my $anchor_text = $1;
+		my $id = $2;
+		my $count;
+
+		# implement equivalent to \citet
+		my $textual_string = "";
+		if ($anchor_text =~ s/^(.*?);\s*//) {
+			$textual_string = "&lt;span class=\"textual citation\"&gt;$1&lt;/span&gt;";
+		}
+
+		if (defined $g_references{$id} ) {
+			my $citation_counter=0;
+			
+			# See if citation has been used before
+			foreach my $old_id (@g_used_references) {
+				$citation_counter++;
+				$count = $citation_counter if ($old_id eq $id);
+			}
+	
+			if (! defined $count) {
+				$g_citation_counter++;
+				$count = $g_citation_counter;
+				push (@g_used_references,$id);
+			}
+			
+			$result = "&lt;span class=\"markdowncitation\"&gt;$textual_string (&lt;a href=\"#$id\" title=\"see citation\"&gt;$count&lt;/a&gt;";
+			
+			if ($anchor_text ne "") {
+				$result .=", &lt;span class=\"locator\"&gt;$anchor_text&lt;/span&gt;";
+			}
+			
+			$result .= ")&lt;/span&gt;";
+		} else {
+			# No reference exists
+			$result = "&lt;span class=\"externalcitation\"&gt;$textual_string (&lt;a id=\"$id\"&gt;$id&lt;/a&gt;";
+
+			if ($anchor_text ne "") {
+				$result .=", &lt;span class=\"locator\"&gt;$anchor_text&lt;/span&gt;";
+			}
+			
+			$result .= ")&lt;/span&gt;";
+		}
+		
+		if (Header2Label($anchor_text) eq "notcited"){
+			$result = "&lt;span class=\"notcited\" id=\"$id\"/&gt;";
+		}
+		$result;
+	}xsge;
+	
+	return $text;
+
+}
+
+sub _PrintMarkdownBibliography{
+	my $citation_counter = 0;
+	my $result;
+	
+	foreach my $id (@g_used_references) {
+		$citation_counter++;
+		$result.="&lt;div id=\"$id\"&gt;&lt;p&gt;[$citation_counter] &lt;span class=\"item\"&gt;$g_references{$id}&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;\n\n";
+	}
+	$result .= "&lt;/div&gt;";
+
+	if ($citation_counter &gt; 0) {
+		$result = "\n\n&lt;div class=\"bibliography\"&gt;\n&lt;hr$g_empty_element_suffix\n&lt;p&gt;$g_bibliography_title&lt;/p&gt;\n\n".$result;
+	} else {
+		$result = "";
+	}	
+	
+	return $result;
+}
+
+sub _GenerateImageCrossRefs {
+	my $text = shift;
+
+	#
+	# First, handle reference-style labeled images: ![alt text][id]
+	#
+	$text =~ s{
+		(				# wrap whole match in $1
+		  !\[
+		    (.*?)		# alt text = $2
+		  \]
+
+		  [ ]?				# one optional space
+		  (?:\n[ ]*)?		# one optional newline followed by spaces
+
+		  \[
+		    (.*?)		# id = $3
+		  \]
+
+		)
+	}{
+		my $result;
+		my $whole_match = $1;
+		my $alt_text    = $2;
+		my $link_id     = lc $3;
+
+		if ($link_id eq "") {
+			$link_id = lc $alt_text;     # for shortcut links like ![this][].
+		}
+
+		$alt_text =~ s/"/&amp;quot;/g;
+		if (defined $g_urls{$link_id}) {
+			my $label = Header2Label($alt_text);
+			$g_crossrefs{$label} = "#$label";
+		}
+		else {
+			# If there's no such link ID, leave intact:
+			$result = $whole_match;
+		}
+
+		$whole_match;
+	}xsge;
+
+	#
+	# Next, handle inline images:  ![alt text](url "optional title")
+	# Don't forget: encode * and _
+
+	$text =~ s{
+		(				# wrap whole match in $1
+		  !\[
+		    (.*?)		# alt text = $2
+		  \]
+		  \(			# literal paren
+		  	[ \t]*
+			&lt;?(\S+?)&gt;?	# src url = $3
+		  	[ \t]*
+			(			# $4
+			  (['"])	# quote char = $5 '
+			  (.*?)		# title = $6
+			  \5		# matching quote
+			  [ \t]*
+			)?			# title is optional
+		  \)
+		)
+	}{
+		my $result;
+		my $whole_match = $1;
+		my $alt_text    = $2;
+
+		$alt_text =~ s/"/&amp;quot;/g;
+		my $label = Header2Label($alt_text);
+		$g_crossrefs{$label} = "#$label";
+		$whole_match;
+	}xsge;
+
+	return $text;
+}
+
+sub _FindMathEquations{
+	my $text = shift;
+	
+	$text =~ s{
+		(\&lt;math[^\&gt;]*)id=\"(.*?)\"&gt; 	# "
+	}{
+		my $label = Header2Label($2);
+		my $header = _RunSpanGamut($2);
+		
+		$g_crossrefs{$label} = "#$label";
+		$g_titles{$label} = $header;
+		
+		$1 . "id=\"$label\"&gt;";
+	}xsge;
+	
+	return $text;
+}
+
+sub _DoMathSpans {
+	# Based on Gruber's _DoCodeSpans
+	
+	my $text = shift;
+	my $display_as_block = 0;	
+	$display_as_block = 1 if ($text =~ /^&lt;&lt;[^\&gt;\&gt;]*&gt;&gt;$/);
+
+	$text =~ s{
+			(?&lt;!\\)		# Character before opening &lt;&lt; can't be a backslash
+			(&lt;&lt;)		# $1 = Opening 
+			(.+?)		# $2 = The code block
+			(?:\[(.+)\])?	# $3 = optional label
+			(&gt;&gt;)
+		}{
+ 			my $m = "$2";
+			my $label = "";
+			my @attr = (xmlns=&gt;"http://www.w3.org/1998/Math/MathML");
+			
+			if (defined $3) {
+				$label = Header2Label($3);
+				my $header = _RunSpanGamut($3);
+
+				$g_crossrefs{$label} = "#$label";
+				$g_titles{$label} = $header;
+			}
+ 			$m =~ s/^[ \t]*//g; # leading whitespace
+ 			$m =~ s/[ \t]*$//g; # trailing whitespace
+			push(@attr,(id=&gt;"$label")) if ($label ne "");
+			push(@attr,(display=&gt;"block")) if ($display_as_block == 1);
+
+			$m = $mathParser-&gt;TextToMathML($m,\@attr); 
+			"$m";
+		}egsx;
+
+	return $text;
+}
+
+sub _DoDefinitionLists {
+	# Uses the syntax proposed by Michel Fortin in PHP Markdown Extra
+	
+	my $text = shift;
+	my $less_than_tab = $g_tab_width -1;
+	
+	my $line_start = qr{
+		[ ]{0,$less_than_tab}
+	}mx;
+	
+	my $term = qr{
+		$line_start
+		[^:\s][^\n]*\n
+	}sx;
+	
+	my $definition = qr{
+		\n?[ ]{0,$less_than_tab}
+		\:[ \t]+(.*?)\n
+		((?=\n?\:)|\n|\Z)	# Lookahead for next definition, two returns,
+							# or the end of the document
+	}sx;
+	
+	my $definition_block = qr{
+		((?:$term)+)				# $1 = one or more terms
+		((?:$definition)+)			# $2 = by one or more definitions
+	}sx;
+	
+	my $definition_list = qr{
+		(?:$definition_block\n*)+		# One ore more definition blocks
+	}sx;
+	
+	$text =~ s{
+		($definition_list)			# $1 = the whole list
+	}{
+		my $list = $1;
+		my $result = $1;
+		
+		$list =~ s{
+			(?:$definition_block)\n*
+		}{
+			my $terms = $1;
+			my $defs = $2;
+
+			$terms =~ s{
+				[ ]{0,$less_than_tab}
+				(.*)
+				\s*
+			}{
+				my $term = $1;
+				my $result = "";
+				$term =~ s/^\s*(.*?)\s*$/$1/;
+				if ($term !~ /^\s*$/){
+					$result = "&lt;dt&gt;" . _RunSpanGamut($1) . "&lt;/dt&gt;\n";
+				}
+				$result;
+			}xmge;
+			
+			$defs =~ s{
+				$definition
+			}{
+				my $def = $1 . "\n";
+				$def =~ s/^[ ]{0,$g_tab_width}//gm;
+				"&lt;dd&gt;\n" . _RunBlockGamut($def) . "\n&lt;/dd&gt;\n";
+			}xsge;
+			
+			$terms . $defs . "\n";
+		}xsge;
+		
+		"&lt;dl&gt;\n" . $list . "&lt;/dl&gt;\n\n";
+	}xsge;
+	
+	return $text
+}
+
+sub _UnescapeComments{
+	# Remove encoding inside comments
+	# Based on proposal by Toras Doran (author of Text::MultiMarkdown)
+
+	my $text = shift;
+	$text =~ s{
+		(?&lt;=&lt;!--) # Begin comment
+		(.*?)     # Anything inside
+		(?=--&gt;)   # End comments
+	}{
+		my $t = $1;
+		$t =~ s/&amp;amp;/&amp;/g;
+		$t =~ s/&amp;lt;/&lt;/g;
+		$t;
+	}egsx;
+
+	return $text;
+}
+
+1;
+
+__END__
+
+
+=pod
+
+=head1 NAME
+
+B&lt;MultiMarkdown&gt;
+
+
+=head1 SYNOPSIS
+
+B&lt;MultiMarkdown.pl&gt; [ B&lt;--html4tags&gt; ] [ B&lt;--version&gt; ] [ B&lt;-shortversion&gt; ]
+    [ I&lt;file&gt; ... ]
+
+
+=head1 DESCRIPTION
+
+MultiMarkdown is an extended version of Markdown. See the website for more
+information.
+
+	http://fletcherpenney.net/multimarkdown/
+
+Markdown is a text-to-HTML filter; it translates an easy-to-read /
+easy-to-write structured text format into HTML. Markdown's text format
+is most similar to that of plain text email, and supports features such
+as headers, *emphasis*, code blocks, blockquotes, and links.
+
+Markdown's syntax is designed not as a generic markup language, but
+specifically to serve as a front-end to (X)HTML. You can  use span-level
+HTML tags anywhere in a Markdown document, and you can use block level
+HTML tags (like &lt;div&gt; and &lt;table&gt; as well).
+
+For more information about Markdown's syntax, see:
+
+    http://daringfireball.net/projects/markdown/
+
+
+=head1 OPTIONS
+
+Use "--" to end switch parsing. For example, to open a file named "-z", use:
+
+	Markdown.pl -- -z
+
+=over 4
+
+
+=item B&lt;--html4tags&gt;
+
+Use HTML 4 style for empty element tags, e.g.:
+
+    &lt;br&gt;
+
+instead of Markdown's default XHTML style tags, e.g.:
+
+    &lt;br /&gt;
+
+
+=item B&lt;-v&gt;, B&lt;--version&gt;
+
+Display Markdown's version number and copyright information.
+
+
+=item B&lt;-s&gt;, B&lt;--shortversion&gt;
+
+Display the short-form version number.
+
+
+=back
+
+
+
+=head1 BUGS
+
+To file bug reports or feature requests (other than topics listed in the
+Caveats section above) please send email to:
+
+    support@daringfireball.net (for Markdown issues)
+    
+    owner@fletcherpenney.net (for MultiMarkdown issues)
+
+Please include with your report: (1) the example input; (2) the output
+you expected; (3) the output (Multi)Markdown actually produced.
+
+
+=head1 AUTHOR
+
+    John Gruber
+    http://daringfireball.net/
+
+    PHP port and other contributions by Michel Fortin
+    http://michelf.com/
+
+    MultiMarkdown changes by Fletcher Penney
+    http://fletcherpenney.net/
+
+=head1 COPYRIGHT AND LICENSE
+
+Original Markdown Code Copyright (c) 2003-2007 John Gruber   
+&lt;http://daringfireball.net/&gt;   
+All rights reserved.
+
+MultiMarkdown changes Copyright (c) 2005-2009 Fletcher T. Penney   
+&lt;http://fletcherpenney.net/&gt;   
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+* Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+
+* Neither the name "Markdown" nor the names of its contributors may
+  be used to endorse or promote products derived from this software
+  without specific prior written permission.
+
+This software is provided by the copyright holders and contributors "as
+is" and any express or implied warranties, including, but not limited
+to, the implied warranties of merchantability and fitness for a
+particular purpose are disclaimed. In no event shall the copyright owner
+or contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to,
+procurement of substitute goods or services; loss of use, data, or
+profits; or business interruption) however caused and on any theory of
+liability, whether in contract, strict liability, or tort (including
+negligence or otherwise) arising in any way out of the use of this
+software, even if advised of the possibility of such damage.
+
+=cut
+
+</string>
+					<key>CheckedForUserDefaultShell</key>
+					<true/>
+					<key>inputMethod</key>
+					<integer>0</integer>
+					<key>shell</key>
+					<string>/usr/bin/perl</string>
+					<key>source</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.RunShellScript</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.3</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunShellScriptAction</string>
+				<key>InputUUID</key>
+				<string>F37810FD-49F2-4A8C-B4E1-CEA2925D0157</string>
+				<key>Keywords</key>
+				<array>
+					<string>Shell</string>
+					<string>Script</string>
+					<string>Command</string>
+					<string>Run</string>
+					<string>Unix</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>7EAB9FB9-054E-4C87-9FEE-9998ACBE2720</string>
+				<key>UUID</key>
+				<string>F0508458-6BF0-4160-A014-B9B79A59CF8E</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>inputMethod</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>CheckedForUserDefaultShell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>COMMAND_STRING</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>3</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>default value</key>
+						<string>/bin/sh</string>
+						<key>name</key>
+						<string>shell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>4</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>449.500000:569.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.3</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<dict/>
+					<key>CheckedForUserDefaultShell</key>
+					<dict/>
+					<key>inputMethod</key>
+					<dict/>
+					<key>shell</key>
+					<dict/>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run Shell Script.action</string>
+				<key>ActionName</key>
+				<string>Run Shell Script</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<string>#!/usr/bin/perl -w
+
+#
+# SmartyPants  -  A Plug-In for Movable Type, Blosxom, and BBEdit
+# by John Gruber
+# http://daringfireball.net
+#
+# See the readme or POD for details, installation instructions, and
+# license information.
+#
+# Copyright (c) 2003-2004 John Gruber
+#
+
+package SmartyPants;
+use strict;
+use vars qw($VERSION);
+$VERSION = "1.5.1";
+# Fri 12 Mar 2004
+
+
+# Configurable variables:
+my $smartypants_attr = "2";  # Blosxom and BBEdit users: change this to configure.
+                             #  1 =&gt;  "--" for em-dashes; no en-dash support
+                             #  2 =&gt;  "---" for em-dashes; "--" for en-dashes
+                             #  3 =&gt;  "--" for em-dashes; "---" for en-dashes
+                             #  See docs for more configuration options.
+
+
+# Globals:
+my $tags_to_skip = qr!&lt;(/?)(?:pre|code|kbd|script|math|style)[\s&gt;]!;
+
+
+# Blosxom plug-in interface:
+sub start { 1; }
+sub story {
+    my($pkg, $path, $filename, $story_ref, $title_ref, $body_ref) = @_;
+
+    $$title_ref = SmartyPants($$title_ref, $smartypants_attr, undef);
+    $$body_ref  = SmartyPants($$body_ref,  $smartypants_attr, undef);
+    1;
+}
+
+
+# Movable Type plug-in interface:
+eval {require MT::Template::Context};  # Test to see if we're running in MT.
+unless ($@) {
+    require MT::Template::Context;
+    import MT::Template::Context;
+    MT::Template::Context-&gt;add_global_filter( smarty_pants   =&gt;  \&amp;SmartyPants);
+    MT::Template::Context-&gt;add_global_filter( smart_quotes   =&gt;  \&amp;SmartQuotes);
+    MT::Template::Context-&gt;add_global_filter( smart_dashes   =&gt;  \&amp;SmartDashes);
+    MT::Template::Context-&gt;add_global_filter( smart_ellipses =&gt;  \&amp;SmartEllipses);
+    MT::Template::Context-&gt;add_tag( SmartyPantsVersion       =&gt;  \&amp;SmartyPantsVersion);
+
+    # If Markdown is loaded, add a combo Markdown/SmartyPants text filter:
+    my $filters = MT-&gt;all_text_filters();
+    if (exists( $filters-&gt;{'markdown'} )) {
+		my $markdown_ref = $filters-&gt;{'markdown'}{on_format};
+		if ($markdown_ref) {
+			MT-&gt;add_text_filter('markdown_with_smartypants' =&gt; {
+				label =&gt; 'Markdown With SmartyPants',
+				on_format =&gt; sub {
+					my $text = shift;
+					$text = &amp;$markdown_ref($text);
+					$text = SmartyPants($text, $smartypants_attr);
+				},
+				docs =&gt; 'http://daringfireball.net/projects/markdown/'
+			});
+		}
+	}
+}
+else {
+    # BBEdit text filter interface; needs to be hidden from MT
+    # (and Blosxom when running in static mode).
+
+    # Set up a do-nothing variable to keep Perl from warning us that
+    # we're only using $blosxom::version once. The right way to do this
+    # is to use "no warnings", but that doesn't work in Perl 5.005.
+    my $in_blosxom = defined($blosxom::version);
+
+    unless ( defined($blosxom::version) ) {
+		#### Check for command-line switches: ###########################
+		my %cli_opts;
+		use Getopt::Long;
+		Getopt::Long::Configure('pass_through');
+		GetOptions(\%cli_opts,
+			'version',
+			'shortversion',
+			'1',
+			'2',
+			'3',
+		);
+		if ($cli_opts{'version'}) {		# Version info
+			print "\nThis is Markdown, version $VERSION.\n";
+			print "Copyright 2004 John Gruber\n";
+			print "http://daringfireball.net/projects/markdown/\n";
+			exit 0;
+		}
+		if ($cli_opts{'shortversion'}) {		# Just the version number string.
+			print $VERSION;
+			exit 0;
+		}
+		if ($cli_opts{'1'}) { $smartypants_attr = 1 };
+		if ($cli_opts{'2'}) { $smartypants_attr = 2 };
+		if ($cli_opts{'3'}) { $smartypants_attr = 3 };
+
+
+		#### Process incoming text: #####################################
+        my $old = $/;
+        undef $/;               # slurp the whole file
+        my $text = &lt;&gt;;
+        $/ = $old;
+        print SmartyPants($text, $smartypants_attr, undef);
+    }
+}
+
+
+sub SmartyPants {
+    # Paramaters:
+    my $text = shift;   # text to be parsed
+    my $attr = shift;   # value of the smart_quotes="" attribute
+    my $ctx  = shift;   # MT context object (unused)
+
+    # Options to specify which transformations to make:
+    my ($do_quotes, $do_backticks, $do_dashes, $do_ellipses, $do_stupefy);
+    my $convert_quot = 0;  # should we translate &amp;quot; entities into normal quotes?
+
+    # Parse attributes:
+    # 0 : do nothing
+    # 1 : set all
+    # 2 : set all, using old school en- and em- dash shortcuts
+    # 3 : set all, using inverted old school en and em- dash shortcuts
+    # 
+    # q : quotes
+    # b : backtick quotes (``double'' only)
+    # B : backtick quotes (``double'' and `single')
+    # d : dashes
+    # D : old school dashes
+    # i : inverted old school dashes
+    # e : ellipses
+    # w : convert &amp;quot; entities to " for Dreamweaver users
+
+    if ($attr eq "0") {
+        # Do nothing.
+        return $text;
+    }
+    elsif ($attr eq "1") {
+        # Do everything, turn all options on.
+        $do_quotes    = 1;
+        $do_backticks = 1;
+        $do_dashes    = 1;
+        $do_ellipses  = 1;
+    }
+    elsif ($attr eq "2") {
+        # Do everything, turn all options on, use old school dash shorthand.
+        $do_quotes    = 1;
+        $do_backticks = 1;
+        $do_dashes    = 2;
+        $do_ellipses  = 1;
+    }
+    elsif ($attr eq "3") {
+        # Do everything, turn all options on, use inverted old school dash shorthand.
+        $do_quotes    = 1;
+        $do_backticks = 1;
+        $do_dashes    = 3;
+        $do_ellipses  = 1;
+    }
+    elsif ($attr eq "-1") {
+        # Special "stupefy" mode.
+        $do_stupefy   = 1;
+    }
+    else {
+        my @chars = split(//, $attr);
+        foreach my $c (@chars) {
+            if    ($c eq "q") { $do_quotes    = 1; }
+            elsif ($c eq "b") { $do_backticks = 1; }
+            elsif ($c eq "B") { $do_backticks = 2; }
+            elsif ($c eq "d") { $do_dashes    = 1; }
+            elsif ($c eq "D") { $do_dashes    = 2; }
+            elsif ($c eq "i") { $do_dashes    = 3; }
+            elsif ($c eq "e") { $do_ellipses  = 1; }
+            elsif ($c eq "w") { $convert_quot = 1; }
+            else {
+                # Unknown attribute option, ignore.
+            }
+        }
+    }
+
+    my $tokens ||= _tokenize($text);
+    my $result = '';
+    my $in_pre = 0;  # Keep track of when we're inside &lt;pre&gt; or &lt;code&gt; tags.
+
+    my $prev_token_last_char = "";  # This is a cheat, used to get some context
+                                    # for one-character tokens that consist of 
+                                    # just a quote char. What we do is remember
+                                    # the last character of the previous text
+                                    # token, to use as context to curl single-
+                                    # character quote tokens correctly.
+
+    foreach my $cur_token (@$tokens) {
+        if ($cur_token-&gt;[0] eq "tag") {
+            # Don't mess with quotes inside tags.
+            $result .= $cur_token-&gt;[1];
+            if ($cur_token-&gt;[1] =~ m/$tags_to_skip/) {
+                $in_pre = defined $1 &amp;&amp; $1 eq '/' ? 0 : 1;
+            }
+        } else {
+            my $t = $cur_token-&gt;[1];
+            my $last_char = substr($t, -1); # Remember last char of this token before processing.
+            if (! $in_pre) {
+                $t = ProcessEscapes($t);
+
+                if ($convert_quot) {
+                    $t =~ s/&amp;quot;/"/g;
+                }
+
+                if ($do_dashes) {
+                    $t = EducateDashes($t)                  if ($do_dashes == 1);
+                    $t = EducateDashesOldSchool($t)         if ($do_dashes == 2);
+                    $t = EducateDashesOldSchoolInverted($t) if ($do_dashes == 3);
+                }
+
+                $t = EducateEllipses($t) if $do_ellipses;
+
+                # Note: backticks need to be processed before quotes.
+                if ($do_backticks) {
+                    $t = EducateBackticks($t);
+                    $t = EducateSingleBackticks($t) if ($do_backticks == 2);
+                }
+
+                if ($do_quotes) {
+                    if ($t eq q/'/) {
+                        # Special case: single-character ' token
+                        if ($prev_token_last_char =~ m/\S/) {
+                            $t = "&amp;#8217;";
+                        }
+                        else {
+                            $t = "&amp;#8216;";
+                        }
+                    }
+                    elsif ($t eq q/"/) {
+                        # Special case: single-character " token
+                        if ($prev_token_last_char =~ m/\S/) {
+                            $t = "&amp;#8221;";
+                        }
+                        else {
+                            $t = "&amp;#8220;";
+                        }
+                    }
+                    else {
+                        # Normal case:                  
+                        $t = EducateQuotes($t);
+                    }
+                }
+
+                $t = StupefyEntities($t) if $do_stupefy;
+            }
+            $prev_token_last_char = $last_char;
+            $result .= $t;
+        }
+    }
+
+    return $result;
+}
+
+
+sub SmartQuotes {
+    # Paramaters:
+    my $text = shift;   # text to be parsed
+    my $attr = shift;   # value of the smart_quotes="" attribute
+    my $ctx  = shift;   # MT context object (unused)
+
+    my $do_backticks;   # should we educate ``backticks'' -style quotes?
+
+    if ($attr == 0) {
+        # do nothing;
+        return $text;
+    }
+    elsif ($attr == 2) {
+        # smarten ``backticks'' -style quotes
+        $do_backticks = 1;
+    }
+    else {
+        $do_backticks = 0;
+    }
+
+    # Special case to handle quotes at the very end of $text when preceded by
+    # an HTML tag. Add a space to give the quote education algorithm a bit of
+    # context, so that it can guess correctly that it's a closing quote:
+    my $add_extra_space = 0;
+    if ($text =~ m/&gt;['"]\z/) {
+        $add_extra_space = 1; # Remember, so we can trim the extra space later.
+        $text .= " ";
+    }
+
+    my $tokens ||= _tokenize($text);
+    my $result = '';
+    my $in_pre = 0;  # Keep track of when we're inside &lt;pre&gt; or &lt;code&gt; tags
+
+    my $prev_token_last_char = "";  # This is a cheat, used to get some context
+                                    # for one-character tokens that consist of 
+                                    # just a quote char. What we do is remember
+                                    # the last character of the previous text
+                                    # token, to use as context to curl single-
+                                    # character quote tokens correctly.
+
+    foreach my $cur_token (@$tokens) {
+        if ($cur_token-&gt;[0] eq "tag") {
+            # Don't mess with quotes inside tags
+            $result .= $cur_token-&gt;[1];
+            if ($cur_token-&gt;[1] =~ m/$tags_to_skip/) {
+                $in_pre = defined $1 &amp;&amp; $1 eq '/' ? 0 : 1;
+            }
+        } else {
+            my $t = $cur_token-&gt;[1];
+            my $last_char = substr($t, -1); # Remember last char of this token before processing.
+            if (! $in_pre) {
+                $t = ProcessEscapes($t);
+                if ($do_backticks) {
+                    $t = EducateBackticks($t);
+                }
+
+                if ($t eq q/'/) {
+                    # Special case: single-character ' token
+                    if ($prev_token_last_char =~ m/\S/) {
+                        $t = "&amp;#8217;";
+                    }
+                    else {
+                        $t = "&amp;#8216;";
+                    }
+                }
+                elsif ($t eq q/"/) {
+                    # Special case: single-character " token
+                    if ($prev_token_last_char =~ m/\S/) {
+                        $t = "&amp;#8221;";
+                    }
+                    else {
+                        $t = "&amp;#8220;";
+                    }
+                }
+                else {
+                    # Normal case:                  
+                    $t = EducateQuotes($t);
+                }
+
+            }
+            $prev_token_last_char = $last_char;
+            $result .= $t;
+        }
+    }
+
+    if ($add_extra_space) {
+        $result =~ s/ \z//;  # Trim trailing space if we added one earlier.
+    }
+    return $result;
+}
+
+
+sub SmartDashes {
+    # Paramaters:
+    my $text = shift;   # text to be parsed
+    my $attr = shift;   # value of the smart_dashes="" attribute
+    my $ctx  = shift;   # MT context object (unused)
+
+    # reference to the subroutine to use for dash education, default to EducateDashes:
+    my $dash_sub_ref = \&amp;EducateDashes;
+
+    if ($attr == 0) {
+        # do nothing;
+        return $text;
+    }
+    elsif ($attr == 2) {
+        # use old smart dash shortcuts, "--" for en, "---" for em
+        $dash_sub_ref = \&amp;EducateDashesOldSchool; 
+    }
+    elsif ($attr == 3) {
+        # inverse of 2, "--" for em, "---" for en
+        $dash_sub_ref = \&amp;EducateDashesOldSchoolInverted; 
+    }
+
+    my $tokens;
+    $tokens ||= _tokenize($text);
+
+    my $result = '';
+    my $in_pre = 0;  # Keep track of when we're inside &lt;pre&gt; or &lt;code&gt; tags
+    foreach my $cur_token (@$tokens) {
+        if ($cur_token-&gt;[0] eq "tag") {
+            # Don't mess with quotes inside tags
+            $result .= $cur_token-&gt;[1];
+            if ($cur_token-&gt;[1] =~ m/$tags_to_skip/) {
+                $in_pre = defined $1 &amp;&amp; $1 eq '/' ? 0 : 1;
+            }
+        } else {
+            my $t = $cur_token-&gt;[1];
+            if (! $in_pre) {
+                $t = ProcessEscapes($t);
+                $t = $dash_sub_ref-&gt;($t);
+            }
+            $result .= $t;
+        }
+    }
+    return $result;
+}
+
+
+sub SmartEllipses {
+    # Paramaters:
+    my $text = shift;   # text to be parsed
+    my $attr = shift;   # value of the smart_ellipses="" attribute
+    my $ctx  = shift;   # MT context object (unused)
+
+    if ($attr == 0) {
+        # do nothing;
+        return $text;
+    }
+
+    my $tokens;
+    $tokens ||= _tokenize($text);
+
+    my $result = '';
+    my $in_pre = 0;  # Keep track of when we're inside &lt;pre&gt; or &lt;code&gt; tags
+    foreach my $cur_token (@$tokens) {
+        if ($cur_token-&gt;[0] eq "tag") {
+            # Don't mess with quotes inside tags
+            $result .= $cur_token-&gt;[1];
+            if ($cur_token-&gt;[1] =~ m/$tags_to_skip/) {
+                $in_pre = defined $1 &amp;&amp; $1 eq '/' ? 0 : 1;
+            }
+        } else {
+            my $t = $cur_token-&gt;[1];
+            if (! $in_pre) {
+                $t = ProcessEscapes($t);
+                $t = EducateEllipses($t);
+            }
+            $result .= $t;
+        }
+    }
+    return $result;
+}
+
+
+sub EducateQuotes {
+#
+#   Parameter:  String.
+#
+#   Returns:    The string, with "educated" curly quote HTML entities.
+#
+#   Example input:  "Isn't this fun?"
+#   Example output: &amp;#8220;Isn&amp;#8217;t this fun?&amp;#8221;
+#
+
+    local $_ = shift;
+
+    # Tell perl not to gripe when we use $1 in substitutions,
+    # even when it's undefined. Use $^W instead of "no warnings"
+    # for compatibility with Perl 5.005:
+    local $^W = 0;
+
+
+    # Make our own "punctuation" character class, because the POSIX-style
+    # [:PUNCT:] is only available in Perl 5.6 or later:
+    my $punct_class = qr/[!"#\$\%'()*+,-.\/:;&lt;=&gt;?\@\[\\\]\^_`{|}~]/;
+
+    # Special case if the very first character is a quote
+    # followed by punctuation at a non-word-break. Close the quotes by brute force:
+    s/^'(?=$punct_class\B)/&amp;#8217;/;
+    s/^"(?=$punct_class\B)/&amp;#8221;/;
+
+
+    # Special case for double sets of quotes, e.g.:
+    #   &lt;p&gt;He said, "'Quoted' words in a larger quote."&lt;/p&gt;
+    s/"'(?=\w)/&amp;#8220;&amp;#8216;/g;
+    s/'"(?=\w)/&amp;#8216;&amp;#8220;/g;
+
+    # Special case for decade abbreviations (the '80s):
+    s/'(?=\d{2}s)/&amp;#8217;/g;
+
+    my $close_class = qr![^\ \t\r\n\[\{\(\-]!;
+    my $dec_dashes = qr/&amp;#8211;|&amp;#8212;/;
+
+    # Get most opening single quotes:
+    s {
+        (
+            \s          |   # a whitespace char, or
+            &amp;nbsp;      |   # a non-breaking space entity, or
+            --          |   # dashes, or
+            &amp;[mn]dash;  |   # named dash entities
+            $dec_dashes |   # or decimal entities
+            &amp;\#x201[34];    # or hex
+        )
+        '                   # the quote
+        (?=\w)              # followed by a word character
+    } {$1&amp;#8216;}xg;
+    # Single closing quotes:
+    s {
+        ($close_class)?
+        '
+        (?(1)|          # If $1 captured, then do nothing;
+          (?=\s | s\b)  # otherwise, positive lookahead for a whitespace
+        )               # char or an 's' at a word ending position. This
+                        # is a special case to handle something like:
+                        # "&lt;i&gt;Custer&lt;/i&gt;'s Last Stand."
+    } {$1&amp;#8217;}xgi;
+
+    # Any remaining single quotes should be opening ones:
+    s/'/&amp;#8216;/g;
+
+
+    # Get most opening double quotes:
+    s {
+        (
+            \s          |   # a whitespace char, or
+            &amp;nbsp;      |   # a non-breaking space entity, or
+            --          |   # dashes, or
+            &amp;[mn]dash;  |   # named dash entities
+            $dec_dashes |   # or decimal entities
+            &amp;\#x201[34];    # or hex
+        )
+        "                   # the quote
+        (?=\w)              # followed by a word character
+    } {$1&amp;#8220;}xg;
+
+    # Double closing quotes:
+    s {
+        ($close_class)?
+        "
+        (?(1)|(?=\s))   # If $1 captured, then do nothing;
+                           # if not, then make sure the next char is whitespace.
+    } {$1&amp;#8221;}xg;
+
+    # Any remaining quotes should be opening ones.
+    s/"/&amp;#8220;/g;
+
+    return $_;
+}
+
+
+sub EducateBackticks {
+#
+#   Parameter:  String.
+#   Returns:    The string, with ``backticks'' -style double quotes
+#               translated into HTML curly quote entities.
+#
+#   Example input:  ``Isn't this fun?''
+#   Example output: &amp;#8220;Isn't this fun?&amp;#8221;
+#
+
+    local $_ = shift;
+    s/``/&amp;#8220;/g;
+    s/''/&amp;#8221;/g;
+    return $_;
+}
+
+
+sub EducateSingleBackticks {
+#
+#   Parameter:  String.
+#   Returns:    The string, with `backticks' -style single quotes
+#               translated into HTML curly quote entities.
+#
+#   Example input:  `Isn't this fun?'
+#   Example output: &amp;#8216;Isn&amp;#8217;t this fun?&amp;#8217;
+#
+
+    local $_ = shift;
+    s/`/&amp;#8216;/g;
+    s/'/&amp;#8217;/g;
+    return $_;
+}
+
+
+sub EducateDashes {
+#
+#   Parameter:  String.
+#
+#   Returns:    The string, with each instance of "--" translated to
+#               an em-dash HTML entity.
+#
+
+    local $_ = shift;
+    s/--/&amp;#8212;/g;
+    return $_;
+}
+
+
+sub EducateDashesOldSchool {
+#
+#   Parameter:  String.
+#
+#   Returns:    The string, with each instance of "--" translated to
+#               an en-dash HTML entity, and each "---" translated to
+#               an em-dash HTML entity.
+#
+
+    local $_ = shift;
+    s/---/&amp;#8212;/g;    # em
+    s/--/&amp;#8211;/g;     # en
+    return $_;
+}
+
+
+sub EducateDashesOldSchoolInverted {
+#
+#   Parameter:  String.
+#
+#   Returns:    The string, with each instance of "--" translated to
+#               an em-dash HTML entity, and each "---" translated to
+#               an en-dash HTML entity. Two reasons why: First, unlike the
+#               en- and em-dash syntax supported by
+#               EducateDashesOldSchool(), it's compatible with existing
+#               entries written before SmartyPants 1.1, back when "--" was
+#               only used for em-dashes.  Second, em-dashes are more
+#               common than en-dashes, and so it sort of makes sense that
+#               the shortcut should be shorter to type. (Thanks to Aaron
+#               Swartz for the idea.)
+#
+
+    local $_ = shift;
+    s/---/&amp;#8211;/g;    # en
+    s/--/&amp;#8212;/g;     # em
+    return $_;
+}
+
+
+sub EducateEllipses {
+#
+#   Parameter:  String.
+#   Returns:    The string, with each instance of "..." translated to
+#               an ellipsis HTML entity. Also converts the case where
+#               there are spaces between the dots.
+#
+#   Example input:  Huh...?
+#   Example output: Huh&amp;#8230;?
+#
+
+    local $_ = shift;
+    s/\.\.\./&amp;#8230;/g;
+    s/\. \. \./&amp;#8230;/g;
+    return $_;
+}
+
+
+sub StupefyEntities {
+#
+#   Parameter:  String.
+#   Returns:    The string, with each SmartyPants HTML entity translated to
+#               its ASCII counterpart.
+#
+#   Example input:  &amp;#8220;Hello &amp;#8212; world.&amp;#8221;
+#   Example output: "Hello -- world."
+#
+
+    local $_ = shift;
+
+    s/&amp;#8211;/-/g;      # en-dash
+    s/&amp;#8212;/--/g;     # em-dash
+
+    s/&amp;#8216;/'/g;      # open single quote
+    s/&amp;#8217;/'/g;      # close single quote
+
+    s/&amp;#8220;/"/g;      # open double quote
+    s/&amp;#8221;/"/g;      # close double quote
+
+    s/&amp;#8230;/.../g;    # ellipsis
+
+    return $_;
+}
+
+
+sub SmartyPantsVersion {
+    return $VERSION;
+}
+
+
+sub ProcessEscapes {
+#
+#   Parameter:  String.
+#   Returns:    The string, with after processing the following backslash
+#               escape sequences. This is useful if you want to force a "dumb"
+#               quote or other character to appear.
+#
+#               Escape  Value
+#               ------  -----
+#               \\      &amp;#92;
+#               \"      &amp;#34;
+#               \'      &amp;#39;
+#               \.      &amp;#46;
+#               \-      &amp;#45;
+#               \`      &amp;#96;
+#
+    local $_ = shift;
+
+    s! \\\\ !&amp;#92;!gx;
+    s! \\"  !&amp;#34;!gx;
+    s! \\'  !&amp;#39;!gx;
+    s! \\\. !&amp;#46;!gx;
+    s! \\-  !&amp;#45;!gx;
+    s! \\`  !&amp;#96;!gx;
+
+    return $_;
+}
+
+
+sub _tokenize {
+#
+#   Parameter:  String containing HTML markup.
+#   Returns:    Reference to an array of the tokens comprising the input
+#               string. Each token is either a tag (possibly with nested,
+#               tags contained therein, such as &lt;a href="&lt;MTFoo&gt;"&gt;, or a
+#               run of text between tags. Each element of the array is a
+#               two-element array; the first is either 'tag' or 'text';
+#               the second is the actual value.
+#
+#
+#   Based on the _tokenize() subroutine from Brad Choate's MTRegex plugin.
+#       &lt;http://www.bradchoate.com/past/mtregex.php&gt;
+#
+
+    my $str = shift;
+    my $pos = 0;
+    my $len = length $str;
+    my @tokens;
+
+    my $depth = 6;
+    my $nested_tags = join('|', ('(?:&lt;(?:[^&lt;&gt;]') x $depth) . (')*&gt;)' x  $depth);
+    my $match = qr/(?s: &lt;! ( -- .*? -- \s* )+ &gt; ) |  # comment
+                   (?s: &lt;\? .*? \?&gt; ) |              # processing instruction
+                   $nested_tags/x;                   # nested tags
+
+    while ($str =~ m/($match)/g) {
+        my $whole_tag = $1;
+        my $sec_start = pos $str;
+        my $tag_start = $sec_start - length $whole_tag;
+        if ($pos &lt; $tag_start) {
+            push @tokens, ['text', substr($str, $pos, $tag_start - $pos)];
+        }
+        push @tokens, ['tag', $whole_tag];
+        $pos = pos $str;
+    }
+    push @tokens, ['text', substr($str, $pos, $len - $pos)] if $pos &lt; $len;
+    \@tokens;
+}
+
+
+1;
+__END__
+
+
+=pod
+
+=head1 NAME
+
+B&lt;SmartyPants&gt;
+
+
+=head1 SYNOPSIS
+
+B&lt;SmartyPants.pl&gt; [ B&lt;-1&gt; ] [ B&lt;-2&gt; ] [ B&lt;-3&gt; ] [ B&lt;--version&gt; ] [ B&lt;--shortversion&gt; ]
+    [ I&lt;file&gt; ... ]
+
+
+=head1 DESCRIPTION
+
+SmartyPants is a web publishing utility that translates plain ASCII
+punctuation characters into "smart" typographic punctuation HTML
+entities. SmartyPants can perform the following transformations:
+
+=over 4
+
+=item *
+
+Straight quotes ( " and ' ) into "curly" quote HTML entities
+
+=item *
+
+Backticks-style quotes (``like this'') into "curly" quote HTML entities
+
+=item *
+
+Dashes (C&lt;--&gt; and C&lt;---&gt;) into en- and em-dash entities
+
+=item *
+
+Three consecutive dots (C&lt;...&gt;) into an ellipsis entity
+
+=back
+
+SmartyPants is a combination plug-in -- the same file works with Movable
+Type, Blosxom, BBEdit, and as a standalone Perl script. Version
+requirements and installation instructions for each of these tools can
+be found in the readme file that accompanies this script.
+
+SmartyPants does not modify characters within C&lt;&lt; &lt;pre&gt; &gt;&gt;, C&lt;&lt; &lt;code&gt; &gt;&gt;,
+C&lt;&lt; &lt;kbd&gt; &gt;&gt;, C&lt;&lt; &lt;script&gt; &gt;&gt;, or C&lt;&lt; &lt;math&gt; &gt;&gt; tag blocks.
+Typically, these tags are used to display text where smart quotes and
+other "smart punctuation" would not be appropriate, such as source code
+or example markup.
+
+
+=head2 Backslash Escapes
+
+If you need to use literal straight quotes (or plain hyphens and
+periods), SmartyPants accepts the following backslash escape sequences
+to force non-smart punctuation. It does so by transforming the escape
+sequence into a decimal-encoded HTML entity:
+
+              Escape  Value  Character
+              ------  -----  ---------
+                \\    &amp;#92;    \
+                \"    &amp;#34;    "
+                \'    &amp;#39;    '
+                \.    &amp;#46;    .
+                \-    &amp;#45;    -
+                \`    &amp;#96;    `
+
+This is useful, for example, when you want to use straight quotes as
+foot and inch marks: 6'2" tall; a 17" iMac.
+
+
+=head1 OPTIONS
+
+Use "--" to end switch parsing. For example, to open a file named "-z", use:
+
+	SmartyPants.pl -- -z
+
+=over 4
+
+
+=item B&lt;-1&gt;
+
+Performs default SmartyPants transformations: quotes (including
+backticks-style), em-dashes, and ellipses. '--' (dash dash) is used to
+signify an em-dash; there is no support for en-dashes.
+
+
+=item B&lt;-2&gt;
+
+Same as B&lt;-1&gt;, except that it uses the old-school typewriter shorthand
+for dashes: '--' (dash dash) for en-dashes, '---' (dash dash dash) for
+em-dashes.
+
+
+=item B&lt;-3&gt;
+
+Same as B&lt;-2&gt;, but inverts the shorthand for dashes: '--'
+(dash dash) for em-dashes, and '---' (dash dash dash) for en-dashes.
+
+
+=item B&lt;-v&gt;, B&lt;--version&gt;
+
+Display SmartyPants's version number and copyright information.
+
+
+=item B&lt;-s&gt;, B&lt;--shortversion&gt;
+
+Display the short-form version number.
+
+
+=back
+
+
+
+=head1 BUGS
+
+To file bug reports or feature requests (other than topics listed in the
+Caveats section above) please send email to:
+
+    smartypants@daringfireball.net
+
+If the bug involves quotes being curled the wrong way, please send example
+text to illustrate.
+
+
+=head2 Algorithmic Shortcomings
+
+One situation in which quotes will get curled the wrong way is when
+apostrophes are used at the start of leading contractions. For example:
+
+    'Twas the night before Christmas.
+
+In the case above, SmartyPants will turn the apostrophe into an opening
+single-quote, when in fact it should be a closing one. I don't think
+this problem can be solved in the general case -- every word processor
+I've tried gets this wrong as well. In such cases, it's best to use the
+proper HTML entity for closing single-quotes (C&lt;&amp;#8217;&gt;) by hand.
+
+
+
+=head1 VERSION HISTORY
+
+    1.5.1: Fri 12 Mar 2004
+    
+    +   Fixed a goof where if you had SmartyPants 1.5.0 installed,
+    	but didn't have Markdown installed, when SmartyPants checked
+    	for Markdown's presence, it created a blank entry in MT's
+    	global hash of installed text filters. This showed up in MT's
+    	Text Formatting pop-up menu as a blank entry.
+
+
+    1.5: Tue 9 Mar 2004
+    
+    +   Integration with Markdown. If Markdown is already loaded
+        when SmartyPants loads, SmartyPants will add a new global
+        text filter, "Markdown With Smartypants".
+    
+    +   Preliminary command-line options parsing. -1 -2 -3
+        -v -V
+    
+    +   dot-space-dot-space-dot now counts as an ellipsis.
+        This is the style used by Project Gutenberg:
+        http://www.gutenberg.net/faq/index.shtml#V.110
+        (Thanks to Fred Condo for the patch.)
+    
+    +	Added `&lt;math&gt;` to the list of tags to skip (pre, code, etc.).
+
+
+    1.4.1: Sat 8 Nov 2003
+
+    +   The bug fix from 1.4 for dashes followed by quotes with no
+        intervening spaces now actually works.
+
+    +   "&amp;nbsp;" now counts as whitespace where necessary. (Thanks to
+        Greg Knauss for the patch.)
+
+
+    1.4: Mon 30 Jun 2003
+
+    +   Improved the HTML tokenizer so that it will parse nested &lt;&gt; pairs
+        up to five levels deep. Previously, it only parsed up to two
+        levels. What we *should* do is allow for any arbitrary level of
+        nesting, but to do so, we would need to use Perl's ?? construct
+        (see Fried's "Mastering Regular Expressions", 2nd Ed., pp.
+        328-331), and sadly, this would only work in Perl 5.6 or later.
+        SmartyPants still supports Perl 5.00503. I suppose we could test
+        for the version and build a regex accordingly, but I don't think
+        I want to maintain two separate patterns.
+
+    +   Thanks to Stepan Riha, the tokenizer now handles HTML comments:
+            &lt;!-- comment --&gt;
+
+        and PHP-style processor instructions:
+            &lt;?php code ?&gt;
+
+    +   The quote educator now handles situations where dashes are used
+        without whitespace, e.g.:
+
+            "dashes"--without spaces--"are tricky"  
+
+    +   Special case for decade abbreviations like this: the '80s.
+        This only works for the sequence appostrophe-digit-digit-s.
+
+
+    1.3: Tue 13 May 2003
+
+    +   Plugged the biggest hole in SmartyPants's smart quotes algorithm.
+        Previous versions were hopelessly confused by single-character
+        quote tokens, such as:
+
+            &lt;p&gt;"&lt;i&gt;Tricky!&lt;/i&gt;"&lt;/p&gt;
+
+        The problem was that the EducateQuotes() function works on each
+        token separately, with no means of getting surrounding context
+        from the previous or next tokens. The solution is to curl these
+        single-character quote tokens as a special case, *before* calling
+        EducateQuotes().
+
+    +   New single-quotes backtick mode for smarty_pants attribute.
+        The only way to turn it on is to include "B" in the configuration
+        string, e.g. to translate backtick quotes, dashes, and ellipses:
+
+            smarty_pants="Bde"
+
+    +   Fixed a bug where an opening quote would get curled the wrong way
+        if the quote started with three dots, e.g.:
+
+            &lt;p&gt;"...meanwhile"&lt;/p&gt;
+
+    +   Fixed a bug where opening quotes would get curled the wrong way
+        if there were double sets of quotes within each other, e.g.:
+
+            &lt;p&gt;"'Some' people."&lt;/p&gt;
+
+    +   Due to popular demand, four consecutive dots (....) will now be
+        turned into an ellipsis followed by a period. Previous versions
+        would turn this into a period followed by an ellipsis. If you
+        really want a period-then-ellipsis sequence, escape the first
+        period with a backslash: \....
+
+    +   Removed "&amp;" from our home-grown punctuation class, since it
+        denotes an entity, not a literal ampersand punctuation
+        character. This fixes a bug where SmartyPants would mis-curl
+        the opening quote in something like this:
+
+            "&amp;#8230;whatever"
+
+    +   SmartyPants has always had a special case where it looks for
+        "'s" in situations like this:
+
+            &lt;i&gt;Custer&lt;/i&gt;'s Last Stand
+
+        This special case is now case-insensitive.
+
+
+    1.2.2: Thu Mar 13, 2003
+
+    +   1.2.1 contained a boneheaded addition which prevented SmartyPants
+        from compiling under Perl 5.005. This has been remedied, and is
+        the only change from 1.2.1.
+
+
+    1.2.1: Mon Mar 10, 2003
+
+    +   New "stupefy mode" for smarty_pants attribute. If you set
+
+            smarty_pants="-1"
+
+        SmartyPants will perform reverse transformations, turning HTML
+        entities into plain ASCII equivalents. E.g. "&amp;#8220;" is turned
+        into a simple double-quote ("), "&amp;#8212;" is turned into two
+        dashes, etc. This is useful if you are using SmartyPants from Brad
+        Choate's MT-Textile text filter, but wish to suppress smart
+        punctuation in specific MT templates, such as RSS feeds. Text
+        filters do their work before templates are processed; but you can
+        use smarty_pants="-1" to reverse the transformations in specific
+        templates.
+
+    +   Replaced the POSIX-style regex character class [:punct:] with an
+        ugly hard-coded normal character class of all punctuation; POSIX
+        classes require Perl 5.6 or later, but SmartyPants still supports
+        back to 5.005.
+
+    +   Several small changes to allow SmartyPants to work when Blosxom
+        is running in static mode.
+
+
+    1.2: Thu Feb 27, 2003
+
+    +   SmartyPants is now a combination plug-in, supporting both
+        Movable Type (2.5 or later) and Blosxom (2.0 or later).
+        It also works as a BBEdit text filter and standalone
+        command-line Perl program. Thanks to Rael Dornfest for the
+        initial Blosxom port (and for the excellent Blosxom plug-in
+        API).
+
+    +   SmartyPants now accepts the following backslash escapes,
+        to force non-smart punctuation. It does so by transforming
+        the escape sequence into a decimal-encoded HTML entity: 
+
+              Escape  Value  Character
+              ------  -----  ---------
+                \\    &amp;#92;    \
+                \"    &amp;#34;    "
+                \'    &amp;#39;    '
+                \.    &amp;#46;    .
+                \-    &amp;#45;    -
+                \`    &amp;#96;    `
+
+        Note that this could produce different results than previous
+        versions of SmartyPants, if for some reason you have an article
+        containing one or more of these sequences. (Thanks to Charles
+        Wiltgen for the suggestion.)
+
+    +   Added a new option to support inverted en- and em-dash notation:
+        "--" for em-dashes, "---" for en-dashes. This is compatible with
+        SmartyPants' original "--" syntax for em-dashes, but also allows
+        you to specify en-dashes. It can be invoked by using
+        smart_dashes="3", smarty_pants="3", or smarty_pants="i". 
+        (Suggested by Aaron Swartz.)
+
+    +   Added a new option to automatically convert &amp;quot; entities into
+        regular double-quotes before sending text to EducateQuotes() for
+        processing. This is mainly for the benefit of people who write
+        posts using Dreamweaver, which substitutes this entity for any
+        literal quote char. The one and only way to invoke this option
+        is to use the letter shortcuts for the smarty_pants attribute;
+        the shortcut for this option is "w" (for Dream_w_eaver).
+        (Suggested by Jonathon Delacour.)
+
+    +   Added &lt;script&gt; to the list of tags in which SmartyPants doesn't
+        touch the contents.
+
+    +   Fixed a very subtle bug that would occur if a quote was the very
+        last character in a body of text, preceded immediately by a tag.
+        Lacking any context, previous versions of SmartyPants would turn
+        this into an opening quote mark. It's now correctly turned into
+        a closing one.
+
+    +   Opening quotes were being curled the wrong way when the
+        subsequent character was punctuation. E.g.: "a '.foo' file".
+        Fixed.
+
+    +   New MT global template tag: &lt;$MTSmartyPantsVersion$&gt;
+        Prints the version number of SmartyPants, e.g. "1.2".
+
+
+    1.1: Wed Feb 5, 2003
+
+    +   The smart_dashes template attribute now offers an option to
+        use "--" for *en* dashes, and "---" for *em* dashes.
+
+    +   The default smart_dashes behavior now simply translates "--"
+        (dash dash) into an em-dash. Previously, it would look for
+        " -- " (space dash dash space), which was dumb, since many
+        people do not use spaces around their em dashes.
+
+    +   Using the smarty_pants attribute with a value of "2" will
+        do the same thing as smarty_pants="1", with one difference:
+        it will use the new shortcuts for en- and em-dashes.
+
+    +   Closing quotes (single and double) were incorrectly curled in
+        situations like this:
+            "&lt;a&gt;foo&lt;/a&gt;",
+        where the comma could be just about any punctuation character.
+        Fixed.
+
+    +   Added &lt;kbd&gt; to the list of tags in which text shouldn't be
+        educated.
+
+
+    1.0: Wed Nov 13, 2002
+
+        Initial release.
+
+
+=head1 AUTHOR
+
+    John Gruber
+    http://daringfireball.net
+
+
+=head1 ADDITIONAL CREDITS
+
+Portions of this plug-in are based on Brad Choate's nifty MTRegex plug-in.
+Brad Choate also contributed a few bits of source code to this plug-in.
+Brad Choate is a fine hacker indeed. (http://bradchoate.com/)
+
+Jeremy Hedley (http://antipixel.com/) and Charles Wiltgen
+(http://playbacktime.com/) deserve mention for exemplary beta testing.
+
+Rael Dornfest (http://raelity.org/) ported SmartyPants to Blosxom.
+
+
+=head1 COPYRIGHT AND LICENSE
+
+    Copyright (c) 2003 John Gruber
+    (http://daringfireball.net/)
+    All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+*   Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+*   Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+*   Neither the name "SmartyPants" nor the names of its contributors may
+    be used to endorse or promote products derived from this software
+    without specific prior written permission.
+
+This software is provided by the copyright holders and contributors "as is"
+and any express or implied warranties, including, but not limited to, the 
+implied warranties of merchantability and fitness for a particular purpose 
+are disclaimed. In no event shall the copyright owner or contributors be 
+liable for any direct, indirect, incidental, special, exemplary, or 
+consequential damages (including, but not limited to, procurement of 
+substitute goods or services; loss of use, data, or profits; or business 
+interruption) however caused and on any theory of liability, whether in 
+contract, strict liability, or tort (including negligence or otherwise) 
+arising in any way out of the use of this software, even if advised of the
+possibility of such damage.
+
+=cut
+</string>
+					<key>CheckedForUserDefaultShell</key>
+					<true/>
+					<key>inputMethod</key>
+					<integer>0</integer>
+					<key>shell</key>
+					<string>/usr/bin/perl</string>
+					<key>source</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.RunShellScript</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.3</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunShellScriptAction</string>
+				<key>InputUUID</key>
+				<string>BFB07055-C632-440A-839D-1B9EAA2F54A4</string>
+				<key>Keywords</key>
+				<array>
+					<string>Shell</string>
+					<string>Script</string>
+					<string>Command</string>
+					<string>Run</string>
+					<string>Unix</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>A7692D7C-FCA1-4FD9-A3A8-2696CFCCB1AF</string>
+				<key>UUID</key>
+				<string>330EE92C-2668-4E42-A154-9241439A16F2</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>inputMethod</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>CheckedForUserDefaultShell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>COMMAND_STRING</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>3</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>default value</key>
+						<string>/bin/sh</string>
+						<key>name</key>
+						<string>shell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>4</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>449.500000:386.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.3</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<dict/>
+					<key>CheckedForUserDefaultShell</key>
+					<dict/>
+					<key>inputMethod</key>
+					<dict/>
+					<key>shell</key>
+					<dict/>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run Shell Script.action</string>
+				<key>ActionName</key>
+				<string>Run Shell Script</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<string>export __CF_USER_TEXT_ENCODING=0x1F5:0x8000100:0x8000100
+cat | pbcopy</string>
+					<key>CheckedForUserDefaultShell</key>
+					<true/>
+					<key>inputMethod</key>
+					<integer>0</integer>
+					<key>shell</key>
+					<string>/bin/bash</string>
+					<key>source</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.RunShellScript</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.3</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunShellScriptAction</string>
+				<key>InputUUID</key>
+				<string>5168214F-307E-4C7F-92DF-3EB3402D308D</string>
+				<key>Keywords</key>
+				<array>
+					<string>Shell</string>
+					<string>Script</string>
+					<string>Command</string>
+					<string>Run</string>
+					<string>Unix</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>2E3FD4ED-ED39-4424-A31F-9E6D43851C70</string>
+				<key>UUID</key>
+				<string>444F030A-5CC7-4711-9053-F6DD6E8DD585</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>inputMethod</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>CheckedForUserDefaultShell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>COMMAND_STRING</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>3</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>default value</key>
+						<string>/bin/sh</string>
+						<key>name</key>
+						<string>shell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>4</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>449.500000:203.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict>
+		<key>4B2ECC78-A422-4CAB-B286-403762A4431A</key>
+		<dict>
+			<key>from</key>
+			<string>330EE92C-2668-4E42-A154-9241439A16F2 - 330EE92C-2668-4E42-A154-9241439A16F2</string>
+			<key>to</key>
+			<string>444F030A-5CC7-4711-9053-F6DD6E8DD585 - 444F030A-5CC7-4711-9053-F6DD6E8DD585</string>
+		</dict>
+		<key>5D406A06-3C8A-402F-BFC2-1A71E58342F6</key>
+		<dict>
+			<key>from</key>
+			<string>F0508458-6BF0-4160-A014-B9B79A59CF8E - F0508458-6BF0-4160-A014-B9B79A59CF8E</string>
+			<key>to</key>
+			<string>330EE92C-2668-4E42-A154-9241439A16F2 - 330EE92C-2668-4E42-A154-9241439A16F2</string>
+		</dict>
+		<key>EF62AB02-F0EF-4B83-A767-F0E7F97A1BF7</key>
+		<dict>
+			<key>from</key>
+			<string>9EE2E3AE-8CE6-48AF-AB64-E6BB0B36C15D - 9EE2E3AE-8CE6-48AF-AB64-E6BB0B36C15D</string>
+			<key>to</key>
+			<string>F0508458-6BF0-4160-A014-B9B79A59CF8E - F0508458-6BF0-4160-A014-B9B79A59CF8E</string>
+		</dict>
+	</dict>
+	<key>state</key>
+	<dict>
+		<key>AMLogTabViewSelectedIndex</key>
+		<integer>0</integer>
+		<key>libraryState</key>
+		<dict>
+			<key>actionsMajorSplitViewState</key>
+			<dict>
+				<key>expandedPosition</key>
+				<real>0.0</real>
+				<key>subviewState</key>
+				<array>
+					<string>0.000000, 0.000000, 381.000000, 515.000000, NO</string>
+					<string>0.000000, 516.000000, 381.000000, 239.000000, NO</string>
+				</array>
+			</dict>
+			<key>actionsMinorSplitViewState</key>
+			<dict>
+				<key>expandedPosition</key>
+				<real>0.0</real>
+				<key>subviewState</key>
+				<array>
+					<string>0.000000, 0.000000, 163.000000, 515.000000, NO</string>
+					<string>164.000000, 0.000000, 217.000000, 515.000000, NO</string>
+				</array>
+			</dict>
+			<key>variablesMajorSplitViewState</key>
+			<dict>
+				<key>expandedPosition</key>
+				<real>0.0</real>
+				<key>subviewState</key>
+				<array>
+					<string>0.000000, 0.000000, 350.000000, 555.000000, NO</string>
+					<string>0.000000, 556.000000, 350.000000, 148.000000, NO</string>
+				</array>
+			</dict>
+			<key>variablesMinorSplitViewState</key>
+			<dict>
+				<key>expandedPosition</key>
+				<real>0.0</real>
+				<key>subviewState</key>
+				<array>
+					<string>0.000000, 0.000000, 163.000000, 555.000000, NO</string>
+					<string>164.000000, 0.000000, 186.000000, 555.000000, NO</string>
+				</array>
+			</dict>
+		</dict>
+		<key>majorSplitViewState</key>
+		<dict>
+			<key>expandedPosition</key>
+			<real>0.0</real>
+			<key>subviewState</key>
+			<array>
+				<string>0.000000, 0.000000, 381.000000, 800.000000, NO</string>
+				<string>382.000000, 0.000000, 619.000000, 800.000000, NO</string>
+			</array>
+		</dict>
+		<key>minorSplitViewState</key>
+		<dict>
+			<key>expandedPosition</key>
+			<real>0.0</real>
+			<key>subviewState</key>
+			<array>
+				<string>0.000000, 0.000000, 619.000000, 609.000000, NO</string>
+				<string>0.000000, 619.000000, 619.000000, 162.000000, NO</string>
+			</array>
+		</dict>
+		<key>windowFrame</key>
+		<string>{{318, 158}, {1000, 877}}</string>
+		<key>workflowViewScrollPosition</key>
+		<string>{{0, 1090}, {604, 609}}</string>
+	</dict>
+	<key>variables</key>
+	<array>
+		<dict>
+			<key>UUID</key>
+			<string>3731FBE1-117E-4E7B-8F9A-9D55E70310AC</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Storage</string>
+			<key>name</key>
+			<string>origInput</string>
+		</dict>
+	</array>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>serviceInputTypeIdentifier</key>
+		<string>com.apple.Automator.text</string>
+		<key>serviceOutputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceProcessesInput</key>
+		<integer>0</integer>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.servicesMenu</string>
+	</dict>
+</dict>
+</plist>

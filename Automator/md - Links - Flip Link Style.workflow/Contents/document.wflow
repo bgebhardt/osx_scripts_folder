@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>381</string>
+	<key>AMApplicationVersion</key>
+	<string>2.4</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.3</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<dict/>
+					<key>CheckedForUserDefaultShell</key>
+					<dict/>
+					<key>inputMethod</key>
+					<dict/>
+					<key>shell</key>
+					<dict/>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run Shell Script.action</string>
+				<key>ActionName</key>
+				<string>Run Shell Script</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<string># encoding=utf8
+"""
+Seth Brown
+02-24-12
+"""
+from sys import stdin, stdout
+import argparse
+import re
+from collections import OrderedDict
+
+class ForMd(object):
+    """Format mardown text"""
+    def __init__(self, text):
+        super(ForMd, self).__init__()
+        self.text = text
+        self.match_links = re.compile(r'(\[.*?\])\s?(\[.*?\]|\(.*?\))',
+                re.DOTALL | re.MULTILINE)
+        self.match_refs = re.compile(r'(?&lt;=\n)\[.*?\]:\s?.*')
+        self.data = []
+
+    def _links(self, ):
+        """find Markdown links"""
+        links = re.findall(self.match_links, self.text)
+        for link in links:
+            # remove newline breaks from urls spanning multi-lines
+            parsed_link = [s.replace('\n','') for s in link]
+            yield parsed_link
+
+    def _refs(self):
+        """find Markdown references"""
+        refs = re.findall(self.match_refs, self.text)
+        refs.sort()
+        refs = OrderedDict(i.split(":", 1) for i in refs)
+        return refs
+
+    def _format(self):
+        """process text"""
+        links = (i for i in self._links())
+        refs = self._refs()
+        for n, link in enumerate(links):
+            text, ref = link
+            ref_num = ''.join(("[",str(n+1),"]: "))
+            if ref in refs.keys():
+                url = refs.get(ref).strip()
+                formd_ref = ''.join((ref_num, url))
+                formd_text = ''.join((text, ref_num))
+                self.data.append([formd_text, formd_ref])
+            elif text in refs.keys():
+                url = refs.get(text).strip()
+                formd_ref = ''.join((ref_num, url))
+                formd_text = ''.join((text, ref_num))
+                self.data.append([formd_text, formd_ref])
+            elif ref not in refs.keys():
+                parse_ref = ref.strip("()")
+                formd_ref = ''.join((ref_num, parse_ref))
+                formd_text = ''.join((text,ref_num))
+                self.data.append([formd_text, formd_ref])
+
+    def inline_md(self):
+        """generate inline markdown """
+        self._format()
+        text_link = iter([''.join((_[0].split("][",1)[0], 
+            "](", _[1].split(":",1)[1].strip(), ")")) for _ in self.data])
+        formd_text = self.match_links.sub(lambda _: next(text_link), md)
+        formd_md = self.match_refs.sub('', formd_text).strip()
+        yield formd_md
+
+    def ref_md(self):
+        """generate referenced markdown"""
+        self._format()
+        ref_nums = iter([_[0].rstrip(" :") for _ in self.data])
+        formd_text = self.match_links.sub(lambda _: next(ref_nums), md)
+        formd_refs = self.match_refs.sub('', formd_text).strip()
+        references = (i[1] for i in self.data)
+        formd_md = '\n'.join((formd_refs, '\n', '\n'.join(i for i in references)))
+        yield formd_md
+
+    def flip(self):
+        """convert markdown to the opposite style of the first text link"""
+        first_match = re.search(self.match_links, self.text).group(0)
+        if '(' and ')' in first_match:
+            formd_md = self.ref_md()
+        else:
+            formd_md = self.inline_md()
+        return formd_md
+
+if __name__ == '__main__':
+    description = 'formd: A (for)matting (M)ark(d)own tool.' 
+    p = argparse.ArgumentParser(description=description)
+    p.add_argument('-r', '--ref', 
+            help="convert text to referenced Markdown", action='store_true', default=False)
+    p.add_argument('-i', '--inline', 
+            help="convert text to inline Markdown", action='store_true', default=False)
+    p.add_argument('-f', '--flip', 
+            help="convert to opposite style Markdown", action='store_true', default=True)
+    args = p.parse_args()
+    md = stdin.read()
+    text = ForMd(md)
+    [stdout.write(t) for t in text.flip()]
+</string>
+					<key>CheckedForUserDefaultShell</key>
+					<true/>
+					<key>inputMethod</key>
+					<integer>0</integer>
+					<key>shell</key>
+					<string>/usr/bin/python</string>
+					<key>source</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.RunShellScript</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.3</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunShellScriptAction</string>
+				<key>InputUUID</key>
+				<string>5FA8A695-0668-4BD4-B035-7EF6EF5849DD</string>
+				<key>Keywords</key>
+				<array>
+					<string>Shell</string>
+					<string>Script</string>
+					<string>Command</string>
+					<string>Run</string>
+					<string>Unix</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>92F7071B-E697-4C76-8274-7DF602C08D12</string>
+				<key>UUID</key>
+				<string>51CDA56C-3FC8-48CC-B106-D86360555FE6</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>inputMethod</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>CheckedForUserDefaultShell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>COMMAND_STRING</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>3</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>default value</key>
+						<string>/bin/sh</string>
+						<key>name</key>
+						<string>shell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>4</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>449.500000:382.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict/>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>serviceInputTypeIdentifier</key>
+		<string>com.apple.Automator.text</string>
+		<key>serviceOutputTypeIdentifier</key>
+		<string>com.apple.Automator.text</string>
+		<key>serviceProcessesInput</key>
+		<integer>0</integer>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.servicesMenu</string>
+	</dict>
+</dict>
+</plist>
