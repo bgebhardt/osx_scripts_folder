@@ -32,6 +32,7 @@ tell application "Safari"
 	
 end tell
 
+-- TODO: This is broken and needs to be fixed. 07-03-2017
 -- assumes urls are on the clipboard
 -- example url: "* [Create Your Ultra Premium Mac Bundle]( https://bundlehunt.com/ )
 on extract_urls()
