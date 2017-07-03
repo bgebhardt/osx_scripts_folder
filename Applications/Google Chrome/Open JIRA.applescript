@@ -11,19 +11,18 @@
 -- Configuration
 set jiraBaseURL to "https://mileiq.atlassian.net/browse/"
 
-tell application "Safari"
+tell application "Google Chrome"
 	try
 		-- check for a front window.  if not create one.
-		if documents is {} then
-			set this_doc to make new document at the beginning of documents
+		if windows is {} then
+			set this_doc to make new window
 		end if
 		
 		set numParagraphs to (number of paragraphs of (the clipboard))
 		
 		repeat with n from 1 to numParagraphs
-			my new_tab()
 			set URLtoOpen to jiraBaseURL & (the clipboard) 
-			set the URL of the document 1 to paragraph n of URLtoOpen
+			my new_tab(URLtoOpen)
 			--log paragraph n of (the clipboard)
 		end repeat
 	on error the error_message number the error_number
@@ -32,11 +31,15 @@ tell application "Safari"
 	
 end tell
 
-on new_tab()
-	tell application "Safari" to activate
-	tell application "System Events"
-		tell process "Safari"
-			click menu item "New Tab" of menu "File" of menu bar 1
+-- new tab function
+-- see http://laclefyoshi.blogspot.com/2010/10/google-chrome-ver.html
+on new_tab(theURL)
+	tell application "Google Chrome"
+		set aWin to window 1
+		tell aWin
+			--		set newTab to make new tab with properties {URL:"http://www.facebook.com/"}
+			set newTab to make new tab with properties {URL:theURL}
 		end tell
 	end tell
+	
 end new_tab
