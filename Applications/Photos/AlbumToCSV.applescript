@@ -4,12 +4,11 @@ of the ablum image file names and the keywords associated with them
 *)
 
 global albumName
-set albumName to "2017 no movies"
+set albumName to "2017 rating 5"
 
 tell application "Photos"
-	-- count of media items of album "2017 no movies"
-
 	set theAlbum to album albumName
+	-- count of media items of theAlbum
 	
 	set firstPhoto to media item 1 of theAlbum
 	
@@ -18,13 +17,15 @@ tell application "Photos"
 	--	log my getCSVProperties(firstPhoto)
 	--date of (properties of firstPhoto)
 	
-	log my getCSVProperties(firstPhoto)
-	
 	set theCSV to ""
 	
 	repeat with i in (media items of theAlbum)
-		set theCSV to theCSV & my getCSVProperties(i)
+	 	set theCSV to theCSV & return & my getCSVProperties(i)
 	end
+	
+	-- just do first photo for testing
+	--set theCSV to my getCSVProperties(firstPhoto)
+
 	
 	set the clipboard to theCSV
 	
@@ -43,7 +44,7 @@ on getCSVProperties(theMediaItem)
 			end
 		end
 	
-		return 	(filename of mediaProps) & ", " & theKeywords 
+		return 	(filename of mediaProps) & ", " & (favorite of mediaProps) & ", " & theKeywords 
 		--& "," & (date of mediaProps)
 	end
 end getCSVProperties
