@@ -1,4 +1,5 @@
 -- script to apply fields specified in a csv line to a photo.
+-- TODO: make it work on a list of lines like this that are on the clipboard.
 set theLine to "DSC06054.JPG, false, 1 star|"
 
 item 1 of theLine
@@ -27,7 +28,9 @@ on applyPhotoProperties(theRecord)
 		else
 			set favorite of thePhoto to true
 		end if
-		set keywords of thePhoto to theKeywords of theRecord
+
+    -- append the keywords
+    my setKeywords(thePhoto, theKeywords of theRecord, false)
 
 		log (properties of thePhoto)
 		return properties of thePhoto
@@ -73,3 +76,33 @@ on parseKeyWords(theKeywords)
 	end try
 
 end parseKeyWords
+
+on setKeywords(theMediaItem, keywordsToApply, shouldReplace)
+  tell application "Photos"
+    set theseKeywords to the keywords of theMediaItem
+    if theseKeywords is missing value then
+      set keywords of theMediaItem to keywordsToApply
+    else if keywordsToApply is {} then -- option for deleting all existing keywords
+      if shouldReplace is true then
+        set keywords of theMediaItem to {}
+      end if
+    else
+      if shouldReplace is false then
+        -- check to see if new keyword already exists
+        set filteredKeywords to {}
+        repeat with q from 1 to the count of keywordsToApply
+          set thisKeyword to item q of keywordsToApply
+          if thisKeyword is not in theseKeywords then
+            set the end of the filteredKeywords to thisKeyword
+          end if
+        end repeat
+        if filteredKeywords is not {} then
+          -- append checked keywords to existing keywords
+          set keywords of theMediaItem to (theseKeywords & filteredKeywords)
+        end if
+      else -- replace keywords with new ones
+        set keywords of theMediaItem to keywordsToApply
+      end if
+    end
+  end
+end
