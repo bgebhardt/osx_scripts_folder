@@ -8,9 +8,9 @@ set theRecord to my parsePhotoCSVLine(theLine)
 log (theFilename of theRecord)
 theRecord
 theFavorite of theRecord
-return my applyPhotoSettings(theRecord)
+return my applyPhotoProperties(theRecord)
 
-on applyPhotoSettings(theRecord)
+on applyPhotoProperties(theRecord)
 	tell application "Photos"
 		-- get the photo matching filename
 		-- example: properties of item 1 of (every media item whose filename is "DSC06054.JPG")
@@ -33,7 +33,7 @@ on applyPhotoSettings(theRecord)
 		return properties of thePhoto
 
 	end tell
-end applyPhotoSettings
+end applyPhotoProperties
 
 
 on parsePhotoCSVLine(theLine)
