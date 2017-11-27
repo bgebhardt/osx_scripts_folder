@@ -9,9 +9,9 @@ set theLines to the clipboard
 -- process all paragraphs
 repeat with para in paragraphs of theLines
 	set theRecord to my parsePhotoCSVLine(para)
-	log "processing filename : " & theFilename of theRecord
+	-- log "processing filename : " & theFilename of theRecord
 	log (para)
-  my applyPhotoProperties(theRecord)
+	my applyPhotoProperties(theRecord)
 
 end repeat
 
@@ -28,18 +28,31 @@ on applyPhotoProperties(theRecord)
 	tell application "Photos"
 		-- get the photo matching filename
 		-- example: properties of item 1 of (every media item whose filename is "DSC06054.JPG")
-		set thePhoto to item 1 of (every media item whose filename is (theFilename of theRecord))
-		log (get theRecord)
-		if theFavorite of theRecord is "false" then
-			set favorite of thePhoto to false
+
+		set thePhotos to (every media item whose filename is (theFilename of theRecord))
+
+		-- change only the ones with 1 photo
+		if count of thePhotos is 1 then
+			set thePhoto to item 1 of (every media item whose filename is (theFilename of theRecord))
+			log (get theRecord)
+			log " ** setting keywords and favorite for " & theFilename of theRecord
+			if theFavorite of theRecord is "false" then
+				set favorite of thePhoto to false
+			else
+				set favorite of thePhoto to true
+			end if
+
+			-- append the keywords
+			my setKeywords(thePhoto, theKeywords of theRecord, false)
+
+			return properties of thePhoto
 		else
-			set favorite of thePhoto to true
-		end if
+			-- there could be more than one photo with the same name.  Which do we set?
+			log " ** for filename " & (theFilename of theRecord) & ": " & count of thePhotos & " photos"
 
-    -- append the keywords
-    my setKeywords(thePhoto, theKeywords of theRecord, false)
+		end
 
-		return properties of thePhoto
+		return {}
 
 	end tell
 end applyPhotoProperties
@@ -84,31 +97,31 @@ on parseKeyWords(theKeywords)
 end parseKeyWords
 
 on setKeywords(theMediaItem, keywordsToApply, shouldReplace)
-  tell application "Photos"
-    set theseKeywords to the keywords of theMediaItem
-    if theseKeywords is missing value then
-      set keywords of theMediaItem to keywordsToApply
-    else if keywordsToApply is {} then -- option for deleting all existing keywords
-      if shouldReplace is true then
-        set keywords of theMediaItem to {}
-      end if
-    else
-      if shouldReplace is false then
-        -- check to see if new keyword already exists
-        set filteredKeywords to {}
-        repeat with q from 1 to the count of keywordsToApply
-          set thisKeyword to item q of keywordsToApply
-          if thisKeyword is not in theseKeywords then
-            set the end of the filteredKeywords to thisKeyword
-          end if
-        end repeat
-        if filteredKeywords is not {} then
-          -- append checked keywords to existing keywords
-          set keywords of theMediaItem to (theseKeywords & filteredKeywords)
-        end if
-      else -- replace keywords with new ones
-        set keywords of theMediaItem to keywordsToApply
-      end if
-    end
-  end
+	tell application "Photos"
+		set theseKeywords to the keywords of theMediaItem
+		if theseKeywords is missing value then
+			set keywords of theMediaItem to keywordsToApply
+		else if keywordsToApply is {} then -- option for deleting all existing keywords
+			if shouldReplace is true then
+				set keywords of theMediaItem to {}
+			end if
+		else
+			if shouldReplace is false then
+				-- check to see if new keyword already exists
+				set filteredKeywords to {}
+				repeat with q from 1 to the count of keywordsToApply
+					set thisKeyword to item q of keywordsToApply
+					if thisKeyword is not in theseKeywords then
+						set the end of the filteredKeywords to thisKeyword
+					end if
+				end repeat
+				if filteredKeywords is not {} then
+					-- append checked keywords to existing keywords
+					set keywords of theMediaItem to (theseKeywords & filteredKeywords)
+				end if
+			else -- replace keywords with new ones
+				set keywords of theMediaItem to keywordsToApply
+			end if
+		end
+	end
 end
