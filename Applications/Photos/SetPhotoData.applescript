@@ -1,27 +1,34 @@
 -- script to apply fields specified in a csv line to a photo.
--- TODO: make it work on a list of lines like this that are on the clipboard.
-set theLine to "DSC06054.JPG, false, 1 star|"
+-- Bryan Gebhardt, created 11-26-2017
 
-item 1 of theLine
+--set theLine to "DSC06054.JPG, false, 1 star|"
+--set theLines to "IMG_5397.JPG, false, 5 star|" & return & "IMG_5396.JPG, false, 5 star|"
 
+set theLines to the clipboard
+
+-- process all paragraphs
+repeat with para in paragraphs of theLines
+	set theRecord to my parsePhotoCSVLine(para)
+	log "processing filename : " & theFilename of theRecord
+	log (para)
+  my applyPhotoProperties(theRecord)
+
+end repeat
+
+(*
+-- process theLine
 set theRecord to my parsePhotoCSVLine(theLine)
-
 log (theFilename of theRecord)
 theRecord
 theFavorite of theRecord
 return my applyPhotoProperties(theRecord)
+*)
 
 on applyPhotoProperties(theRecord)
 	tell application "Photos"
 		-- get the photo matching filename
 		-- example: properties of item 1 of (every media item whose filename is "DSC06054.JPG")
-		log (theFilename of theRecord)
 		set thePhoto to item 1 of (every media item whose filename is (theFilename of theRecord))
-
-		log (theFavorite of theRecord)
-		log (theKeywords of theRecord)
-		log (properties of thePhoto)
-		log (theFavorite of theRecord = "false")
 		log (get theRecord)
 		if theFavorite of theRecord is "false" then
 			set favorite of thePhoto to false
@@ -32,7 +39,6 @@ on applyPhotoProperties(theRecord)
     -- append the keywords
     my setKeywords(thePhoto, theKeywords of theRecord, false)
 
-		log (properties of thePhoto)
 		return properties of thePhoto
 
 	end tell
