@@ -58,6 +58,50 @@ on applyPhotoProperties(theRecord)
 end applyPhotoProperties
 
 
+on returnNewestPhoto(thePhotos)
+	tell application "Photos"
+		--	set thePhoto to item 1 of (every media item whose filename is "DSC_0188.jpg")
+		set newestPhoto to null
+		repeat with thePhoto in thePhotos
+			if newestPhoto is null then
+				set newestPhoto to thePhoto
+			else if (date of thePhoto) > (date of newestPhoto) then
+				set newestPhoto to thePhoto
+			end if
+		end repeat
+
+		set {year:y, month:m, day:d} to (date of thePhoto)
+		log (y as integer)
+		log (m as integer)
+
+		if (y as integer) = 2017 then
+			if (m as integer) = 8 then
+				log ("** process me **")
+			end if
+		end if
+
+		return thePhoto
+	end tell
+end
+
+-- TODO: change export to export date/time and filename.
+-- TODO: That's the only way to uniquely identify a photo.  Duh!
+-- hack to process only 8-2017 photos.
+-- won't work as there can be multiple 8-2017 photos.
+on processPhoto(thePhoto)
+	set {year:y, month:m, day:d} to (date of thePhoto)
+	log (y as integer)
+	log (m as integer)
+
+	if (y as integer) = 2017 then
+		if (m as integer) = 8 then
+			log ("** process me **")
+		end if
+	end if
+
+	return thePhoto
+end
+
 on parsePhotoCSVLine(theLine)
 
 	set theRecord to {theFilename:null, theFavorite:null, theKeywords:null}
