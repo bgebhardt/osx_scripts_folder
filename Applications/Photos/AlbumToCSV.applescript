@@ -40,6 +40,7 @@ on printAlbumKeywords(theAlbumName)
 	end tell
 end printAlbumKeyWords
 
+-- switched it to semi-colon (;) delimated so date can be parsed.
 on getCSVProperties(theMediaItem)
 	tell application "Photos"
 		set mediaProps to properties of theMediaItem
@@ -51,7 +52,6 @@ on getCSVProperties(theMediaItem)
 			end repeat
 		end if
 
-		return (filename of mediaProps) & ", " & (favorite of mediaProps) & ", " & theKeywords
-		--& "," & (date of mediaProps)
+		return ((filename of theMediaItem) & "; " & (date of theMediaItem) as string) & "; " & (favorite of theMediaItem) & "; " & theKeywords
 	end tell
 end getCSVProperties
