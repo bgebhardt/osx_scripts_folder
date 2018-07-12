@@ -45,7 +45,8 @@ tell application "OmniFocus"
 		repeat with theItem in theTasksSelected
 			log ("task name: " & name of theItem)
 			log (get theItem)
-			my setDate(theItem)
+			-- can choose between defaulting to due date or defer date TODO: make global config for this
+			my setDateDefaultDueDate(theItem)
 		end repeat
 	end tell
 	
@@ -54,7 +55,33 @@ tell application "OmniFocus"
 	-- my setDate(theTask)
 end tell
 
-on setDate(theTask)
+-- sets either the defer date or due date if it has a value; if no value defaults to the due date 
+on setDateDefaultDueDate(theTask)
+	tell application "OmniFocus"
+		
+		if defer date of theTask is missing value then
+			my setTaskDueDate(theTask)
+		else -- defer date present
+			if defer date of theTask is missing value then
+				my setTaskDueDate(theTask)
+			else -- defer date pressent
+				-- set both only if dates match
+				if due date of theTask = defer date of theTask then
+					my setTaskStartDate(theTask)
+					my setTaskDueDate(theTask)
+				else -- otherwise just set start date
+					my setTaskStartDate(theTask)
+				end if
+			end if
+		end if
+	end tell
+	
+	my fixDueDateIfBeforeDeferDate(theTask)	
+end setDate
+
+
+-- sets either the defer date or due date if it has a value; if no value defaults to the defer date 
+on setDateDefaultDeferDate(theTask)
 	tell application "OmniFocus"
 		
 		if due date of theTask is missing value then
@@ -77,6 +104,7 @@ on setDate(theTask)
 	my fixDueDateIfBeforeDeferDate(theTask)	
 end setDate
 
+-- sets the start date (aka defer date) to the global time offset setting if not already set
 on setTaskStartDate(selectedItem)
 	set success to false
 	tell application "OmniFocus"
@@ -95,6 +123,7 @@ on setTaskStartDate(selectedItem)
 	return success
 end setTaskStartDate
 
+-- sets the due date to the global time offset setting if not already set
 on setTaskDueDate(selectedItem)
 	set success to false
 	tell application "OmniFocus"
