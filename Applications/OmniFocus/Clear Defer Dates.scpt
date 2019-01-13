@@ -4,6 +4,7 @@ set gDeferDate to date "Tuesday, January 1, 2030 at 9:00:00 AM"
 
 tell application "OmniFocus"
 	tell content of first document window of front document
+		-- TODO: fix this selection.  It no longer works in OmniFocus 3.  Look at Today script
 		--Get selection
 		-- assumes one selection
 		set theSel to selected trees
