@@ -20,7 +20,8 @@ set gTagList to {"Today", "This week", "This month"}
 
 tell application "OmniFocus"
 	-- get a reference to the tag to toggle.  Change the name of the tag to what you'd like to toggle
-	-- TODO: create a pick list to pick from your frequent tags
+	-- to get all tags (for reference)	
+	--	flattened tags of front document
 	
 	--	set tagToToggle to the first flattened tag of front document where its name = "Today"
 	(* the old pick one version
@@ -34,14 +35,7 @@ tell application "OmniFocus"
 	*)
 	
 	set tagsToToggle to my pickTagsFromList()
-	-- exit on missing or bad tag
-	-- how to error check?
-	if tagsToToggle is missing value then
-		return
-	end if
-	
-	-- to get all tags (for reference)	
-	--	flattened tags of front document
+	-- it exits on missing or bad tag
 	
 	tell content of first document window of front document
 		--Get selection
@@ -124,7 +118,7 @@ on pickTagsFromList()
 	-- set tagList to {"Today"}
 	
 	-- to test a bad tag
-	--set tagList to {"Bad Tag", "Today", "This week", "This month"}
+	set tagList to {"Bad Tag", "Today", "This week", "This month"}
 	
 	-- will prompt if there is more than one tag	
 	if length of tagList is greater than 1 then
