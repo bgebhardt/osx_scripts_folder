@@ -95,10 +95,11 @@ on pickOneTagFromList()
 		set tagName to item 1 of tagList
 	end if
 	
+   	-- we don't catch the error as we want to stop the whole script if a tag doesn't exist
 	my getTag(tagName)
 end pickOneTagFromList
 
--- return tag based on a tag name
+-- return tag based on a tag name.  If tag doesn't exist it throws an error.
 on getTag(theTagName)
 	tell application "OmniFocus"
 		try
@@ -106,8 +107,10 @@ on getTag(theTagName)
 			name of theTag
 			return theTag
 		on error
-			display dialog (theTagName & " is not a tag in your Omnifocus document.")
-			return missing value
+			set msg to (theTagName & " is not a tag in your Omnifocus document. Please fix the script configuration.")
+			display dialog msg
+			error msg
+			--return missing value
 		end try
 	end tell
 end getTag
