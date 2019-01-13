@@ -4,6 +4,7 @@ Inspired by https://discourse.omnigroup.com/t/any-of2-scripts-to-count-tasks-and
 *)
 
 -- TODO: Requires you are in focused mode to work on a subset of projects.  It does not work on perspectives.  Need to see how I can fix this.
+-- TODO: Add # of flagged items too
 
 property pTitle : "Completion Status" -- title of dialog box
 property pLine : "-> " -- starting string for a line
