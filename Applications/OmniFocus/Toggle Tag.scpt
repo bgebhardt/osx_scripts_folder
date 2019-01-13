@@ -14,12 +14,16 @@
 -- Configure this list to the names of your tags you want to pick from
 set gTagList to {"Today", "This week", "This month"}
 
+-- TODO
+-- multi-selection
+-- in pick list display which tags are already "on"
+
 tell application "OmniFocus"
 	-- get a reference to the tag to toggle.  Change the name of the tag to what you'd like to toggle
 	-- TODO: create a pick list to pick from your frequent tags
 	
 	--	set tagToToggle to the first flattened tag of front document where its name = "Today"
-	set tagToToggle to my pickTagFromList()
+	set tagToToggle to my pickOneTagFromList()
 	-- exit on missing or bad tag
 	if tagToToggle is missing value then
 		return
@@ -69,8 +73,8 @@ on toggleTag(theTask, theTag)
 	end tell
 end toggleTag
 
--- returns a tag. On an error or canceling the pick list it returns missing value.
-on pickTagFromList()
+-- returns one tag. On an error or canceling the pick list it returns missing value.
+on pickOneTagFromList()
 	global gTagList
 	set tagList to gTagList
 	
@@ -91,14 +95,19 @@ on pickTagFromList()
 		set tagName to item 1 of tagList
 	end if
 	
+	my getTag(tagName)
+end pickOneTagFromList
+
+-- return tag based on a tag name
+on getTag(theTagName)
 	tell application "OmniFocus"
 		try
-			set tagToToggle to the first flattened tag of front document where its name = tagName
-			name of tagToToggle
-			tagToToggle
+			set theTag to the first flattened tag of front document where its name = theTagName
+			name of theTag
+			return theTag
 		on error
-			display dialog (tagName & " is not a tag in your Omnifocus document.")
+			display dialog (theTagName & " is not a tag in your Omnifocus document.")
 			return missing value
 		end try
 	end tell
-end pickTagFromList
+end getTag
