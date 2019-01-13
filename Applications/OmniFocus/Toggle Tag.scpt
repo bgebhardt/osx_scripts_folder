@@ -15,7 +15,6 @@
 set gTagList to {"Today", "This week", "This month"}
 
 -- TODO
--- multi-selection
 -- in pick list display which tags are already "on"
 
 tell application "OmniFocus"
@@ -118,7 +117,7 @@ on pickTagsFromList()
 	-- set tagList to {"Today"}
 	
 	-- to test a bad tag
-	set tagList to {"Bad Tag", "Today", "This week", "This month"}
+	--set tagList to {"Bad Tag", "Today", "This week", "This month"}
 	
 	-- will prompt if there is more than one tag	
 	if length of tagList is greater than 1 then
