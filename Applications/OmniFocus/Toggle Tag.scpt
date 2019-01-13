@@ -99,6 +99,38 @@ on pickOneTagFromList()
 	my getTag(tagName)
 end pickOneTagFromList
 
+-- returns a list of tags which may include missing values. On an error or canceling the pick list it returns missing value.
+on pickTagsFromList()
+	global gTagList
+	set tagList to gTagList
+	
+	-- to test one tag
+	-- set tagList to {"Today"}
+	
+	-- to test a bad tag
+	--set tagList to {"Bad Tag", "Today", "This week", "This month"}
+	
+	-- will prompt if there is more than one tag	
+	if length of tagList is greater than 1 then
+		set dialogResult to (choose from list tagList with prompt "Pick a tag to toggle" with title "Toggle Omnifocus Tag" with multiple selections allowed)
+		if dialogResult is false then
+			return missing value
+		end if
+		set tagNames to dialogResult
+		
+	else
+		set tagNames to tagList
+	end if
+	
+	log (get tagNames)
+	set TheTags to {}
+	-- we don't catch the error as we want to stop the whole script if a tag doesn't exist
+	repeat with theTagName in tagNames
+		set TheTags to TheTags & {(my getTag(theTagName))}
+	end repeat
+	return TheTags
+end pickTagsFromList
+
 -- return tag based on a tag name.  If tag doesn't exist it throws an error.
 on getTag(theTagName)
 	tell application "OmniFocus"
