@@ -30,6 +30,8 @@ tell application "OmniFocus"
 	end if
 	name of tagToToggle
 	
+	set tagsToToggle to {tagToToggle}
+	
 	-- to get all tags (for reference)	
 	--	flattened tags of front document
 	
@@ -54,10 +56,16 @@ tell application "OmniFocus"
 			--properties of theTask
 			set TheTags to tags of theTask
 			
-			my toggleTag(theTask, tagToToggle)
+			my toggleMultipleTags(theTask, tagsToToggle)
 		end repeat
 	end tell
 end tell
+
+on toggleMultipleTags(theTask, TheTags)
+	repeat with theTag in TheTags
+		my toggleTag(theTask, theTag)
+	end repeat
+end toggleMultipleTags
 
 on toggleTag(theTask, theTag)
 	tell application "OmniFocus"
@@ -95,7 +103,7 @@ on pickOneTagFromList()
 		set tagName to item 1 of tagList
 	end if
 	
-   	-- we don't catch the error as we want to stop the whole script if a tag doesn't exist
+	-- we don't catch the error as we want to stop the whole script if a tag doesn't exist
 	my getTag(tagName)
 end pickOneTagFromList
 
