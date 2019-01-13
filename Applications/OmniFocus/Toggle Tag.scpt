@@ -32,12 +32,21 @@ tell application "OmniFocus"
 	tell content of first document window of front document
 		--Get selection
 		-- assumes one selection
-		set theSel to selected trees
-		-- set theTask to value of item 1 of theSel -- to get the first item in the list; for reference only
+		set theSel to (selected trees where class of its value is not item and class of its value is not folder)
+		-- need to create a list of tasks before changing dates as that changes what the trees point to
+		set theTasksSelected to {}
+		-- loop through all items; no error checking!
+		repeat with theItem in theSel
+			set the end of theTasksSelected to value of theItem
+		end repeat
+		
+		log "list of tasks: "
+		log (get theTasksSelected)
 		
 		-- loop through all items and toggle the tag; no error checking as I'm lazy!
-		repeat with theItem in theSel
-			set theTask to value of theItem
+		repeat with theTask in theTasksSelected
+			log ("task name: " & name of theTask)
+			log (get theTask)
 			--properties of theTask
 			set TheTags to tags of theTask
 			
@@ -93,4 +102,3 @@ on pickTagFromList()
 		end try
 	end tell
 end pickTagFromList
-
