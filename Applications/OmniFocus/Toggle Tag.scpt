@@ -23,14 +23,22 @@ tell application "OmniFocus"
 	-- TODO: create a pick list to pick from your frequent tags
 	
 	--	set tagToToggle to the first flattened tag of front document where its name = "Today"
+	(* the old pick one version
 	set tagToToggle to my pickOneTagFromList()
 	-- exit on missing or bad tag
 	if tagToToggle is missing value then
 		return
 	end if
 	name of tagToToggle
-	
 	set tagsToToggle to {tagToToggle}
+	*)
+	
+	set tagsToToggle to my pickTagsFromList()
+	-- exit on missing or bad tag
+	-- how to error check?
+	if tagsToToggle is missing value then
+		return
+	end if
 	
 	-- to get all tags (for reference)	
 	--	flattened tags of front document
@@ -120,7 +128,7 @@ on pickTagsFromList()
 	
 	-- will prompt if there is more than one tag	
 	if length of tagList is greater than 1 then
-		set dialogResult to (choose from list tagList with prompt "Pick a tag to toggle" with title "Toggle Omnifocus Tag" with multiple selections allowed)
+		set dialogResult to (choose from list tagList with prompt "Pick one or more tags to toggle" with title "Toggle Omnifocus Tag" with multiple selections allowed)
 		if dialogResult is false then
 			return missing value
 		end if
