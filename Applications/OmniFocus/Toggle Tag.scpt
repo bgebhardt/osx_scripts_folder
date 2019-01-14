@@ -13,7 +13,7 @@
 
 -- Configure this list to the names of your tags you want to pick from
 -- If you create a list of one tag it won't bring up the picker.
-set gTagList to {"Today", "This week", "This month"}
+set gTagList to {"Today", "This week", "This month","Weekend","Someday"}
 
 -- TODO
 -- in pick list display which tags are already "on"
