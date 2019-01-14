@@ -12,6 +12,7 @@
 -- [Add tags to task with AppleScript? : omnifocus](https://www.reddit.com/r/omnifocus/comments/9ksw15/add_tags_to_task_with_applescript/)
 
 -- Configure this list to the names of your tags you want to pick from
+-- If you create a list of one tag it won't bring up the picker.
 set gTagList to {"Today", "This week", "This month"}
 
 -- TODO
