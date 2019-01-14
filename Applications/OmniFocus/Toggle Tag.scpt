@@ -23,16 +23,6 @@ tell application "OmniFocus"
 	-- to get all tags (for reference)	
 	--	flattened tags of front document
 	
-	--	set tagToToggle to the first flattened tag of front document where its name = "Today"
-	(* the old pick one version
-	set tagToToggle to my pickOneTagFromList()
-	-- exit on missing or bad tag
-	if tagToToggle is missing value then
-		return
-	end if
-	name of tagToToggle
-	set tagsToToggle to {tagToToggle}
-	*)
 	tell content of first document window of front document
 		
 		-- 1 Get the tasks
@@ -136,7 +126,6 @@ end pickOneTagFromList
 
 -- returns a list of tags which may include missing values. On an error or canceling the pick list it returns missing value.
 -- you can pass in a modified display version of the tag list
--- TODO: I need to pass in an array of arrays and flatten it in the dialog list
 -- TODO: make this optional to pass in
 on pickTagsFromList(tagDisplayList)
 	global gTagList
@@ -156,8 +145,6 @@ on pickTagsFromList(tagDisplayList)
 		end if
 		set tagNames to dialogResult
 		
-		-- here I need to get back the original tag names.  Ugh! This isn't working.
-		
 	else
 		set tagNames to tagList
 	end if
@@ -172,7 +159,6 @@ on getTagsFromTagNames(tagNames)
 	end repeat
 	return TheTags
 end getTagsFromTagNames
-
 
 -- return tag based on a tag name.  If tag doesn't exist it throws an error.
 on getTag(theTagName)
