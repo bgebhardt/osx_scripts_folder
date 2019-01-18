@@ -13,7 +13,7 @@
 
 -- Configure this list to the names of your tags you want to pick from
 -- If you create a list of one tag it won't bring up the picker.
-set gTagList to {"Today", "This week", "This month","Weekend","Someday"}
+set gTagList to {"Today", "This week","Someday","Wait For","This month","Weekend"}
 
 -- TODO
 -- in pick list display which tags are already "on"
@@ -55,6 +55,9 @@ tell application "OmniFocus"
 		
 		-- Ask for what to toggle
 		set tagsNames to my pickTagsFromList(tagDisplayList)
+		if tagsNames is missing value -- if the user cancel the pick list
+			return
+		end
 		--set tagsNames to my pickTagsFromList(gTagList) -- switch to this line to go back to no annotations on the tags picked.
 		-- it exits on missing or bad tag
 		
