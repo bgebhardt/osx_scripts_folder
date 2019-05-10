@@ -194,8 +194,10 @@ on updateTagDisplayList(tagDisplayList, theTask)
 				
 				log (get theActualTag) & " : " & (get name of theTag)
 				if ((name of theTag as text) = (theActualTag as text)) then
-					set (item theDisplayTagId of tagDisplayList) to (item theDisplayTagId of tagDisplayList) & " •"
-					-- this is a reference; need to change the item in the list
+					if (last character of (item theDisplayTagId of tagDisplayList)) is not " •" then -- if the tag doesn't already have a mark then add one
+						set (item theDisplayTagId of tagDisplayList) to (item theDisplayTagId of tagDisplayList) & " •"
+						-- this is a reference; need to change the item in the list
+					end if
 				end if
 			end repeat
 		end repeat
