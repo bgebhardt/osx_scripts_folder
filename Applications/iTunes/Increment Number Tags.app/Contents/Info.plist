@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleAllowMixedLocalizations</key>
+	<true/>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>Increment Number Tags</string>
+	<key>CFBundleExecutable</key>
+	<string>Increment Number Tags</string>
+	<key>CFBundleIconFile</key>
+	<string>applet</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.dougscripts.incrementnumbertags</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Increment Number Tags</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.9</string>
+	<key>CFBundleSignature</key>
+	<string>aplt</string>
+	<key>CFBundleVersion</key>
+	<string>2906</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.12.0</string>
+	<key>LSRequiresCarbon</key>
+	<true/>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>This script needs to access track and playlist information in the iTunes library.</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>This script needs access to your music to run.</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>© 2012-2018, Doug Adams. All Rights Reserved.</string>
+	<key>NSSystemAdministrationUsageDescription</key>
+	<string>This script needs access to administer this system to run.</string>
+	<key>WindowState</key>
+	<dict>
+		<key>bundleDividerCollapsed</key>
+		<true/>
+		<key>bundlePositionOfDivider</key>
+		<real>0.0</real>
+		<key>dividerCollapsed</key>
+		<false/>
+		<key>eventLogLevel</key>
+		<integer>2</integer>
+		<key>name</key>
+		<string>ScriptWindowState</string>
+		<key>positionOfDivider</key>
+		<real>1062</real>
+		<key>savedFrame</key>
+		<string>151 150 1007 1267 0 0 2560 1417 </string>
+		<key>selectedTab</key>
+		<string>log</string>
+	</dict>
+</dict>
+</plist>
