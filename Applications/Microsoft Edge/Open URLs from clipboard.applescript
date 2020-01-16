@@ -1,4 +1,4 @@
-tell application "Microsoft Edge Dev"
+tell application "Microsoft Edge"
 	try
 		-- check for a front window.  if not create one.
 		if windows is {} then
@@ -22,7 +22,7 @@ end tell
 -- new tab function
 -- see http://laclefyoshi.blogspot.com/2010/10/google-chrome-ver.html
 on new_tab(theURL)
-	tell application "Microsoft Edge Dev"
+	tell application "Microsoft Edge"
 		set aWin to window 1
 		tell aWin
 			--		set newTab to make new tab with properties {URL:"http://www.facebook.com/"}

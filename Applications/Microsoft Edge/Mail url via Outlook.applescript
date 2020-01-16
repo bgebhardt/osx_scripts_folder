@@ -3,7 +3,7 @@ set gEmailBody to ""
 set gSubject to ""
 
 -- simple get link script.
-tell application "Microsoft Edge Dev"
+tell application "Microsoft Edge"
 	set i to active tab of window 1
 	set gSubject to title of i
 	set gEmailBody to "[" & title of i & "]( " & URL of i & " )" -- in markdown format

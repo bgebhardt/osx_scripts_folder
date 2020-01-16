@@ -1,7 +1,7 @@
 -- copy urls of all windows to clipboard in markdown link format
 -- also inserts tab counts and a total tab count at the end
 -- [tite]("url")
-tell application "Microsoft Edge Dev"
+tell application "Microsoft Edge"
 	-- inspired by this gist: https://gist.github.com/rentzsch/1047967
 	set URL_list to ""
 	set allWindows to (every window)

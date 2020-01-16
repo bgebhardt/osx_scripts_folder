@@ -8,7 +8,7 @@
 -- Example:
 --* [applescript strip character - Bing]( https://www.bing.com/search?q=applescript+strip+character&form=APMCS1&PC=APMC )
 --* [applescript examples - Bing]( https://www.bing.com/search?q=applescript+examples&FORM=R5FD )
-tell application "Microsoft Edge Dev"
+tell application "Microsoft Edge"
 	try
 		set urls to (the clipboard)
 		set urls to my extract_urls(get the clipboard)
@@ -72,7 +72,7 @@ end extract_url
 -- new tab function
 -- see http://laclefyoshi.blogspot.com/2010/10/google-chrome-ver.html
 on new_tab(theURL)
-	tell application "Microsoft Edge Dev"
+	tell application "Microsoft Edge"
 		set aWin to window 1
 		tell aWin
 			--		set newTab to make new tab with properties {URL:"http://www.facebook.com/"}

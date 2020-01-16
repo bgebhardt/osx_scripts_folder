@@ -11,7 +11,7 @@
 -- Configuration
 set jiraBaseURL to "https://mileiq.atlassian.net/browse/"
 
-tell application "Microsoft Edge Dev"
+tell application "Microsoft Edge"
 	try
 		-- check for a front window.  if not create one.
 		if windows is {} then
