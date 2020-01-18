@@ -26,11 +26,23 @@ tell application "System Events"
 		click
 		-- the menu does not appear inthe PUB's view heirarchy until after it's clicked
 		tell menu 1
-			get menu items
-			if curBrowser is "Google Chrome" then
+			
+			set menuItems to get menu items
+			
+			-- handles case of multiple chrome's which are named with their version number 
+			-- example: Google Chrome (79.0.3945.130)
+			-- picks first Chrome which may or may not be the right one
+			repeat with m in menu items
+				if (name of m) contains "Google Chrome" then
+					set chrome to m
+					exit repeat
+				end if
+			end repeat
+			
+			if curBrowser contains "Google Chrome" then
 				click menu item "Microsoft Edge"
 			else
-				click menu item "Google Chrome"
+				click menu item (name of chrome)
 			end if
 		end tell
 	end tell
