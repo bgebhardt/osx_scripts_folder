@@ -1,3 +1,6 @@
+-- get running browser name
+set browserName to myGetBrowserName()
+
 -- script that opens all urls in the text on the clipboard.
 -- it assumes urls are newline separated.
 
@@ -8,27 +11,81 @@
 -- Example:
 --* [applescript strip character - Bing]( https://www.bing.com/search?q=applescript+strip+character&form=APMCS1&PC=APMC )
 --* [applescript examples - Bing]( https://www.bing.com/search?q=applescript+examples&FORM=R5FD )
-tell application "Microsoft Edge"
-	try
-		set urls to (the clipboard)
-		set urls to my extract_urls(get the clipboard)
-		log "extracted urls:" & urls
+-- I don't know how to do this without code duplication because I need to reference app terms like "tab"
+if browserName is "Microsoft Edge Canary" then
+	tell application "Microsoft Edge Canary"
+		try
+			set urls to (the clipboard)
+			set urls to my extract_urls(get the clipboard)
+			log "extracted urls:" & urls
+			
+			set numParagraphs to (number of paragraphs of urls)
+			
+			repeat with n from 1 to numParagraphs
+				log "** here"
+				log paragraph n of urls
+				set the theURL to paragraph n of urls
+				--	my new_tab(theURL)
+				
+				set aWin to window 1
+				tell aWin
+					--		set newTab to make new tab with properties {URL:"http://www.facebook.com/"}
+					set newTab to make new tab with properties {URL:theURL}
+				end tell
+				
+				--log paragraph n of (the clipboard)
+			end repeat
+			
+		on error the error_message number the error_number
+			display dialog error_message with icon stop
+		end try
 		
-		set numParagraphs to (number of paragraphs of urls)
-		
-		repeat with n from 1 to numParagraphs
-			log "** here"
-			log paragraph n of urls
-			set the theURL to paragraph n of urls
-			my new_tab(theURL)
-			--log paragraph n of (the clipboard)
-		end repeat
-		
-	on error the error_message number the error_number
-		display dialog error_message with icon stop
-	end try
+	end tell
 	
-end tell
+else if browserName is "Microsoft Edge" then
+	tell application "Microsoft Edge Canary"
+		try
+			set urls to (the clipboard)
+			set urls to my extract_urls(get the clipboard)
+			log "extracted urls:" & urls
+			
+			set numParagraphs to (number of paragraphs of urls)
+			
+			repeat with n from 1 to numParagraphs
+				log "** here"
+				log paragraph n of urls
+				set the theURL to paragraph n of urls
+				--		my new_tab(theURL)
+				set aWin to window 1
+				tell aWin
+					--		set newTab to make new tab with properties {URL:"http://www.facebook.com/"}
+					set newTab to make new tab with properties {URL:theURL}
+				end tell
+				
+				--log paragraph n of (the clipboard)
+			end repeat
+			
+		on error the error_message number the error_number
+			display dialog error_message with icon stop
+		end try
+		
+	end tell
+	
+end if
+
+
+-- new tab function
+-- see http://laclefyoshi.blogspot.com/2010/10/google-chrome-ver.html
+on new_tab(theURL)
+	tell application "Microsoft Edge Canary"
+		set aWin to window 1
+		tell aWin
+			--		set newTab to make new tab with properties {URL:"http://www.facebook.com/"}
+			set newTab to make new tab with properties {URL:theURL}
+		end tell
+	end tell
+	
+end new_tab
 
 -- extract the urls from a paragraph of markdown urls
 on extract_urls(theMarkdownURLs)
@@ -69,15 +126,21 @@ on extract_url(theMarkdownURL)
 	return theURL
 end extract_url
 
--- new tab function
--- see http://laclefyoshi.blogspot.com/2010/10/google-chrome-ver.html
-on new_tab(theURL)
-	tell application "Microsoft Edge"
-		set aWin to window 1
-		tell aWin
-			--		set newTab to make new tab with properties {URL:"http://www.facebook.com/"}
-			set newTab to make new tab with properties {URL:theURL}
-		end tell
+on myGetBrowserName()
+	tell application "System Events"
+		-- name of every process where name is like Microsoft Edge
+		set browserName to (name of every process where name contains "Microsoft Edge")
+		
+		if browserName is {} then
+			-- if browser note running then exit
+			display dialog "Microsoft Edge is not running. Cancel to stop script."
+			-- or we could set it to a name
+			set browserName to "Microsoft Edge" -- browser to run if not running
+		else
+			set browserName to item 1 of browserName
+		end if
+		
+		browserName
 	end tell
 	
-end new_tab
+end myGetBrowserName

@@ -1,29 +1,21 @@
+-- Template to easily detect running browser and target that browser. 
+-- Uses code duplication unfortunately.
+
 -- get running browser name
 set browserName to myGetBrowserName()
 
--- copy url to clipboard in markdown link format
--- [tite]("url")
 -- I don't know how to do this without code duplication because I need to reference app terms like "tab"
 if browserName is "Microsoft Edge Canary" then
 	tell application "Microsoft Edge Canary"
-		set URL_list to ""
-		set i to active tab of window 1
-		set mdURL to "[" & title of i & "](" & URL of i & ")"
-		set URL_list to mdURL & return & URL_list
 		
-		set the clipboard to URL_list
-		URL_list
+		-- INSERT SCRIPT SPECIFIC CODE HERE
+		
 	end tell
 	
 else if browserName is "Microsoft Edge" then
 	tell application "Microsoft Edge"
-		set URL_list to ""
-		set i to active tab of window 1
-		set mdURL to "[" & title of i & "](" & URL of i & ")"
-		set URL_list to mdURL & return & URL_list
-		
-		set the clipboard to URL_list
-		URL_list
+
+		-- INSERT SCRIPT SPECIFIC CODE HERE - DUPLICATED CODE
 		
 	end tell
 	
