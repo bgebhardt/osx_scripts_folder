@@ -8,8 +8,8 @@ set browserName to myGetBrowserName()
 -- also inserts tab counts and a total tab count at the end
 -- [tite]("url")
 -- I don't know how to do this without code duplication because I need to reference app terms like "tab"
-if browserName is "Microsoft Edge Canary" then
-	tell application "Microsoft Edge Canary"
+if browserName is "Microsoft Edge Beta" then
+	tell application "Microsoft Edge Beta"
 		
 	-- inspired by this gist: https://gist.github.com/rentzsch/1047967
 	set URL_list to ""

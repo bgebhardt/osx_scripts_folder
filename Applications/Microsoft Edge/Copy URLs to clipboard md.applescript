@@ -7,8 +7,8 @@ set browserName to myGetBrowserName()
 -- copy urls to clipboard in markdown link format
 -- [tite]("url")
 -- I don't know how to do this without code duplication because I need to reference app terms like "tab"
-if browserName is "Microsoft Edge Canary" then
-	tell application "Microsoft Edge Canary"
+if browserName is "Microsoft Edge Beta" then
+	tell application "Microsoft Edge Beta"
 		
 	set URL_list to ""
 	repeat with i in (every tab of window 1)

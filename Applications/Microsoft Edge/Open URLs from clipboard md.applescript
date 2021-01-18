@@ -12,8 +12,8 @@ set browserName to myGetBrowserName()
 --* [applescript strip character - Bing]( https://www.bing.com/search?q=applescript+strip+character&form=APMCS1&PC=APMC )
 --* [applescript examples - Bing]( https://www.bing.com/search?q=applescript+examples&FORM=R5FD )
 -- I don't know how to do this without code duplication because I need to reference app terms like "tab"
-if browserName is "Microsoft Edge Canary" then
-	tell application "Microsoft Edge Canary"
+if browserName is "Microsoft Edge" then
+	tell application "Microsoft Edge"
 		try
 			set urls to (the clipboard)
 			set urls to my extract_urls(get the clipboard)
@@ -42,8 +42,8 @@ if browserName is "Microsoft Edge Canary" then
 		
 	end tell
 	
-else if browserName is "Microsoft Edge" then
-	tell application "Microsoft Edge Canary"
+else if browserName is "Microsoft Edge Beta" then
+	tell application "Microsoft Edge Beta"
 		try
 			set urls to (the clipboard)
 			set urls to my extract_urls(get the clipboard)
@@ -77,7 +77,7 @@ end if
 -- new tab function
 -- see http://laclefyoshi.blogspot.com/2010/10/google-chrome-ver.html
 on new_tab(theURL)
-	tell application "Microsoft Edge Canary"
+	tell application "Microsoft Edge Beta"
 		set aWin to window 1
 		tell aWin
 			--		set newTab to make new tab with properties {URL:"http://www.facebook.com/"}

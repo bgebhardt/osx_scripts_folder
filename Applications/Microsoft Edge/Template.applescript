@@ -3,6 +3,7 @@
 
 -- get running browser name
 set browserName to myGetBrowserName()
+-- set preferredBrowser to "Microsoft Edge" -- name of the broswer you want links opened in
 
 -- I don't know how to do this without code duplication because I need to reference app terms like "tab"
 if browserName is "Microsoft Edge Canary" then
@@ -31,6 +32,9 @@ on myGetBrowserName()
 			display dialog "Microsoft Edge is not running. Cancel to stop script."
 			-- or we could set it to a name
 			set browserName to "Microsoft Edge" -- browser to run if not running
+		-- doesn't work for some reason
+		-- else if browserName is not preferredBrowser then 
+		-- 	display dialog "Preferred browser " & preferredBrowser & " is not running. Cancel to stop script."
 		else
 			set browserName to item 1 of browserName
 		end if
