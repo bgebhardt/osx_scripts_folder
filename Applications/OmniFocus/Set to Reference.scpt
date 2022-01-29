@@ -30,7 +30,7 @@ end tell
 -- set an iteam to reference context with no due date
 on setToReference(theTask)
 	tell application "OmniFocus"
-		set context of theTask to (my getContext("Reference"))
+		set tag of theTask to (my getContext("Reference"))
 		set due date of theTask to missing value -- clear due date
 	end tell
 end setToReference
@@ -39,7 +39,7 @@ end setToReference
 on getContext(contextName)
 	tell application "OmniFocus"
 		tell front document
-			set theContext to first flattened context where its name = contextName
+			set theContext to first flattened tag where its name = contextName
 			--	set theProject to first flattened project where its name = "Finance" -- example for projects
 			
 		end tell

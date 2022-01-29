@@ -82,7 +82,7 @@ on main()
 			set autosave to false
 			if changeContext then set newContext to my getContext(newContextName)
 			repeat with thisItem in validSelectedItemsList
-				if changeContext then set context of thisItem to newContext
+				if changeContext then set tag of thisItem to newContext
 				set succeeded to my clearDate(thisItem)
 				if succeeded then set successTot to successTot + 1
 			end repeat
@@ -104,7 +104,7 @@ on getContext(contextName)
 	tell application "OmniFocus"
 		tell front document
 			set contextID to id of item 1 of (complete contextName as context)
-			return first context whose id is contextID
+			return first tag whose id is contextID
 		end tell
 	end tell
 end getContext
