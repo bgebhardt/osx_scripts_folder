@@ -2,4 +2,6 @@
 -- play/pause - cmd-option-shift-space
 tell application "Music"
 	playpause
+
+	display notification "Music is " & (player state as text)
 end tell

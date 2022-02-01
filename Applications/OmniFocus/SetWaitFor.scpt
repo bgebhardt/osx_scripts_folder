@@ -17,7 +17,7 @@ property theContextName : "Wait for" -- the context to set the task to
 tell application "OmniFocus"
 
 	tell default document
-		set theContext to first flattened context where its name = theContextName --and the name of its container = "Store"
+		set theContext to first flattened tag where its name = theContextName --and the name of its container = "Store"
 	end tell
 
 	set theTasksSelected to my getSelectedTasks()
@@ -37,9 +37,9 @@ on processTask(theTask, theContext)
 		log ("task name: " & name of theTask)
 		log (get theTask)
 		
-		log (name of context of theTask)
+		log (name of tag of theTask)
 		
-		set context of theTask to theContext		
+		set tag of theTask to theContext		
 		
 	end
 end processTask
