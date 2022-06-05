@@ -14,13 +14,28 @@ set theAlbum to "Foundation- Season 1 (Apple TV+ Original Series Soundtrack)"
 set theArtist to "Bear McCreary"
 set theTrackCount to 14
 set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 4
 *)
 
--- Tehran- Season 1 (Original Series Soundtrack) - 002 - Tehran- Season 1 - Thunder (Soundtrack)
+(*-- Tehran- Season 1 (Original Series Soundtrack) - 002 - Tehran- Season 1 - Thunder (Soundtrack)
 set theAlbum to "Tehran- Season 1 (Original Series Soundtrack)"
 set theArtist to "Mark Eliyahu"
 set theTrackCount to 20
 set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 4
+*)
+
+
+--Star Wars- The Bad Batch, Vol. 1 (Episodes 1-8) Soundtrack by Kevin Kiner, 001, Star Wars- The Bad Batch Vol. 1, Cid’s Jukebox Mix Vol. 1 (Soundtrack by Kevin Kiner)
+-- track num 3, name 5
+set theAlbum to "The Bad Batch, Vol. 1 (Episodes 1-8) Soundtrack"
+set theArtist to "Kevin Kiner"
+set theTrackCount to 37
+set theGenre to "Soundtrack"
+set theTrackNumPos to 3
+set theTrackNamePos to 5
 
 
 tell application "Music"
@@ -60,8 +75,8 @@ tell application "Music"
 	
 	delimitedList
 	set albumName to origTrackName
-	set trackNum to (item 2 of delimitedList as number)
-	set trackName to item 4 of delimitedList
+	set trackNum to (item theTrackNumPos of delimitedList as number)
+	set trackName to item theTrackNamePos of delimitedList
 	
 	delimitedList
 	
