@@ -28,15 +28,23 @@ set theTrackNamePos to 4
 *)
 
 
---Star Wars- The Bad Batch, Vol. 1 (Episodes 1-8) Soundtrack by Kevin Kiner, 001, Star Wars- The Bad Batch Vol. 1, Cid’s Jukebox Mix Vol. 1 (Soundtrack by Kevin Kiner)
+(*--Star Wars- The Bad Batch, Vol. 1 (Episodes 1-8) Soundtrack by Kevin Kiner, 001, Star Wars- The Bad Batch Vol. 1, Cid’s Jukebox Mix Vol. 1 (Soundtrack by Kevin Kiner)
 -- track num 3, name 5
 set theAlbum to "The Bad Batch, Vol. 1 (Episodes 1-8) Soundtrack"
 set theArtist to "Kevin Kiner"
 set theTrackCount to 37
 set theGenre to "Soundtrack"
 set theTrackNumPos to 3
-set theTrackNamePos to 5
+set theTrackNamePos to 5*)
 
+--Monsters at Work (Original Soundtrack) by Dominic Lewis - 001 - Monsters at Work Main Title (Toy Piano) - Monsters at Work Soundtrack (by Dominic Lewis)
+-- track num 3, name 5
+set theAlbum to "Monsters at Work (Original Soundtrack)"
+set theArtist to "Dominic Lewis"
+set theTrackCount to 18
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3 -- but many of them are 3 or 4; argh; need proper regex to figure this one out
 
 tell application "Music"
 	name of current playlist
