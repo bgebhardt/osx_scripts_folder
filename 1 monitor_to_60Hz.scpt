@@ -1,6 +1,11 @@
 -- Script that sets monitor to 60Hz
 -- Workaround for issues with Dell monitor
 -- see [Dell Monitor Screen Flickering When MacBook M1 Refresh Rate is Set as Variable ( 40-60 Hz ) | Dell US](https://www.dell.com/support/kbdoc/en-us/000197189/dell-s2722qc-monitor-screen-flickering-when-macbook-m1-refresh-rate-is-set-as-variable-40-60-hz?lang=en)
+
+-- Pages that helped figure this out
+-- [user interface - Selecting Pop Up Menu Buttons in AppleScript - Stack Overflow](https://stackoverflow.com/questions/36549556/selecting-pop-up-menu-buttons-in-applescript)
+-- [Mac Automation Scripting Guide: Automating the User Interface](https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/MacAutomationScriptingGuide/AutomatetheUserInterface.html)
+
 tell application "System Preferences"
 	activate
 	set current pane to pane id "com.apple.preference.displays"
