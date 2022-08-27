@@ -1,9 +1,8 @@
 -- script to test parsing different song namepath to temporary items
 
 tell application "Music"
-	name of current playlist
-	
-	properties of current track
+	--name of current playlist
+	-- properties of current track
 	--name of current track
 	
 	
