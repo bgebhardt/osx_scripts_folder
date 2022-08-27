@@ -18,7 +18,8 @@ set theTrackNumPos to 2
 set theTrackNamePos to 4
 *)
 
-(*-- Tehran- Season 1 (Original Series Soundtrack) - 002 - Tehran- Season 1 - Thunder (Soundtrack)
+(*
+-- Tehran- Season 1 (Original Series Soundtrack) - 002 - Tehran- Season 1 - Thunder (Soundtrack)
 set theAlbum to "Tehran- Season 1 (Original Series Soundtrack)"
 set theArtist to "Mark Eliyahu"
 set theTrackCount to 20
@@ -28,15 +29,18 @@ set theTrackNamePos to 4
 *)
 
 
-(*--Star Wars- The Bad Batch, Vol. 1 (Episodes 1-8) Soundtrack by Kevin Kiner, 001, Star Wars- The Bad Batch Vol. 1, Cid�s Jukebox Mix Vol. 1 (Soundtrack by Kevin Kiner)
+(*
+--Star Wars- The Bad Batch, Vol. 1 (Episodes 1-8) Soundtrack by Kevin Kiner, 001, Star Wars- The Bad Batch Vol. 1, Cid�s Jukebox Mix Vol. 1 (Soundtrack by Kevin Kiner)
 -- track num 3, name 5
 set theAlbum to "The Bad Batch, Vol. 1 (Episodes 1-8) Soundtrack"
 set theArtist to "Kevin Kiner"
 set theTrackCount to 37
 set theGenre to "Soundtrack"
 set theTrackNumPos to 3
-set theTrackNamePos to 5*)
+set theTrackNamePos to 5
+*)
 
+(*
 --Monsters at Work (Original Soundtrack) by Dominic Lewis - 001 - Monsters at Work Main Title (Toy Piano) - Monsters at Work Soundtrack (by Dominic Lewis)
 -- track num 3, name 5
 set theAlbum to "Monsters at Work (Original Soundtrack)"
@@ -44,12 +48,47 @@ set theArtist to "Dominic Lewis"
 set theTrackCount to 18
 set theGenre to "Soundtrack"
 set theTrackNumPos to 2
-set theTrackNamePos to 3 -- but many of them are 3 or 4; argh; need proper regex to figure this one out
+set theTrackNamePos to 4 -- but many of them are 3 or 4; argh; need proper regex to figure this one out 
+*)
+
+(*
+-- No Time To Die (Original Motion Picture Soundtrack) by Hans Zimmer, 002, No Time To Die- # 21 No Time to Die – Billie Eilish
+-- position 4 as track and track title
+-- No Time To Die- # 21 No Time to Die
+-- TODO: How to parse
+set theAlbum to "No Time To Die (Original Motion Picture Soundtrack)"
+set theArtist to "Hans Zimmer"
+set theTrackCount to 22
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2 -- these are all mixed up too
+set theTrackNamePos to 3 -- includes extra stuff - title, track # 
+*)
+
+
+(*
+--Dune (Original Motion Picture Soundtrack) by Hans Zimmer, 001, Dune – My Road Leads into the Desert (Soundtrack by Hans Zimmer)
+set theAlbum to "Dune (Original Motion Picture Soundtrack)"
+set theArtist to "Hans Zimmer"
+set theTrackCount to 22
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3 -- has extra album name
+*)
+
+
+--Vangelis Blade Runner Soundtrack (29th Anniversary Limited Edition 2011), 001, Vangelis- Blade Runner Soundtrack [CD4], Tears In Rain [1994 Version]
+set theAlbum to "Blade Runner Soundtrack (29th Anniversary Limited Edition 2011)"
+set theArtist to "Vangelis"
+set theTrackCount to 82
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2 -- need to invert these via 82 - number or theTrackCount - theTrackNumPos; use invertTrackNumbers
+set invertTrackNumbers to 1 
+set theTrackNamePos to 4 
+
 
 tell application "Music"
-	name of current playlist
-	
-	properties of current track
+	--name of current playlist
+	--properties of current track
 	--name of current track
 	
 	
@@ -97,6 +136,10 @@ tell application "Music"
 		set album to theAlbum
 		set artist to theArtist
 		set track number to trackNum
+		-- hack to invert track count for some albums
+		if invertTrackNumbers is 1
+			set track number to (theTrackCount - trackNum +1)
+		end
 		set track count to theTrackCount
 		set genre to theGenre
 		set name to trackName
