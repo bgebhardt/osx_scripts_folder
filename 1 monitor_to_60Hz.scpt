@@ -9,8 +9,7 @@
 tell application "System Preferences"
 	activate
 	set current pane to pane id "com.apple.preference.displays"
-	reveal (first anchor of current pane whose name is "displaysColorTab")
-	delay 1 -- wait for pane to load. May not be long enough.
+	delay 1.0 -- wait for pane to load. May not be long enough.	
 end tell
 
 tell application "System Events"
