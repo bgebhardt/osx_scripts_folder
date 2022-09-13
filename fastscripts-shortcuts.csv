@@ -1,0 +1,42 @@
+name, shortcut, script_file
+"change_browser", "⌃⌥⌘B", Macintosh HD:Users:brgebhar:Library:Scripts:change_browser.applescript
+"prev track", "⌥⇧⌘⇠", Macintosh HD:Users:brgebhar:Library:Scripts:0 music:prev track.scpt
+"Current URL to clipboard md", "⇧⌘C", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Google Chrome:Current URL to clipboard md.scpt
+"1-star", "⌥⇧⌘1", Macintosh HD:Users:brgebhar:Library:Scripts:0 music:1-star.scpt
+"Defer 1 month", "⌃⌘M", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:Defer 1 month.scpt
+"Open JIRA", "⇧⌘J", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Google Chrome:Open JIRA.applescript
+"Copy URLs to clipboard md", "⌥⇧⌘C", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Google Chrome:Copy URLs to clipboard md.scpt
+"Current URL to clipboard rich link", "⌥⇧C", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Microsoft Edge:Current URL to clipboard rich link.applescript
+"Clear Dates", "⇧⌘G", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:Clear Dates.scpt
+"2-star", "⌥⇧⌘2", Macintosh HD:Users:brgebhar:Library:Scripts:0 music:2-star.scpt
+"Defer to Friday", "⌃⌘F", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:Defer to Friday.scpt
+"Toggle Tag", "⌘R", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:Toggle Tag.scpt
+"Copy URLs to clipboard md", "⌥⇧⌘C", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Safari:Copy URLs to clipboard md.scpt
+"Current URL to clipboard md", "⇧⌘C", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Microsoft Edge:Current URL to clipboard md.applescript
+"Copy URLs to clipboard md", "⌥⇧⌘C", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Microsoft Edge:Copy URLs to clipboard md.applescript
+"Today", "⌘T", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:Today.scpt
+"Defer 1 week", "⇧⌘W", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:Defer 1 week.scpt
+"Outlook2015-2-OmniFocus", "⌥⇧Q", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Microsoft Outlook:Outlook2015-2-OmniFocus.scpt
+"next track", "⌥⇧⌘⇢", Macintosh HD:Users:brgebhar:Library:Scripts:0 music:next track.scpt
+"volume down", "⌥⇧⌘-", Macintosh HD:Users:brgebhar:Library:Scripts:0 sound:volume down.scpt
+"3-star", "⌥⇧⌘3", Macintosh HD:Users:brgebhar:Library:Scripts:0 music:3-star.scpt
+"Warn before quitting", "⌘Q", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Safari:Warn before quitting.scpt
+"song_metadata_from_name", "⌃⌘S", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Music:song_metadata_from_name.scpt
+"playpause", "⌥⇧⌘␣", Macintosh HD:Users:brgebhar:Library:Scripts:0 music:playpause.scpt
+"volume up", "⌥⇧⌘=", Macintosh HD:Users:brgebhar:Library:Scripts:0 sound:volume up.scpt
+"Defer for 1 quarter", "⌃⌘E", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:Defer for 1 quarter.scpt
+"SetWaitFor", "⌥⌘W", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:SetWaitFor.scpt
+"look up MSFT Edge", "⌃⇧⌘L", Macintosh HD:Users:brgebhar:Library:Scripts:look up MSFT Edge.scpt
+"4-star", "⌥⇧⌘4", Macintosh HD:Users:brgebhar:Library:Scripts:0 music:4-star.scpt
+"Set to Reference", "⇧⌘R", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:Set to Reference.scpt
+"Mail url via Outlook", "⇧⌘M", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Safari:Mail url via Outlook.scpt
+"Swap due defere dates", "⌥⌘S", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:Swap due defere dates.scpt
+"Defer to weekend", "⌃⌥W", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:Defer to weekend.scpt
+"Current URL to clipboard md", "⇧⌘C", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Safari:Current URL to clipboard md.scpt
+"Copy ALL URLs to clipboard md", "⌥⇧⌘A", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Safari:Copy ALL URLs to clipboard md.scpt
+"5-star", "⌥⇧⌘5", Macintosh HD:Users:brgebhar:Library:Scripts:0 music:5-star.scpt
+"Open JIRA", "⇧⌘J", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Safari:Open JIRA.applescript
+"Tomorrow", "⇧⌘T", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:Tomorrow.scpt
+"0-star", "⌥⇧⌘0", Macintosh HD:Users:brgebhar:Library:Scripts:0 music:0-star.scpt
+"Copy All URLs to clipboard md", "⌥⇧⌘A", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Google Chrome:Copy All URLs to clipboard md.scpt
+"Swap morning evening times", "⌥⌘T", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:Swap morning evening times.scpt
