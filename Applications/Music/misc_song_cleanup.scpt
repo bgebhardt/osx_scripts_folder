@@ -13,10 +13,13 @@ tell application "Music"
 	
 	set theTrack to item 1 of selection -- get the first track
 	-- "Dune – My Road Leads into the Desert (Soundtrack by Hans Zimmer)"
+	-- 46 Wreckage (Soundtrack by Jeff Russo & Paul Doucette) -
+	-- 30 You Belong With Us (Music by Joseph Trapanese) -
+
 	
 	set str to name of theTrack
 	set str to my trimFrontChars(str, 0)
-	set str to my trimLastChars(str, 28)
+	set str to my trimLastChars(str, 31)
 	
 	str
 	

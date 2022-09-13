@@ -8,6 +8,8 @@ TODOs
 * parse out genre from name
 *)
 
+set invertTrackNumbers to 0 -- default to not invert the track numbers
+
 -- change these for each album you're processing
 (*
 set theAlbum to "Foundation- Season 1 (Apple TV+ Original Series Soundtrack)"
@@ -75,7 +77,7 @@ set theTrackNumPos to 2
 set theTrackNamePos to 3 -- has extra album name
 *)
 
-
+(*
 --Vangelis Blade Runner Soundtrack (29th Anniversary Limited Edition 2011), 001, Vangelis- Blade Runner Soundtrack [CD4], Tears In Rain [1994 Version]
 set theAlbum to "Blade Runner Soundtrack (29th Anniversary Limited Edition 2011)"
 set theArtist to "Vangelis"
@@ -84,7 +86,47 @@ set theGenre to "Soundtrack"
 set theTrackNumPos to 2 -- need to invert these via 82 - number or theTrackCount - theTrackNumPos; use invertTrackNumbers
 set invertTrackNumbers to 1 
 set theTrackNamePos to 4 
+*)
 
+(*
+--The Lord of the Rings- The Rings of Power (Season 1- Amazon Original Series Soundtrack) by Bear McCreary, 002, Galadriel, The Lord of the Rings- The Rings of Power (Season 1- Soundtrack) by Bear McCrea…
+set theAlbum to "The Lord of the Rings- The Rings of Power (Season 1- Amazon Original Series Soundtrack)"
+set theArtist to "Bear McCreary"
+set theTrackCount to 2
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3
+*)
+
+(*
+--For All Mankind- Season 3 (Apple TV+ Original Series Soundtrack) by Jeff Russo & Paul Doucette, 001,  For All Mankind- Season 3, Wreckage (Soundtrack by Jeff Russo & Paul Doucette) -
+set theAlbum to "For All Mankind- Season 3 (Apple TV+ Original Series Soundtrack)"
+set theArtist to "Jeff Russo & Paul Doucette"
+set theTrackCount to 16
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 4 -- need to cut off last part of name with unpack song script
+*)
+
+(*
+--Top Gun- Maverick (Music From The Motion Picture) by Harold Faltermeyer & Hans Zimmer & Lorne Balfe, 003, Top Gun- Maverick 💿 The Man, The Legend, Touchdown (Music From The Motion Picture) -
+set theAlbum to "Top Gun- Maverick (Music From The Motion Picture)"
+set theArtist to "Harold Faltermeyer & Hans Zimmer & Lorne Balfe"
+set theTrackCount to 8
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3 -- weird names to fix
+*)
+
+(*
+--The Witcher- Season 2 (Soundtrack from the Netflix Original Series) by Joseph Trapanese, 007, The Witcher- Season 2 Soundtrack, Pain and Desperation (Music by Joseph Trapanese) -
+set theAlbum to "The Witcher- Season 2 (Soundtrack from the Netflix Original Series)"
+set theArtist to "Joseph Trapanese"
+set theTrackCount to 32
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 4 -- need to cut off last part of name with unpack song script
+*)
 
 tell application "Music"
 	--name of current playlist
