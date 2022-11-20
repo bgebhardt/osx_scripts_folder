@@ -6,8 +6,8 @@ set browserName to myGetBrowserName()
 -- set preferredBrowser to "Microsoft Edge" -- name of the broswer you want links opened in
 
 -- I don't know how to do this without code duplication because I need to reference app terms like "tab"
-if browserName is "Microsoft Edge Canary" then
-	tell application "Microsoft Edge Canary"
+if browserName is "Microsoft Edge Beta" then
+	tell application "Microsoft Edge Beta"
 		
 		-- INSERT SCRIPT SPECIFIC CODE HERE
 		
