@@ -46,7 +46,7 @@ if browserName is "Microsoft Edge Canary" then
 				else
 					set isActiveTabText to ""
 				end if
-				set mdURL to "* " & isActiveTabText & "[" & title of i & "]( " & URL of i & " )"
+				set mdURL to "- " & isActiveTabText & "[" & title of i & "]( " & URL of i & " )"
 				set URL_list to URL_list & return & mdURL
 				set currentTab to currentTab + 1
 			end repeat
@@ -100,7 +100,7 @@ else if browserName is "Microsoft Edge" then
 				else
 					set isActiveTabText to ""
 				end if
-				set mdURL to "* " & isActiveTabText & "[" & title of i & "]( " & URL of i & " )"
+				set mdURL to "- " & isActiveTabText & "[" & title of i & "]( " & URL of i & " )"
 				set URL_list to URL_list & return & mdURL
 				set currentTab to currentTab + 1
 			end repeat

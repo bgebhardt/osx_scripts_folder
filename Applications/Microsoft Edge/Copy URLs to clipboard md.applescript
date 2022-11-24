@@ -12,7 +12,7 @@ if browserName is "Microsoft Edge Beta" then
 		
 	set URL_list to ""
 	repeat with i in (every tab of window 1)
-		set mdURL to "* [" & title of i & "](" & URL of i & ")"
+		set mdURL to "- [" & title of i & "](" & URL of i & ")"
 		set URL_list to mdURL & return & URL_list
 	end repeat
 	
@@ -28,7 +28,7 @@ else if browserName is "Microsoft Edge" then
 
 	set URL_list to ""
 	repeat with i in (every tab of window 1)
-		set mdURL to "* [" & title of i & "](" & URL of i & ")"
+		set mdURL to "- [" & title of i & "](" & URL of i & ")"
 		set URL_list to mdURL & return & URL_list
 	end repeat
 	
