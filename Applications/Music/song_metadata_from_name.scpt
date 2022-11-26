@@ -128,6 +128,59 @@ set theTrackNumPos to 2
 set theTrackNamePos to 4 -- need to cut off last part of name with unpack song script
 *)
 
+(*
+--{"Succession- Season 1 (HBO Original Series Soundtrack)", "028", "Succession (Main Title Theme)"}
+set theAlbum to "Succession- Season 1 (HBO Original Series Soundtrack)"
+set theArtist to "Nicholas Britell"
+set theTrackCount to 28
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3
+set invertTrackNumbers to 1 
+*)
+
+--{"Succession- Season 2 (Music from the HBO Series)", "001", "Succession S2 Official Soundtrack | L to the OG feat. Kendall Roy", "Nicholas Britell | WaterTower"}
+set theAlbum to "Succession- Season 2 (HBO Original Series Soundtrack)"
+set theArtist to "Nicholas Britell"
+set theTrackCount to 23
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3
+set invertTrackNumbers to 1 
+
+(*
+-- {"Succession- Season 3 (HBO Series Original Soundtrack)", "002", "Succession S3 Official Soundtrack _ Andante Moderato – End Credits – _Amen_"}
+set theAlbum to "Succession- Season 3 (HBO Series Original Soundtrack)"
+set theArtist to "Nicholas Britell"
+set theTrackCount to 21
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3 -- need adjust as the titles include "-"'s 
+set invertTrackNumbers to 1 
+*)
+
+(*
+--{"Andor- Vol. 1 (Episodes 1-4) (Original Score)", "001", "END OF DAY (Time Grappler)"}
+set theAlbum to "Andor: Vol. 1 (Episodes 1-4) [Original Score])"
+set theArtist to "Nicholas Britell"
+set theTrackCount to 34
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3
+set invertTrackNumbers to 1 
+*)
+
+(*
+--{"Andor- Vol. 2 (Episodes 5-8) (Original Score)", "002", "Thirty Shifts Later"}
+set theAlbum to "Andor: Vol. 2 (Episodes 5-8) [Original Score]"
+set theArtist to "Nicholas Britell"
+set theTrackCount to 27
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3
+set invertTrackNumbers to 1 
+*)
+
 tell application "Music"
 	--name of current playlist
 	--properties of current track
