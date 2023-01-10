@@ -8,7 +8,7 @@ set bolDebug to false
 tell application "Microsoft PowerPoint"
 	set link to the clipboard
 	-- https://microsoft.sharepoint-df.com/:w:/t/M365ProductROB/EU9Fzul1OIVDhkhSxl5YbL8BYd9SbfpsCvmaG5fh9OVrbA?e=130dXk
-	set d to active document
+	set d to active presentation
 	
 	-- markdown
 	-- set link to "(" & name of d & ")[" & theClip & "]"
@@ -18,12 +18,14 @@ tell application "Microsoft PowerPoint"
 	
 	log (get HTMLlink)
 	-- check the first few characters look like a microsoft sharepoint link (MSFT internal only)
-	if length of link is greater than 28 then
-		set substr to characters 1 thru 28 of link as string
+	if length of link is greater than 17 then
+		set substr to characters 1 thru 17 of link as string
+		-- match on "https://microsoft" 
 		--match this so it works for https://microsoft.sharepoint-df.com too.
-		if (substr) is equal to "https://microsoft.sharepoint" then
+		--and match this so it works for https://microsoft-my.sharepoint.com too.
+		if (substr) is equal to "https://microsoft" then
 			-- matches so continue
-						
+			
 			-- and put it as RTF on the clipboard
 			my copyHTMLasRTFtoClipboard(HTMLlink)
 			--display dialog "matches"
