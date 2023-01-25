@@ -183,7 +183,7 @@ set theTrackNamePos to 3
 set invertTrackNumbers to 1 
 *)
 
-
+(*
 {"Andor- Vol. 3 (Episodes 9-12) (Original Score)", "023", "Make It Look Good"}
 set theAlbum to "Andor- Vol. 3 (Episodes 9-12) (Original Score)"
 set theArtist to "Nicholas Britell"
@@ -192,7 +192,16 @@ set theGenre to "Soundtrack"
 set theTrackNumPos to 2
 set theTrackNamePos to 3
 set invertTrackNumbers to 1 
+*)
 
+--{"Slow Horses- Season 1 (ATV+ Original Series Soundtrack)", "001", "Slow Horses Return"}.
+set theAlbum to "Slow Horses- Season 1 (ATV+ Original Series Soundtrack)"
+set theArtist to "Daniel Pemberton"
+set theTrackCount to 27
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3
+set invertTrackNumbers to 1 
 
 
 tell application "Music"
