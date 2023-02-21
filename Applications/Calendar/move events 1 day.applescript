@@ -6,7 +6,7 @@ set startTime to current date
 set endTime to (date (date string of startTime)) + 1 * days 
 
 tell application "Calendar"
-	set theEvents to {}
+	set theEvents to {}     
 	
     -- get greater than current date but less than midnight on current date.
 	tell calendar "Scheduled Tasks"
