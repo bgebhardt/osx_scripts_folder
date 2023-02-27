@@ -1,7 +1,8 @@
--- Script moves all events today that have not passed in the "Schedueld Tasks" calendar to the next day.
+-- Script moves all events today in the "Schedueld Tasks" calendar to the next day.
 -- I use this when I decide I'm not getting any more of these task events done today.
 
 set startTime to current date
+set startTime to (date (date string of startTime)) -- set to midnight for today
 -- sets to midnight of the next day so we get all events between now and the end of the day
 set endTime to (date (date string of startTime)) + 1 * days 
 
