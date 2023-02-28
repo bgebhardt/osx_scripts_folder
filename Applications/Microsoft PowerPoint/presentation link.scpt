@@ -14,6 +14,6 @@ tell application "Microsoft PowerPoint"
 		return "file://" & POSIX path of fullURL
 	else
 		set appURL to "ms-powerpoint:ofe|u|" & fullURL
-		set link to "[" & activeDocName & "](" & appURL & ")"
 	end if
+	set link to "[" & activeDocName & "](" & appURL & ")"
 end tell
