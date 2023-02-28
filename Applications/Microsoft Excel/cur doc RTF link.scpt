@@ -1,91 +1,35 @@
--- Script to get the active document name and create a link to it based on what is in clipboard. It assumes you have just copied a link to the doc in the clipboard. 
--- After running the clipboard has an RTF version of the link with a friendly doc name. It's the same as copying the link in a web broswer for sharing.
+-- Script to get the active document name and create a link to it based on what is in clipboard.
 -- turning HTML to rtf inspired by and copied from https://gist.github.com/JMichaelTX/603c98d5f12ffcf5be1b080285982437
-
-global bolDebug
-set bolDebug to false
-
-property gStyleLink : "color:blue"
-property gstrFont : "font-family:verdana,geneva,sans-serif;"
-property gstrLinkFontSize : "font-size:12px;"
+-- also inspired by hookmark links with fixes for Office apps
+-- [Excel OneDrive file not Hookable \[workarounds\] - Discussion & Help - Hookmark Forum](https://discourse.hookproductivity.com/t/excel-onedrive-file-not-hookable-workarounds/2367/10)
+-- [Using Hookmark in Microsoft OneDrive with Microsoft Office Apps â€“ Hookmark](https://hookproductivity.com/help/integration/using-hook-with-onedrive/)
 
 tell application "Microsoft Excel"
-	set link to the clipboard
-	-- https://microsoft.sharepoint-df.com/:w:/t/M365ProductROB/EU9Fzul1OIVDhkhSxl5YbL8BYd9SbfpsCvmaG5fh9OVrbA?e=130dXk
-	set d to active workbook
-	set linkText to (name of d)
-	
-	-- hack to make sure we have text from the clipboard. If not we stop the script
-	-- this works around errors trying to pass the script RTF or other non-text
-	try
-		link as text
-	on error
-		beep 4
-		return -1
-	end try
-
-	-- markdown
-	-- set link to "(" & name of d & ")[" & theClip & "]"
-	
-	-- create the HTML link; <a href="url">link text</a>
-	--set HTMLlink to "<a href=\"" & link & "\">" & name of d & "</a>"
-	set HTMLlink to my createHTMLLink(linkText, link)
-	
-	log (get HTMLlink)
-	-- check the first few characters look like a microsoft sharepoint link (MSFT internal only)
-	if length of link is greater than 17 then
-		set substr to characters 1 thru 17 of link as string
-		-- match on "https://microsoft" 
-		--match this so it works for https://microsoft.sharepoint-df.com too.
-		--and match this so it works for https://microsoft-my.sharepoint.com too.
-		if (substr) is equal to "https://microsoft" then
-			-- matches so continue
-						
-			-- and put it as RTF on the clipboard
-			my copyHTMLasRTFtoClipboard(HTMLlink)
-			--display dialog "matches"
-			beep 2
-		else
-			beep 3
-		end if
-	else -- does not match
-		beep 1
-		-- do nothing
-		--display dialog "NOT match"
-	end if
-	
+	set link to my getDocHTMLLink(active workbook)
+	my copyHTMLasRTFtoClipboard(link)
 end tell
 
-
-###ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-#      COPY HTML TO CLIPBOARD AS RTF:  copyHTMLasRTFtoClipboard
-###ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+on getDocHTMLLink(d)
+	tell application "Microsoft Excel"
+		set activeDocName to name of d
+		set activeDocPath to path of d
+		set fullURL to full name of d
+		if fullURL does not start with "http" then
+			set appURL to "file://" & POSIX path of fullURL
+		else
+			set appURL to "ms-excel:ofe|u|" & fullURL
+		end if
+		-- markdown link: set link to "[" & activeDocName & "](" & appURL & ")"
+		set link to "<a href=\"" & appURL & "\">" & activeDocName & "<a>"
+		
+		return link
+	end tell
+end getDocHTMLLink
 
 on copyHTMLasRTFtoClipboard(pstrHTML)
-	
-	if bolDebug then display dialog "ENTER copyHTMLasRTFtoClipboard"
 	
 	-- REWRITTEN AS RTF AND COPIED TO THE CLIPBOARD
 	set lstrCMD to "echo " & quoted form of pstrHTML & " | textutil -format html -convert rtf -stdin -stdout | pbcopy -Prefer rtf"
 	do shell script lstrCMD
 	
-	if bolDebug then
-		display notification pstrHTML with title "Copy RTF to Clipboard"
-	end if
-	
 end copyHTMLasRTFtoClipboard
-
-###ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-#      Create HTML Link:    createHTMLLink
-###ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-
-on createHTMLLink(pstrLinkText, pstrURL)
-  
-  set strHTMLLink to "<a href=\"" & pstrURL & "\" style=\"" & gStyleLink & "\">" & pstrLinkText & "<a>"
-  
-  -- MUST include a space character just before the </span> in order to keep font styles --
-  set strHTMLLink to "<span style=\"" & gstrFont & gstrLinkFontSize & "\">" & strHTMLLink & " </span>"
-  
-  return strHTMLLink
-  
-end createHTMLLink
