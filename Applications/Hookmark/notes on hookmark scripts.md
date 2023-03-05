@@ -54,6 +54,35 @@ end tell
 
 set appURL to "ms-excel:ofe|u|" & fullURL
 
+## PDF Expert
+
+### Get Address
+tell application "System Events"
+	tell process "PDF Expert"
+		if enabled of menu item "Show in Finder" of menu 1 of menu bar item "File" of menu bar 1 then
+			click menu item "Show in Finder" of menu 1 of menu bar item "File" of menu bar 1
+			delay 0.1
+			tell application "Finder"
+				set theItems to selection
+				set ext to name extension of item 1 of theItems
+				if ext = "hook" or ext = "HOOK" then
+					set filepath to item 1 of theItems as alias
+					return read POSIX path of filepath
+				end if
+				set theURL to URL of item 1 of theItems
+				close front window
+				activate application "PDF Expert"
+				get theURL
+			end tell
+		end if
+	end tell
+end tell
+
+### Get Name
+tell application "System Events"
+	get name of first window of process "PDF Expert"
+end tell
+
 ## How to create RTF links on the Mac
 
 Inspired by [AppleScript to Create Rich Text Hyperlink with Custom Protocol from Selected Text](https://gist.github.com/JMichaelTX/603c98d5f12ffcf5be1b080285982437)
