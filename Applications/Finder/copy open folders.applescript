@@ -9,7 +9,7 @@ tell application "Finder"
 	set the clipboard to (((count wins) as text) & " open windows" & return)
 	repeat with w in wins
 		set thePath to (POSIX path of (target of w as text)) -- gets the text version of the path to the folder
-		set theEntry to "** " & (name of w) & " ** (" & thePath & ")"
+		set theEntry to "** " & (name of w) & " ** (file://" & thePath & ")"
 		set the clipboard to (the clipboard) & return & theEntry
 	end repeat
 	
