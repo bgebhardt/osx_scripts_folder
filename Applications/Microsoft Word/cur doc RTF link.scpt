@@ -29,7 +29,10 @@ end getDocHTMLLink
 on copyHTMLasRTFtoClipboard(pstrHTML)
 	
 	-- REWRITTEN AS RTF AND COPIED TO THE CLIPBOARD
-	set lstrCMD to "echo " & quoted form of pstrHTML & " | textutil -format html -convert rtf -stdin -stdout | pbcopy -Prefer rtf"
+	-- TODO: switch script back to markdown; check for /opt/homebrew/bin/pandoc existence
+	-- set lstrCMD to "echo " & quoted form of pstrHTML & " | textutil -format html -convert rtf -stdin -stdout | pbcopy -Prefer rtf"
+	set lstrCMD to "echo " & quoted form of pstrHTML & " |  /opt/homebrew/bin/pandoc -standalone --from html --to rtf  | pbcopy -Prefer rtf"
+	
 	do shell script lstrCMD
 	
 end copyHTMLasRTFtoClipboard
