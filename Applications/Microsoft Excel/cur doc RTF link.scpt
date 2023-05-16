@@ -4,6 +4,12 @@
 -- [Excel OneDrive file not Hookable \[workarounds\] - Discussion & Help - Hookmark Forum](https://discourse.hookproductivity.com/t/excel-onedrive-file-not-hookable-workarounds/2367/10)
 -- [Using Hookmark in Microsoft OneDrive with Microsoft Office Apps – Hookmark](https://hookproductivity.com/help/integration/using-hook-with-onedrive/)
 
+-- exit if no pandoc
+if not my checkForPandoc() then
+	display dialog "pandoc not found. Install pandoc with Homebrew: brew install pandoc"
+	return
+end if
+
 tell application "Microsoft Excel"
 	set link to my getDocHTMLLink(active workbook)
 	my copyHTMLasRTFtoClipboard(link)
@@ -37,3 +43,13 @@ on copyHTMLasRTFtoClipboard(pstrHTML)
 	do shell script lstrCMD
 	
 end copyHTMLasRTFtoClipboard
+
+on checkForPandoc()
+	set lstrCMD to "/opt/homebrew/bin/pandoc --version"
+	try
+		do shell script lstrCMD
+		return true
+	on error
+		return false
+	end try
+end
