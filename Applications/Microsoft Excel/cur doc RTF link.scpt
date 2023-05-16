@@ -36,7 +36,7 @@ on copyHTMLasRTFtoClipboard(pstrHTML)
 	
 	-- REWRITTEN AS RTF AND COPIED TO THE CLIPBOARD
 	
-	-- TODO: switch script back to markdown; check for /opt/homebrew/bin/pandoc existence
+	-- TODO: switch script back to markdown
 	set lstrCMD to "echo " & quoted form of pstrHTML & " |  /opt/homebrew/bin/pandoc -standalone --from html --to rtf  | pbcopy -Prefer rtf"
 	--set lstrCMD to "echo " & quoted form of pstrHTML & " | textutil -format html -font Arial -fontsize 28 -convert rtf -stdin -stdout | pbcopy -Prefer rtf"
 	
