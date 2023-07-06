@@ -8,7 +8,12 @@ set browserName to myGetBrowserName()
 -- also inserts tab counts and a total tab count at the end
 -- [tite]("url")
 -- I don't know how to do this without code duplication because I need to reference app terms like "tab"
+-- in theory I can magically select the right version but this script doesn’t work when one of the browser apps isn't installed.
+-- As I don't install Beta Edge now I'm commenting this out.
 if browserName is "Microsoft Edge Beta" then
+	display dialog "Uncomment Microsoft Edge Beta in script to get this working now."
+
+	(*)
 	tell application "Microsoft Edge Beta"
 		
 	-- inspired by this gist: https://gist.github.com/rentzsch/1047967
@@ -61,6 +66,7 @@ if browserName is "Microsoft Edge Beta" then
 	
 	beep 2		
 	end tell
+	*)
 	
 else if browserName is "Microsoft Edge" then
 	tell application "Microsoft Edge"
