@@ -194,10 +194,32 @@ set theTrackNamePos to 3
 set invertTrackNumbers to 1 
 *)
 
+(*
 --{"Slow Horses- Season 1 (ATV+ Original Series Soundtrack)", "001", "Slow Horses Return"}.
 set theAlbum to "Slow Horses- Season 1 (ATV+ Original Series Soundtrack)"
 set theArtist to "Daniel Pemberton"
 set theTrackCount to 27
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3
+set invertTrackNumbers to 1 
+*)
+
+(*
+-- The Lightning Thief (Original Cast Recording) - 001 - Bring on the Monsters
+set theAlbum to "The Lightning Thief (Original Cast Recording)"
+set theArtist to "Rob Rokicki"
+set theTrackCount to 19
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3
+set invertTrackNumbers to 1 
+*)
+
+--Guardians of the Galaxy Vol. 3 (Original Score) - 001 - All Life Has Meaning (From _Guardians of the Galaxy Vol. 3_-Visualizer Video)
+set theAlbum to "Guardians of the Galaxy Vol. 3 (Original Score)"
+set theArtist to "John Murphy"
+set theTrackCount to 26
 set theGenre to "Soundtrack"
 set theTrackNumPos to 2
 set theTrackNamePos to 3
