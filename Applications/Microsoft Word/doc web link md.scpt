@@ -8,12 +8,12 @@
 -- inspired by Hookmark's excel scripts 
 -- Links with fixes for Office apps
 -- [Excel OneDrive file not Hookable \[workarounds\] - Discussion & Help - Hookmark Forum](https://discourse.hookproductivity.com/t/excel-onedrive-file-not-hookable-workarounds/2367/10)
--- [Using Hookmark in Microsoft OneDrive with Microsoft Office Apps – Hookmark](https://hookproductivity.com/help/integration/using-hook-with-onedrive/)
+-- [Using Hookmark in Microsoft OneDrive with Microsoft Office Apps ‚Äì Hookmark](https://hookproductivity.com/help/integration/using-hook-with-onedrive/)
 
-tell application "Microsoft PowerPoint"
-	set activeDoc to active presentation
+tell application "Microsoft Word"
+	set activeDoc to active document
 	set activeDocName to name of activeDoc
-	set activeDocPath to path of activeDoc -- this is the urlencoded version of the doc
+	set activeDocPath to path of activeDoc
 	set fullURL to full name of activeDoc
 	if fullURL does not start with "http" then
 		-- TODO: improve this error return
@@ -21,6 +21,8 @@ tell application "Microsoft PowerPoint"
 		return "can't make " & activeDocName & " into a web link."
 		--return "file://" & POSIX path of fullURL
 	end if
+	-- if you want it in markdown format
+	set link to "[" & activeDocName & "](" & fullURL & "?Web=1)"
 	
 	-- need to encode the doc name before putting it in the url
 	set encodedDocName to my encodeText(activeDocName, true, false)
@@ -28,14 +30,13 @@ tell application "Microsoft PowerPoint"
 	set docURL to activeDocPath & "/" & encodedDocName & "?Web=1"
 	
 	-- if you want it in markdown format
-	--set link to "[" & activeDocName & "](" & docURL & ")"
+	set link to "[" & activeDocName & "](" & docURL & ")"
 	
 	-- if you just want the link
-	set link to docURL & "?Web=1"
+	--set link to docURL & "?Web=1"
 	
 	set the clipboard to link
 end tell
-
 
 -- from [Mac Automation Scripting Guide: Encoding and Decoding Text](https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/MacAutomationScriptingGuide/EncodeandDecodeText.html)
 on encodeCharacter(theCharacter)
@@ -63,4 +64,3 @@ on encodeText(theText, encodeCommonSpecialCharacters, encodeExtendedSpecialChara
 	end repeat
 	return theEncodedText
 end encodeText
-

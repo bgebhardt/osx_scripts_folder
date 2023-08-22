@@ -30,10 +30,10 @@ tell application "Microsoft Word"
 	set docURL to activeDocPath & "/" & encodedDocName & "?Web=1"
 	
 	-- if you want it in markdown format
-	set link to "[" & activeDocName & "](" & docURL & ")"
+	--set link to "[" & activeDocName & "](" & docURL & ")"
 	
 	-- if you just want the link
-	--set link to docURL & "?Web=1"
+	set link to docURL & "?Web=1"
 	
 	set the clipboard to link
 end tell
