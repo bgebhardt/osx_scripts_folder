@@ -13,18 +13,26 @@
 tell application "Microsoft Excel"
 	set activeDoc to active workbook
 	set activeDocName to name of activeDoc
-	set activeDocPath to path of activeDoc
+	set activeDocPath to path of activeDoc -- not url encoded
 	set fullURL to full name of activeDoc
+	
 	if fullURL does not start with "http" then
 		-- TODO: improve this error return
 		display dialog "can't make " & activeDocName & " into a web link."
 		return "can't make " & activeDocName & " into a web link."
 		--return "file://" & POSIX path of fullURL
 	end if
+	
+	set docURL to full name urlencoded of activeDoc & "?Web=1"
 	-- if you want it in markdown format
-	set link to "[" & activeDocName & "](" & fullURL & "?Web=1)"
+	set link to "[" & activeDocName & "](" & docURL & ")"
 	
 	-- if you just want the link
-	-- set link to fullURL & "?Web=1"
+	--set link to docURL & "?Web=1"
+	
 	set the clipboard to link
+	
 end tell
+
+-- not used; keeping as FYI on how to url encode/decode
+-- from [Mac Automation Scripting Guide: Encoding and Decoding Text](https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/MacAutomationScriptingGuide/EncodeandDecodeText.html)
