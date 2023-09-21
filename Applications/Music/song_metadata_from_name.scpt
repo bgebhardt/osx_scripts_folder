@@ -216,6 +216,7 @@ set theTrackNamePos to 3
 set invertTrackNumbers to 1 
 *)
 
+(*
 --Guardians of the Galaxy Vol. 3 (Original Score) - 001 - All Life Has Meaning (From _Guardians of the Galaxy Vol. 3_-Visualizer Video)
 set theAlbum to "Guardians of the Galaxy Vol. 3 (Original Score)"
 set theArtist to "John Murphy"
@@ -223,6 +224,27 @@ set theTrackCount to 26
 set theGenre to "Soundtrack"
 set theTrackNumPos to 2
 set theTrackNamePos to 3
+set invertTrackNumbers to 1 
+*)
+
+(*
+--Ahsoka Soundtrack - 004 - Star Wars AHSOKA Vol. 1 Soundtrack _ Can_t Follow Us Ð Kevin Kiner _ Original Series Score _
+set theAlbum to "Star Wars AHSOKA Vol. 1 Soundtrack"
+set theArtist to "Kevin Kiner"
+set theTrackCount to 47
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3
+set invertTrackNumbers to 1 
+*)
+
+--Ahsoka, Vol. 1 (Episodes 1-4) [Original Soundtrack] - 001 - Kevin Kiner - Hunt Them Down (From _Ahsoka - Vol. 1 (Episodes 1-4)_-Score-Audio Only)
+set theAlbum to "Star Wars Ahsoka, Vol. 1 (Episodes 1-4) [Original Soundtrack]"
+set theArtist to "Kevin Kiner"
+set theTrackCount to 6
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 4
 set invertTrackNumbers to 1 
 
 
