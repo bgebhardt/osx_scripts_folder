@@ -7,7 +7,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/usr/bin/osascript</string>
-        <string>/Users/bryan/Library/Scripts/battery/check_charger.appescript</string>
+        <string>/Users/bryan/Library/Scripts/battery/check_charger.applescript</string>
     </array>
     <key>StartInterval</key>
 	<integer>900</integer>
