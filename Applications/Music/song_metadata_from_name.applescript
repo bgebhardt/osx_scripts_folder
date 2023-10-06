@@ -238,6 +238,7 @@ set theTrackNamePos to 3
 set invertTrackNumbers to 1 
 *)
 
+(*)
 --Ahsoka, Vol. 1 (Episodes 1-4) [Original Soundtrack] - 001 - Kevin Kiner - Hunt Them Down (From _Ahsoka - Vol. 1 (Episodes 1-4)_-Score-Audio Only)
 set theAlbum to "Star Wars Ahsoka, Vol. 1 (Episodes 1-4) [Original Soundtrack]"
 set theArtist to "Kevin Kiner"
@@ -245,6 +246,17 @@ set theTrackCount to 6
 set theGenre to "Soundtrack"
 set theTrackNumPos to 2
 set theTrackNamePos to 4
+set invertTrackNumbers to 1 
+*)
+
+-- Star Wars AHSOKA Vol. 1 & 2 Soundtrack (Original Series Score) (Episodes 1-8) - 002 - Star Wars AHSOKA Vol. 2 Soundtrack _ Epilogue Part I Ð Kevin Kiner _ Original Series Score _
+
+set theAlbum to "Star Wars AHSOKA Vol. 2 Soundtrack"
+set theArtist to "Kevin Kiner"
+set theTrackCount to 58
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3
 set invertTrackNumbers to 1 
 
 
