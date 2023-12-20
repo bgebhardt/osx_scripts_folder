@@ -40,3 +40,21 @@ name, shortcut, script_file
 "0-star", "⌥⇧⌘0", Macintosh HD:Users:brgebhar:Library:Scripts:0 music:0-star.scpt
 "Copy All URLs to clipboard md", "⌥⇧⌘A", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:Google Chrome:Copy All URLs to clipboard md.scpt
 "Swap morning evening times", "⌥⌘T", Macintosh HD:Users:brgebhar:Library:Scripts:Applications:OmniFocus:Swap morning evening times.scpt
+
+# Shortcut dump from 12-20-2023; merge with above.
+name, shortcut, script_file
+"which_charger", "⌃⌥⌘B", Ernie:Users:bryan:Library:Scripts:battery:which_charger.applescript
+"2-star", "⌥⇧⌘2", Ernie:Users:bryan:Library:Scripts:0 music:2-star.scpt
+"0-star", "⌥⇧⌘0", Ernie:Users:bryan:Library:Scripts:0 music:0-star.scpt
+"volume up", "⌥⇧⌘-", Ernie:Users:bryan:Library:Scripts:0 sound:volume up.scpt
+"next track", "⌥⇧⌘⇢", Ernie:Users:bryan:Library:Scripts:0 music:next track.scpt
+"5-star", "⌥⇧⌘5", Ernie:Users:bryan:Library:Scripts:0 music:5-star.scpt
+"volume down", "⌥⇧⌘=", Ernie:Users:bryan:Library:Scripts:0 sound:volume down.scpt
+"md2rtf clipboard", "⌃⌘A", Ernie:Users:bryan:Library:Scripts:md2rtf clipboard.workflow:
+"playpause", "⌥⇧⌘␣", Ernie:Users:bryan:Library:Scripts:0 music:playpause.scpt
+"3-star", "⌥⇧⌘3", Ernie:Users:bryan:Library:Scripts:0 music:3-star.scpt
+"1-star", "⌥⇧⌘1", Ernie:Users:bryan:Library:Scripts:0 music:1-star.scpt
+"Copy URLs to clipboard md", "⌃⌥⌘C", Ernie:Users:bryan:Library:Scripts:Applications:Microsoft Edge:Copy URLs to clipboard md.applescript
+"prev track", "⌥⇧⌘⇠", Ernie:Users:bryan:Library:Scripts:0 music:prev track.scpt
+"open in PDF Expert", "⇧⌘O", Ernie:Users:bryan:Library:Scripts:Applications:Skim:open in PDF Expert.applescript
+"4-star", "⌥⇧⌘4", Ernie:Users:bryan:Library:Scripts:0 music:4-star.scpt

@@ -29,5 +29,7 @@ tell application "FastScripts"
 	
 	set the clipboard to theShortcutsList
 	theShortcutsList
+
+	display dialog "Shortcuts copied to clipboard in csv."
 	
 end tell
