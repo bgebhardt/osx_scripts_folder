@@ -5,24 +5,31 @@
 -- * [keyboard - Shortcut to eject all external hard drives but not MobileBackups - Ask Different](https://apple.stackexchange.com/questions/86005/shortcut-to-eject-all-external-hard-drives-but-not-mobilebackups/446461#446461)
 -- * [Using Keyboard Maestro and AppleScript to Eject External Drives - MacSparky](https://www.macsparky.com/blog/2022/01/using-keyboard-maestro-and-applescript-to-eject-external-drives/)
 
+-- TODO
+-- need to error check if they are already mounted
+-- look at command line options to do this.
 
-display dialog "Eject Gonzo?"
+(*
+ use do shell script and disk util instead 
+diskutil eject Grover
+Disk Grover ejected
+diskutil eject Gonzo
+Disk Gonzo ejected
+diskutil mountDisk Gonzo
+Volume(s) mounted successfully
+diskutil mountDisk Grover
+Volume(s) mounted successfully
+*)
+
+-- display dialog "Eject Gonzo and Grover?"
+
+-- volumes owned by "system" are TimeMachine backups so filter those out.
+-- this is a fragile approach as there could be system owned external drives but not in my set up.
+-- eject only local volumes keeps cloud drives mounted (like Google Drive)
 try
-	-- volumes owned by "system" are TimeMachine backups so filter those out.
-	-- this is a fragile approach as there could be system owned external drives but not in my set up.
-	-- eject only local volumes keeps cloud drives mounted (like Google Drive)
-	tell application "Finder"
-		eject disk "Gonzo"
-		-- (every disk whose ejectable is true and local volume is true and format is not unknown format and owner is not "system")
-		
-	end tell
-	beep 2 -- to indicate it was successful
+	do shell script "/usr/sbin/diskutil eject Gonzo" 
+	do shell script "/usr/sbin/diskutil eject Grover" 
+	beep 2
 on error
 	display dialog "Unable to eject disk." buttons {"Close"} default button "Close"
 end try
-
-
-(*
--- TODO
-turn into an eject/mount disk toggle
-*)
