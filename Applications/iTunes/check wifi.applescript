@@ -47,7 +47,7 @@ if mySSID is "Gebhardt"
     display dialog "SSID: " & mySSID & return & "lastTxRate = " & lastTxRate & "; lastTxRateThreshold = " & lastTxRateThreshold
 
     -- if tx rate is greater than threshold
-    -- TODO not working because tx rate is varies a lot
+    -- ! not working because tx rate is varies a lot
     if lastTxRate > lastTxRateThreshold
         --my toggleWifi()        
     end
