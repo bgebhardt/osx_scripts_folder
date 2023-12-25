@@ -66,6 +66,19 @@ end
 on toggleWifi()
     display dialog "Toggle wifi?"
     do shell script "networksetup -setairportpower en0 off; sleep 2; networksetup -setairportpower en0 on"
+
+(*
+ TODO check for wifi interface name
+Way to check which interface is the wifi.
+from [macos - Turn ON/OFF Wifi in OS X Utility - Super User](https://superuser.com/questions/334374/turn-on-off-wifi-in-os-x-utility)
+#!/bin/bash
+
+device="$(networksetup -listallhardwareports |
+grep -E '(Wi-Fi|AirPort)' -A 1 | grep -o "en.")"
+[[ "$(networksetup -getairportpower $device)" == *On ]] && val=off || val=on
+networksetup -setairportpower $device $val
+*)
+
 end
 
 
