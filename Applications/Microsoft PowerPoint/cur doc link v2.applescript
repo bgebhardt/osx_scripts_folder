@@ -1,4 +1,4 @@
--- gets a url to the front window of Microsoft Word.
+-- gets a url to the front window of Microsoft PowerPoint.
 -- can choose a link that will download if pasted into browser or a link format that opens in the Mac office app (set gMacAppLink).
 -- when pasting the link into a Microsft app it should resolve to a clickable link that opens in web.
 
@@ -9,7 +9,7 @@
 
 set gMacAppLink to false
 
-tell application "Microsoft Word"
+tell application "Microsoft PowerPoint"
 	set activeDoc to active document
 	set activeDocName to name of activeDoc
 	set activeDocPath to path of activeDoc
