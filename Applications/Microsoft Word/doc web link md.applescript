@@ -1,4 +1,4 @@
--- gets markdown style web link for front window of PowerPoint.
+-- gets markdown style web link for front window of Microsoft Word.
 -- the web link is better for sharing with other users and is faster than the "share" button in office apps.
 
 -- The key is to add "?Web=1" to open in web. Web=0 will download the file I think.
@@ -30,10 +30,10 @@ tell application "Microsoft Word"
 	set docURL to activeDocPath & "/" & encodedDocName & "?Web=1"
 	
 	-- if you want it in markdown format
-	--set link to "[" & activeDocName & "](" & docURL & ")"
+	set link to "[" & activeDocName & "](" & docURL & ")"
 	
 	-- if you just want the link
-	set link to docURL & "?Web=1"
+	--set link to docURL & "?Web=1"
 	
 	set the clipboard to link
 end tell
