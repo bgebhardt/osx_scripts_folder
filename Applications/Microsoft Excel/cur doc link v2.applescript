@@ -10,7 +10,7 @@
 set gMacAppLink to false
 
 tell application "Microsoft Excel"
-	set activeDoc to active document
+	set activeDoc to active workbook
 	set activeDocName to name of activeDoc
 	set activeDocPath to path of activeDoc
 	set fullURL to full name of activeDoc
