@@ -14,7 +14,8 @@
 -- this is a fragile approach as there could be system owned external drives but not in my set up.
 -- eject only local volumes keeps cloud drives mounted (like Google Drive)
 
-set diskList to { "Gonzo", "Grover" }
+# set diskList to { "Gonzo", "Grover", "Elmo" }
+set diskList to { "Grover", "Elmo" }
 
 repeat with theDisk in diskList
   
