@@ -249,16 +249,48 @@ set theTrackNamePos to 4
 set invertTrackNumbers to 1 
 *)
 
--- Star Wars AHSOKA Vol. 1 & 2 Soundtrack (Original Series Score) (Episodes 1-8) - 002 - Star Wars AHSOKA Vol. 2 Soundtrack _ Epilogue Part I Ð Kevin Kiner _ Original Series Score _
-
-set theAlbum to "Star Wars AHSOKA Vol. 2 Soundtrack"
-set theArtist to "Kevin Kiner"
-set theTrackCount to 58
+(*)
+-- For All Mankind Season 4 Soundtrack (Apple TV+ Original Series Score) - 002 - Discriminator Install
+set theAlbum to "For All Mankind Season 4 Soundtrack (Apple TV+ Original Series Score)"
+set theArtist to "Jeff Russo & Paul Doucette"
+set theTrackCount to 10
 set theGenre to "Soundtrack"
 set theTrackNumPos to 2
 set theTrackNamePos to 3
 set invertTrackNumbers to 1 
+*)
 
+(*
+-- For All Mankind- Season 2 (Apple TV+ Original Series Soundtrack) by Jeff Russo - 006 -  For All Mankind- Season 2 - Reaching For the Case (Soundtrack by Jeff Russo)
+set theAlbum to "For All Mankind- Season 2 (Apple TV+ Original Series Soundtrack)"
+set theArtist to "Jeff Russo"
+set theTrackCount to 21
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 4
+set invertTrackNumbers to 1 
+*)
+
+(*
+-- For All Mankind (Soundtrack) - 001 - Woman on the Moon _ For All Mankind- Season 1 OST
+set theAlbum to "For All Mankind (Soundtrack)"
+set theArtist to "Jeff Russo"
+set theTrackCount to 26
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 3
+set invertTrackNumbers to 1 
+*)
+
+
+-- Best battlestar galactica music - 010 - 03-Admiral And Commander
+set theAlbum to "Best Battlestar Galactica Music"
+set theArtist to "Bear McCreary"
+set theTrackCount to 28
+set theGenre to "Soundtrack"
+set theTrackNumPos to 2
+set theTrackNamePos to 4
+set invertTrackNumbers to 0
 
 tell application "Music"
 	--name of current playlist
@@ -311,9 +343,9 @@ tell application "Music"
 		set artist to theArtist
 		set track number to trackNum
 		-- hack to invert track count for some albums
-		if invertTrackNumbers is 1
-			set track number to (theTrackCount - trackNum +1)
-		end
+		if invertTrackNumbers is 1 then
+			set track number to (theTrackCount - trackNum + 1)
+		end if
 		set track count to theTrackCount
 		set genre to theGenre
 		set name to trackName
