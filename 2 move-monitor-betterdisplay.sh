@@ -8,7 +8,7 @@ DISPLAY2="Built-in Display"
 
 # Move DISPLAY2 to the bottom left corner of DISPLAY1
 # betterdisplaycli requires Xcode install to work so using executable in the app bundle
-/Applications/BetterDisplay.app/Contents/MacOS/BetterDisplay perform -namelike="$DISPLAY2" -moveTo=bottomLeftCorner -targetNameLike="$DISPLAY1"
+/Applications/BetterDisplay.app/Contents/MacOS/BetterDisplay perform -namelike="$DISPLAY2" -moveTo=left -targetNameLike="$DISPLAY1"
 
 
 # This script moves DISPLAY2 to the bottom left corner of DISPLAY1. You can adjust the -moveTo parameter to other positions like topLeft, topRight, bottomRight, etc., depending on your needs1.
