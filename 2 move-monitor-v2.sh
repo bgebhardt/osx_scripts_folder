@@ -40,3 +40,6 @@ $BETTERDISPLAYCLI set -namelike=$DISPLAY2 -placement="$current_x$hack_end"
 # Print the old and new positions
 echo "Old position: $current_x,$current_y"
 echo "New position: $current_x,$new_y"
+
+# Beep once using AppleScript
+osascript -e 'beep 1'
