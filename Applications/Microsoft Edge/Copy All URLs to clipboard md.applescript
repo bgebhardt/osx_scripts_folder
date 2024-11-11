@@ -107,7 +107,7 @@ else if browserName is "Microsoft Edge" then
 					set isActiveTabText to ""
 				end if
 				set mdURL to "- " & isActiveTabText & "[" & title of i & "]( " & URL of i & " )"
-				set URL_list to URL_list & return & mdURL
+				set URL_list to URL_list & mdURL & return
 				set currentTab to currentTab + 1
 			end repeat
 			
