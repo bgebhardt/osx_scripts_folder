@@ -25,6 +25,11 @@ log "clipboard is " & clipboardContent
 --if clipboardContent starts with "http://" or clipboardContent starts with "https://" then
 -- Parse the URL into the filename part and the rest
 
+-- TODO: change parsing to use grep via the do shell script "
+-- paste the link to stdout and pipe to grep
+-- set run_cmd to "/usr/bin/pbpaste | /usr/bin/grep -o \"https://.*/\"""
+-- see "3 get file sharepoint.applescript" file for full approach
+
 -- parse the url into directory and filename after isolating it in the clipboard text
 --set urlComponents to my parseOutURL(clipboardContent)
 try
