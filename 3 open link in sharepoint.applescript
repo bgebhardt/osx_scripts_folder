@@ -13,7 +13,13 @@ set clipboardContent to the clipboard as text
 --set clipboardContent to "[M365 Newsletter planning doc.docx](https://microsoft.sharepoint-df.com/teams/M365Consumer/Shared%20Documents/News%20post%20drafts/M365%20Newsletter%20planning%20doc.docx)"
 
 -- TODO: this example currently does not work. Just works with Hookmark links and markdown links
+-- personal OneDrive sharepoint links
 --set clipboardContent to "M365 Newsletter planning doc.docx https://microsoft.sharepoint-df.com/teams/M365Consumer/Shared%20Documents/News%20post%20drafts/M365%20Newsletter%20planning%20doc.docx) with text"
+
+-- Teams sharepoint site links
+-- TODO: make work! but how.
+-- https://microsoft.sharepoint-df.com/:w:/r/teams/M365ProductROB/_layouts/15/Doc.aspx?sourcedoc=%7B8631901D-C727-42A3-8940-9587E461585B%7D&file=FY25%20Consumer%20Priorities.docx&action=default&mobileredirect=true&DefaultItemOpen=1&share=IQEdkDGGJ8ejQolAlYfkYVhbAQkAxf38b5BMWEK4Lz2C7Ck
+-- in https://microsoft.sharepoint-df.com/teams/M365ProductROB/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2FM365ProductROB%2FShared%20Documents%2FStrategy%20and%20OKRs%2FFY25
 
 -- https://microsoft.sharepoint-df.com/teams/M365Consumer/Shared%20Documents/News%20post%20drafts/M365%20Newsletter%20planning%20doc.docx
 -- [M365 Newsletter planning doc.docx](https://microsoft.sharepoint-df.com/teams/M365Consumer/Shared%20Documents/News%20post%20drafts/M365%20Newsletter%20planning%20doc.docx)
