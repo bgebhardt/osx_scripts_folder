@@ -11,29 +11,44 @@ tell application "Contacts"
 	--set phoneNumbers to value of phones of selectedPerson -- returns an array of phone numbers but no labels
 	set phoneNumbers to phones of selectedPerson
 	set primaryPhone to ""
-	repeat with phoneNumber in phoneNumbers
-		log "phoneNumber label: " & label of phoneNumber
-		if label of phoneNumber contains "Mobile" then -- label is formated as "_$!<Mobile>!$_" for some reason
-			set primaryPhone to value of phoneNumber
-			exit repeat
+	
+	if phoneNumbers is not {} then
+		repeat with phoneNumber in phoneNumbers
+			log "phoneNumber label: " & label of phoneNumber
+			if label of phoneNumber contains "Mobile" then -- label is formated as "_$!<Mobile>!$_" for some reason
+				set primaryPhone to value of phoneNumber
+				exit repeat
+			end if
+		end repeat
+		if primaryPhone is "" then
+			set primaryPhone to value of item 1 of phoneNumbers
 		end if
-	end repeat
-	if primaryPhone is "" then
-		set primaryPhone to value of item 1 of phoneNumbers
 	end if
 	
 	set theEmails to emails of selectedPerson
 	set primaryEmail to ""
-	repeat with theEmail in theEmails
-		log "theEmail label: " & label of theEmail
-		if label of theEmail contains "Home" then -- label is formated as "_$!<Home>!$_" for some reason
-			set primaryEmail to value of theEmail
-			exit repeat
+	if theEmails is not {} then
+		repeat with theEmail in theEmails
+			log "theEmail label: " & label of theEmail
+			if label of theEmail contains "Home" then -- label is formated as "_$!<Home>!$_" for some reason
+				set primaryEmail to value of theEmail
+				exit repeat
+			end if
+		end repeat
+		if primaryEmail is "" then
+			set primaryEmail to value of item 1 of theEmails
 		end if
-	end repeat
-	if primaryEmail is "" then
-		set primaryEmail to value of item 1 of theEmails
 	end if
 	
-	set the clipboard to firstName & lastName & return & "Phone: " & primaryPhone & return & "Email: " & primaryEmail
+	-- Format primaryPhone as a proper US phone number
+	-- TODO: this only works if the number is 10 digits which I think is wrong given how contacts works.
+	set formattedPhone to primaryPhone
+	if length of primaryPhone is 10 then
+		set areaCode to text 1 thru 3 of primaryPhone
+		set centralOfficeCode to text 4 thru 6 of primaryPhone
+		set lineNumber to text 7 thru 10 of primaryPhone
+		set formattedPhone to "(" & areaCode & ") " & centralOfficeCode & "-" & lineNumber
+	end if
+	
+	set the clipboard to firstName & " " & lastName & return & " Phone: " & formattedPhone & return & " Email: " & primaryEmail
 end tell
