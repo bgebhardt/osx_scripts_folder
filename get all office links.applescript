@@ -5,6 +5,8 @@
 
 set the clipboard to ""
 
+set the clipboard to (the clipboard) & "# Microsoft Excel" & return
+
 tell application "Microsoft Excel"
 	if it is running then
 		set docs to documents
@@ -19,6 +21,7 @@ end tell
 
 
 -- gets markdown style link for all open presentations of PowerPoint.
+set the clipboard to (the clipboard) & "# Microsoft PowerPoint" & return
 
 tell application "Microsoft PowerPoint"
 	if it is running then
@@ -33,6 +36,7 @@ tell application "Microsoft PowerPoint"
 end tell
 
 -- get all doc links
+set the clipboard to (the clipboard) & "# Microsoft Word" & return
 tell application "Microsoft Word"
 	if it is running then
 		set docs to documents
