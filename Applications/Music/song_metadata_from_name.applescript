@@ -283,14 +283,37 @@ set invertTrackNumbers to 1
 *)
 
 
--- Best battlestar galactica music - 010 - 03-Admiral And Commander
-set theAlbum to "Best Battlestar Galactica Music"
-set theArtist to "Bear McCreary"
-set theTrackCount to 28
+
+-- -- Best battlestar galactica music - 010 - 03-Admiral And Commander
+-- set theAlbum to "Best Battlestar Galactica Music"
+-- set theArtist to "Bear McCreary"
+-- set theTrackCount to 28
+-- set theGenre to "Soundtrack"
+-- set theTrackNumPos to 2
+-- set theTrackNamePos to 4
+-- set invertTrackNumbers to 0
+
+--Star Trek VI- The Undiscovered Country- Expanded Edition - 021 - Star Trek Undiscovered Country   21 Sign Off
+
+set theAlbum to "Star Trek VI- The Undiscovered Country- Expanded Edition"
+set theArtist to "Cliff Eidelman"
+set theTrackCount to 26
 set theGenre to "Soundtrack"
 set theTrackNumPos to 2
-set theTrackNamePos to 4
+set theTrackNamePos to 3
 set invertTrackNumbers to 0
+
+
+-- 1982 - Star Trek II The Wrath Of Khan Soundtrack - 021 - 21 - Amazing Grace - James Horner - Star Trek II The Wrath Of Khan Expanded
+--Star Trek II- The Wrath of Khan- Expanded Edition - 021 - Star Trek II Wrath of Khan   21 Amazing Grace
+-- set theAlbum to "Star Trek II- The Wrath of Khan- Expanded Edition"
+-- set theArtist to "James Horner"
+-- set theTrackCount to 24
+-- set theGenre to "Soundtrack"
+-- set theTrackNumPos to 3
+-- set theTrackNamePos to 5
+-- set invertTrackNumbers to 0
+
 
 tell application "Music"
 	--name of current playlist
