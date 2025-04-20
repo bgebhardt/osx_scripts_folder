@@ -7,10 +7,12 @@
 -- [Using Hookmark in Microsoft OneDrive with Microsoft Office Apps Ð Hookmark](https://hookproductivity.com/help/integration/using-hook-with-onedrive/)
 -- [Excel OneDrive file not Hookable \[workarounds\] - Discussion & Help - Hookmark Forum](https://discourse.hookproductivity.com/t/excel-onedrive-file-not-hookable-workarounds/2367/10)
 
+-- TODO: Script appears to not be working
+
 set gMacAppLink to false
 
 tell application "Microsoft PowerPoint"
-	set activeDoc to active document
+	set activeDoc to active presentation
 	set activeDocName to name of activeDoc
 	set activeDocPath to path of activeDoc
 	set fullURL to full name of activeDoc
