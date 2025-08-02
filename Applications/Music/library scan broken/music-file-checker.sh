@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# TODO: It appears this script did not work at all. 
+# Issues include - not matching file names in xml file to folders right. Filename in xls seems to be case insensitive, maybe other issues.
+
 # Music Library File Checker
 # Compares files in Media directory against Library.xml file paths
 
