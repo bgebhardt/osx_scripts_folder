@@ -13,7 +13,7 @@ tell application "System Events"
 			set theVaults to theVaults & {(my getVaultName(winTitle))}
 		end repeat
 		
-		theVaults	
+		theVaults
 		
 	end tell
 end tell
